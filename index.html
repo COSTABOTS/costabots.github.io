@@ -18,13 +18,13 @@
             color: #ffffff;
         }
 
-        /* CABECERA EN BLANCO CON BRANDING COMPLETO */
+        /* CABECERA DE ALTO CONTRASTE */
         header {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 15px 20px;
-            background-color: #ffffff; /* Fondo blanco de contraste */
+            padding: 25px 20px; /* Más espacio vertical */
+            background-color: #ffffff; 
             border-bottom: 2px solid #e2e8f0;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
             position: sticky;
@@ -32,27 +32,28 @@
             z-index: 1000;
         }
 
-        /* Maquetación del nombre al lado del logo */
+        /* Contenedor del branding */
         .brand-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 18px; /* Más separación entre texto e icono */
         }
 
         .brand-text {
             font-family: 'Urbanist', sans-serif;
-            font-size: 32px;
+            font-size: 38px; /* Texto más grande e imponente */
             font-weight: 800;
             letter-spacing: 1.5px;
-            color: #1e293b; /* COSTA en tono oscuro tirando a negro */
+            color: #1e293b; 
         }
 
         .brand-text span {
-            color: #007BFF; /* BOTS en el azul de tu logo */
+            color: #007BFF; 
         }
 
+        /* LOGO DEL HEADER MUCHO MÁS GRANDE */
         .logo-img {
-            height: 42px; /* Tamaño ideal y proporcionado */
+            height: 70px; /* Subido de 42px a 70px para que tenga presencia real */
             width: auto;
             object-fit: contain;
         }
@@ -88,14 +89,14 @@
             margin-right: auto;
         }
 
-        /* CONTENEDOR DE LA DEMO (MÓVIL MÁS GRANDE Y REESTILIZADO) */
+        /* CONTENEDOR DE LA DEMO (FORMATO MÓVIL) */
         .demo-container {
-            max-width: 420px; /* Le damos un poco más de aire al formato móvil para que no se ahogue el bot */
+            max-width: 420px; 
             height: 720px;    
             margin: 0 auto 60px auto;
             background: #111827;
             border-radius: 36px;
-            border: 10px solid #1e293b; /* Un marco simulando el smartphone real */
+            border: 10px solid #1e293b; 
             overflow: hidden;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
             position: relative;
@@ -109,19 +110,19 @@
             background-color: #111726;
         }
 
-        /* SECCIÓN DE NUESTROS PROYECTOS / LOGOS */
+        /* FRANJA DE LOGOS EDITADA: AHORA MUCHO MÁS CLARA */
         .projects-section {
-            background-color: #0b0f19;
+            background-color: #f8fafc; /* Cambiado de azul oscuro a un gris claro/blanco roto premium */
             padding: 60px 20px;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .projects-title {
             font-family: 'Urbanist', sans-serif;
-            font-size: 22px;
-            color: #64748b;
+            font-size: 20px;
+            color: #64748b; /* Texto en gris oscuro legible */
             margin-bottom: 40px;
             text-transform: uppercase;
             letter-spacing: 2.5px;
@@ -132,17 +133,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 60px;
+            gap: 80px; /* Más espacio entre logos */
             flex-wrap: wrap;
             max-width: 900px;
             margin: 0 auto;
         }
 
+        /* LOGOS DE SISTEMAS CON MÁXIMA VISIBILIDAD */
         .project-logo {
-            height: 75px;
-            max-width: 240px;
+            height: 85px; /* Un poco más grandes */
+            max-width: 260px;
             object-fit: contain;
-            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
+            filter: none; /* Quitamos sombras oscuras innecesarias en fondo claro */
             transition: transform 0.3s;
         }
 
@@ -150,7 +152,7 @@
             transform: scale(1.05);
         }
 
-        /* BOTÓN DE ACCIÓN CON TU WHATSAPP DIRECTO */
+        /* BOTÓN DE ACCIÓN WHATSAPP */
         .cta-section {
             text-align: center;
             padding: 80px 20px 100px 20px;
@@ -182,15 +184,15 @@
             background-color: #090d16;
         }
 
-        /* ADAPTACIÓN PANTALLAS PEQUEÑAS */
+        /* ADAPTACIÓN MÓVIL */
         @media (max-width: 600px) {
             h1 { font-size: 32px; }
             .subtitle { font-size: 16px; }
             .demo-container { max-width: 100%; height: 620px; border-radius: 24px; border-width: 6px; }
-            .brand-text { font-size: 26px; }
-            .logo-img { height: 34px; }
+            .brand-text { font-size: 28px; }
+            .logo-img { height: 50px; } /* En móvil también se mantiene hermoso */
             .logos-grid { gap: 40px; }
-            .project-logo { height: 55px; }
+            .project-logo { height: 65px; }
         }
     </style>
 </head>
