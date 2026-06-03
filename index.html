@@ -3,34 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CostaBots | Automatización Inteligente</title>
+    <title>CostaBots | Smart Solutions. Better Experiences.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * { box-sizing: border-box; }
         body {
-            background-color: #0f172a; /* Fondo oscuro premium */
+            background-color: #0f172a; /* Fondo oscuro premium de la presentación */
             margin: 0;
             padding: 0;
             font-family: 'Inter', sans-serif;
             color: #ffffff;
         }
 
-        /* CABECERA MÁS CLARA PARA MÁXIMO CONTRASTE */
+        /* CABECERA EN BLANCO CON BRANDING COMPLETO */
         header {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-            background-color: #ffffff; /* Fondo blanco para que resalte cualquier logo */
+            padding: 15px 20px;
+            background-color: #ffffff; /* Fondo blanco de contraste */
             border-bottom: 2px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Maquetación del nombre al lado del logo */
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-text {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #1e293b; /* COSTA en tono oscuro tirando a negro */
+        }
+
+        .brand-text span {
+            color: #007BFF; /* BOTS en el azul de tu logo */
         }
 
         .logo-img {
-            height: 55px; /* Un pelín más grande para que luzca bien */
+            height: 42px; /* Tamaño ideal y proporcionado */
+            width: auto;
             object-fit: contain;
         }
 
@@ -38,7 +61,7 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 60px 20px 20px 20px;
             text-align: center;
         }
 
@@ -65,16 +88,16 @@
             margin-right: auto;
         }
 
-        /* CONTENEDOR DE LA DEMO (TAMAÑO MÓVIL) */
+        /* CONTENEDOR DE LA DEMO (MÓVIL MÁS GRANDE Y REESTILIZADO) */
         .demo-container {
-            max-width: 380px; 
-            height: 680px;    
+            max-width: 420px; /* Le damos un poco más de aire al formato móvil para que no se ahogue el bot */
+            height: 720px;    
             margin: 0 auto 60px auto;
             background: #111827;
-            border-radius: 32px;
-            border: 8px solid #1e293b; 
+            border-radius: 36px;
+            border: 10px solid #1e293b; /* Un marco simulando el smartphone real */
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
             position: relative;
         }
 
@@ -97,11 +120,12 @@
 
         .projects-title {
             font-family: 'Urbanist', sans-serif;
-            font-size: 24px;
-            color: #94a3b8;
+            font-size: 22px;
+            color: #64748b;
             margin-bottom: 40px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
+            font-weight: 700;
         }
 
         .logos-grid {
@@ -126,10 +150,10 @@
             transform: scale(1.05);
         }
 
-        /* BOTÓN DE ACCIÓN (TU WHATSAPP REAL) */
+        /* BOTÓN DE ACCIÓN CON TU WHATSAPP DIRECTO */
         .cta-section {
             text-align: center;
-            padding: 80px 20px;
+            padding: 80px 20px 100px 20px;
         }
 
         .btn-whatsapp {
@@ -141,7 +165,7 @@
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
-            box-shadow: 0 10px 20px -10px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
             transition: transform 0.2s, background-color 0.2s;
         }
 
@@ -158,11 +182,13 @@
             background-color: #090d16;
         }
 
-        /* ADAPTACIÓN MÓVIL GENERAL */
+        /* ADAPTACIÓN PANTALLAS PEQUEÑAS */
         @media (max-width: 600px) {
             h1 { font-size: 32px; }
             .subtitle { font-size: 16px; }
-            .demo-container { max-width: 100%; height: 600px; border-radius: 20px; }
+            .demo-container { max-width: 100%; height: 620px; border-radius: 24px; border-width: 6px; }
+            .brand-text { font-size: 26px; }
+            .logo-img { height: 34px; }
             .logos-grid { gap: 40px; }
             .project-logo { height: 55px; }
         }
@@ -171,7 +197,10 @@
 <body>
 
     <header>
-        <img src="https://costabots.github.io/LOGO_COSTABOTS.png" alt="CostaBots" class="logo-img">
+        <div class="brand-container">
+            <div class="brand-text">COSTA<span>BOTS</span></div>
+            <img src="https://costabots.github.io/LOGO_COSTABOTS.png" alt="Icono CostaBots" class="logo-img">
+        </div>
     </header>
 
     <div class="container">
