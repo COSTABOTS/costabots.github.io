@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CostaBots | Smart Solutions. Better Experiences.</title>
+    <title>CostaBots | Automatización Inteligente</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* ESTILOS BASE */
         * { box-sizing: border-box; }
         body {
             background-color: #0f172a; /* Fondo oscuro premium */
@@ -19,44 +18,35 @@
             color: #ffffff;
         }
 
-        /* CABECERA (HEADER) */
+        /* CABECERA CON TU LOGO */
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 20px 40px;
+            padding: 25px;
             background-color: #0b0f19;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
 
-        .logo-container {
-            font-family: 'Urbanist', sans-serif;
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 1px;
+        .logo-img {
+            height: 50px;
+            object-fit: contain;
         }
 
-        .logo-container span {
-            color: #007BFF; /* Azul Costa Corporativo */
-        }
-
-        /* HERO SECTION (PORTADA) */
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-            max-width: 900px;
+        /* CONTENIDO PRINCIPAL */
+        .container {
+            max-width: 800px;
             margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
         }
 
         h1 {
             font-family: 'Urbanist', sans-serif;
-            font-size: 54px;
+            font-size: 46px;
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             letter-spacing: -1px;
         }
 
@@ -65,195 +55,152 @@
         }
 
         .subtitle {
-            font-size: 20px;
+            font-size: 18px;
             color: #94a3b8;
             line-height: 1.6;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* BLOQUE DE LA DEMO INTERACTIVA (EL SAFARI-IA) */
-        .demo-section {
-            max-width: 1000px;
-            margin: 0 auto 80px auto;
-            padding: 0 20px;
-        }
-
-        .demo-box {
+        /* CONTENEDOR DE LA DEMO (TAMAÑO MÓVIL) */
+        .demo-container {
+            max-width: 380px; /* Ancho real de un smartphone */
+            height: 680px;    /* Alto de pantalla de móvil */
+            margin: 0 auto 60px auto;
             background: #111827;
-            border-radius: 20px;
-            border: 6px solid #1e293b;
+            border-radius: 32px;
+            border: 8px solid #1e293b; /* Marco del teléfono */
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
         }
 
-        .demo-header {
-            background-color: #1e293b;
-            color: #ffffff;
-            padding: 15px;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: center;
-            letter-spacing: 0.5px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* IFRAME TOTALMENTE LIMPIO CON TU SUBDOMINIO */
         iframe {
             width: 100%;
-            height: 650px;
+            height: 100%;
             border: none;
             display: block;
             background-color: #111827;
         }
 
-        /* SECCIÓN DE CARACTERÍSTICAS (TILES) */
-        .features-section {
-            max-width: 1100px;
-            margin: 0 auto 80px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            font-family: 'Urbanist', sans-serif;
-            font-size: 32px;
+        /* SECCIÓN DE NUESTROS PROYECTOS / LOGOS */
+        .projects-section {
+            background-color: #0b0f19;
+            padding: 60px 20px;
             text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .projects-title {
+            font-family: 'Urbanist', sans-serif;
+            font-size: 24px;
+            color: #94a3b8;
             margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .tiled-content {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+        .logos-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .tile {
-            background: #111827;
-            padding: 40px;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+        .project-logo {
+            height: 75px;
+            max-width: 240px;
+            object-fit: contain;
+            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
             transition: transform 0.3s;
         }
 
-        .tile:hover {
-            transform: translateY(-5px);
+        .project-logo:hover {
+            transform: scale(1.05);
         }
 
-        .tile .icon {
-            font-size: 40px;
-            color: #007BFF;
-            margin-bottom: 20px;
-        }
-
-        .tile h3 {
-            font-family: 'Urbanist', sans-serif;
-            font-size: 22px;
-            margin: 0 0 15px 0;
-        }
-
-        .tile p {
-            color: #94a3b8;
-            font-size: 16px;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        /* BOTÓN DE ACCIÓN LLAMATIVO (WHATSAPP) */
+        /* BOTÓN DE ACCIÓN (TU WHATSAPP REAL) */
         .cta-section {
             text-align: center;
-            padding: 60px 20px 100px 20px;
-            background: linear-gradient(to top, #0b0f19, #0f172a);
+            padding: 80px 20px;
         }
 
         .btn-whatsapp {
             display: inline-block;
-            background-color: #007BFF;
+            background-color: #25d366; /* Verde WhatsApp */
             color: white;
-            padding: 18px 36px;
+            padding: 18px 38px;
             font-size: 18px;
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
-            box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4);
+            box-shadow: 0 10px 20px -10px rgba(37, 211, 102, 0.5);
             transition: transform 0.2s, background-color 0.2s;
         }
 
         .btn-whatsapp:hover {
-            background-color: #0069d9;
+            background-color: #1ebd58;
             transform: translateY(-2px);
         }
 
-        /* PIE DE PÁGINA */
         footer {
             text-align: center;
             padding: 30px;
             font-size: 14px;
             color: #64748b;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background-color: #0b0f19;
+            background-color: #090d16;
         }
 
-        /* ADAPTACIÓN PARA MÓVILES */
-        @media (max-width: 900px) {
-            .tiled-content { grid-template-columns: 1fr; }
-            h1 { font-size: 38px; }
-            .subtitle { font-size: 18px; }
-            iframe { height: 550px; }
+        /* ADAPTACIÓN MÓVIL GENERAL */
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            .subtitle { font-size: 16px; }
+            .demo-container { max-width: 100%; height: 600px; border-radius: 20px; }
+            .logos-grid { gap: 40px; }
+            .project-logo { height: 55px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">Costa<span>Bots</span></div>
+        <img src="https://costabots.github.io/LOGO_HEADER_SAFARI.png" alt="CostaBots" class="logo-img">
     </header>
 
-    <div class="hero">
+    <div class="container">
         <h1>Smart Solutions.<br><span>Better Experiences.</span></h1>
         <p class="subtitle">
-            Liderando la transformación digital en la Costa del Sol con asistentes virtuales de Inteligencia Artificial de alta precisión para hostelería y comercios.
+            Automatización inteligente y asistentes virtuales de IA para la hostelería de la Costa del Sol. Gestiona aforos, confirma mesas y elimina los No-Shows por WhatsApp.
         </p>
-    </div>
 
-    <div class="demo-section">
-        <div class="demo-box">
-            <div class="demo-header">
-                <i class="fa-solid fa-circle-dot" style="color: #22c55e; margin-right: 5px;"></i> 
-                DEMO EN VIVO: Interactúa con nuestro sistema inteligente de reservas
-            </div>
+        <div class="demo-container">
             <iframe src="https://safari.costabots.com" allow="geolocation; microphone; camera"></iframe>
         </div>
     </div>
 
-    <div class="features-section">
-        <h2 class="section-title">Infraestructura Tecnológica Integrada</h2>
-        <div class="tiled-content">
-            <div class="tile">
-                <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
-                <h3>WhatsApp Shield</h3>
-                <p>Confirmaciones automáticas, recordatorios inteligentes y links de cancelación instantáneos para anular por completo los No-Shows.</p>
-            </div>
-            <div class="tile">
-                <div class="icon"><i class="fa-solid fa-clock"></i></div>
-                <h3>Disponibilidad 24/7</h3>
-                <p>Tu negocio nunca cierra la recepción. Captura reservas y atiende clientes de forma impecable en inglés o español, incluso de madrugada.</p>
-            </div>
-            <div class="tile">
-                <div class="icon"><i class="fa-solid fa-chart-pie"></i></div>
-                <h3>Aforo Inteligente</h3>
-                <p>Cálculo y control de cubiertos (PAX) en tiempo real por tramos horarios para optimizar el servicio en sala y el trabajo en cocina.</p>
-            </div>
+    <div class="projects-section">
+        <div class="projects-title">Sistemas Desplegados</div>
+        <div class="logos-grid">
+            <img src="https://costabots.github.io/LOGO_HEADER_SAFARI.png" alt="Safari-IA" class="project-logo">
+            <img src="https://costabots.github.io/LOGO_HEADER_GRANDITALIA.png" alt="Grand Italia" class="project-logo">
         </div>
     </div>
 
     <div class="cta-section">
-        <h2 style="font-family: 'Urbanist', sans-serif; font-size: 32px; margin-bottom: 30px;">¿Listo para optimizar tu negocio?</h2>
-        <a href="https://wa.me/34600000000?text=Hola!%20Estoy%20interesado%20en%20automatizar%20mi%20negocio%20con%20CostaBots" class="btn-whatsapp" target="_blank">
-            <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> CONTACTAR AHORA
+        <h2 style="font-family: 'Urbanist', sans-serif; font-size: 28px; margin-bottom: 25px;">¿Hablamos para automatizar tu restaurante?</h2>
+        <a href="https://wa.me/34613144143?text=Hola%20Francisco!%20Estoy%20interesado%20en%20un%20asistente%20virtual%20de%20CostaBots%20para%20mi%20negocio." class="btn-whatsapp" target="_blank">
+            <i class="fa-brands fa-whatsapp" style="margin-right: 8px; font-size: 22px; vertical-align: middle;"></i> CONTACTAR POR WHATSAPP
         </a>
     </div>
 
     <footer>
-        &copy; 2026 CostaBots. Soluciones avanzadas de automatización. Costa del Sol, España.
+        &copy; 2026 CostaBots. Todos los derechos reservados. Costa del Sol, España.
     </footer>
 
 </body>
