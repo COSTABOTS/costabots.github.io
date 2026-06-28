@@ -954,7 +954,27 @@
           <div class="tablet-shell">
             <div class="demo-frame manager-frame">
               <iframe
-                src="https://manager.costabots.com"
+                src="Quiero que CostaBots Manager solo autocompletar las credenciales demo cuando viene desde la web/landing.
+
+Implementación:
+- Si la URL contiene ?demo=1, el login debe autocompletar:
+  email: demo2@costabots.local
+  password: Demo2026
+
+- Si la URL NO contiene ?demo=1, el login debe aparecer vacío como siempre.
+
+Condiciones:
+- No hacer auto-login.
+- El usuario debe pulsar ENTRAR.
+- No cambiar la lógica de autenticación.
+- No tocar Supabase Auth.
+- No tocar perfiles, clientes, client_id ni sheet_id.
+- Permitir que el usuario borre o cambie las credenciales.
+- Hacer el cambio mínimo y seguro solo en el componente Login.
+
+Además:
+- En la web/landing, el botón o enlace que abre Manager demo debe apuntar a:
+  https://manager.costabots.com?demo=1"
                 title="CostaBots Manager Demo — Panel operativo"
                 loading="lazy"
                 allow="clipboard-write">
@@ -970,7 +990,27 @@
             </div>
           </div>
           <span class="demo-note">Datos simulados — no afecta a restaurantes reales.</span><br>
-          <a class="demo-open-link" href="https://manager.costabots.com" target="_blank" rel="noopener">Abrir Manager en pantalla completa ↗</a>
+          <a class="demo-open-link" href="Quiero que CostaBots Manager solo autocompletar las credenciales demo cuando viene desde la web/landing.
+
+Implementación:
+- Si la URL contiene ?demo=1, el login debe autocompletar:
+  email: demo2@costabots.local
+  password: Demo2026
+
+- Si la URL NO contiene ?demo=1, el login debe aparecer vacío como siempre.
+
+Condiciones:
+- No hacer auto-login.
+- El usuario debe pulsar ENTRAR.
+- No cambiar la lógica de autenticación.
+- No tocar Supabase Auth.
+- No tocar perfiles, clientes, client_id ni sheet_id.
+- Permitir que el usuario borre o cambie las credenciales.
+- Hacer el cambio mínimo y seguro solo en el componente Login.
+
+Además:
+- En la web/landing, el botón o enlace que abre Manager demo debe apuntar a:
+  https://manager.costabots.com?demo=1" target="_blank" rel="noopener">Abrir Manager en pantalla completa ↗</a>
         </div>
       </div>
     </div>
