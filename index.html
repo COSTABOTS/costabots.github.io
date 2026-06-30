@@ -2070,7 +2070,9 @@
       <button class="manager-modal-close" type="button" aria-label="Cerrar Manager" data-manager-demo-close>×</button>
       <div class="manager-tablet-shell">
         <iframe
-          src="https://manager.costabots.com?demo=1"
+          data-manager-frame
+          data-src="https://manager.costabots.com?demo=1"
+          src="about:blank"
           title="CostaBots Manager Demo"
           loading="lazy"
           allow="clipboard-write">
@@ -2193,6 +2195,7 @@
       const managerOpenButtons = document.querySelectorAll('[data-manager-demo-open]');
       const managerModal = document.querySelector('.manager-modal');
       const managerModalCloseButtons = document.querySelectorAll('[data-manager-demo-close]');
+      const managerFrame = document.querySelector('[data-manager-frame]');
       const navToggle = document.querySelector('.nav-toggle');
       const mobileMenu = document.querySelector('.mobile-menu');
       const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
@@ -2721,6 +2724,9 @@
       const openManagerModal = (event) => {
         if (!managerModal || !isDesktopDemo()) return;
         event.preventDefault();
+        if (managerFrame?.dataset.src && managerFrame.getAttribute('src') !== managerFrame.dataset.src) {
+          managerFrame.setAttribute('src', managerFrame.dataset.src);
+        }
         managerModal.classList.add('is-open');
         managerModal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
@@ -2731,6 +2737,9 @@
         if (!managerModal) return;
         managerModal.classList.remove('is-open');
         managerModal.setAttribute('aria-hidden', 'true');
+        if (managerFrame) {
+          managerFrame.setAttribute('src', 'about:blank');
+        }
         if (!modal?.classList.contains('is-open') && !assistantModal?.classList.contains('is-open')) {
           document.body.style.overflow = '';
         }
