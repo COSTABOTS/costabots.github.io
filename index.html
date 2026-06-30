@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -17,7 +17,7 @@
   <meta property="og:url" content="https://costabots.com">
   <meta property="og:title" content="CostaBots | Smart Solutions. Better Experiences.">
   <meta property="og:description" content="Asistentes digitales para restaurantes y hoteles de la Costa del Sol. Reservas, carta digital, feedback privado y panel operativo.">
-  <meta property="og:image" content="https://costabots.github.io/LOGO_COSTABOTS.png">
+  <meta property="og:image" content="public/brand/costabots-logo.png">
   <meta property="og:locale" content="es_ES">
   <meta property="og:site_name" content="CostaBots">
 
@@ -25,7 +25,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CostaBots | Smart Solutions. Better Experiences.">
   <meta name="twitter:description" content="Asistentes digitales para restaurantes y hoteles. Costa del Sol.">
-  <meta name="twitter:image" content="https://costabots.github.io/LOGO_COSTABOTS.png">
+  <meta name="twitter:image" content="public/brand/costabots-logo.png">
+  <link rel="icon" type="image/png" href="public/brand/costabots-logo.png">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -34,7 +35,7 @@
     "@type": "Organization",
     "name": "CostaBots",
     "url": "https://costabots.com",
-    "logo": "https://costabots.github.io/LOGO_COSTABOTS.png",
+    "logo": "public/brand/costabots-logo.png",
     "description": "Asistentes digitales con IA para restaurantes y hoteles de la Costa del Sol.",
     "address": {
       "@type": "PostalAddress",
@@ -79,116 +80,328 @@
       overflow-x: hidden;
     }
 
-    /* ── DEMO CREDENTIALS ── */
-    .demo-credentials {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 14px auto 8px;
-      padding: 12px 20px;
-      background: var(--sage-lt);
-      border: 1px solid rgba(44, 95, 93, 0.18);
-      border-radius: 10px;
-      max-width: 400px;
-    }
-
-    .demo-credentials-label {
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--sage);
-      letter-spacing: 0.02em;
-    }
-
-    .demo-credentials-fields {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .demo-cred-item {
-      font-size: 0.8rem;
-      color: var(--gray);
-    }
-
-    .demo-cred-item code {
-      background: white;
-      border: 1px solid rgba(44, 95, 93, 0.15);
-      padding: 3px 10px;
-      border-radius: 5px;
-      font-family: 'DM Mono', monospace, monospace;
-      font-size: 0.82rem;
-      color: var(--dark);
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      margin-left: 4px;
-    }
-
-    .demo-cred-divider {
-      color: rgba(122, 115, 106, 0.4);
-      font-size: 0.9rem;
-    }
-
     /* ── NAV ── */
-    nav {
+    .site-nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 999;
-      display: flex;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 32px;
-      height: 68px;
-      background: rgba(245, 237, 224, 0.92);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(200, 86, 42, 0.15);
+      gap: 24px;
+      padding: 0 clamp(22px, 4vw, 44px);
+      height: 70px;
+      background: rgba(250, 247, 242, 0.84);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(44, 95, 93, 0.1);
     }
 
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 11px;
       text-decoration: none;
+      min-height: 44px;
     }
 
     .nav-logo img {
-      height: 36px;
-      width: auto;
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      display: block;
+      flex: 0 0 auto;
     }
 
     .nav-logo span {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
+      font-size: 1.46rem;
       font-weight: 600;
       color: var(--dark);
+      letter-spacing: 0.01em;
+      line-height: 1;
+      transform: translateY(1px);
+    }
+
+    .nav-links {
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px;
+      border: 1px solid rgba(44,95,93,0.08);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.38);
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-links a,
+    .nav-link-primary {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 500;
+      padding: 8px 13px;
+      border-radius: 999px;
+      transition: color 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-link-primary {
+      display: inline-flex;
+      align-items: center;
+      border: 0;
+      background: transparent;
+      font-family: inherit;
+      cursor: default;
+    }
+
+    .nav-links a:hover,
+    .nav-link-primary:hover,
+    .nav-item:hover .nav-link-primary {
+      color: var(--dark);
+      background: rgba(255,255,255,0.7);
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      min-width: 260px;
+      padding: 10px;
+      border: 1px solid rgba(44,95,93,0.1);
+      border-radius: 18px;
+      background: rgba(250,247,242,0.96);
+      box-shadow: 0 24px 70px rgba(28,24,20,0.14);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -6px);
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .nav-dropdown::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -16px;
+      height: 16px;
+    }
+
+    .nav-item:hover .nav-dropdown,
+    .nav-item:focus-within .nav-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, 0);
+    }
+
+    .nav-dropdown a {
+      display: block;
+      padding: 11px 12px;
+      color: var(--dark);
+      border-radius: 12px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .nav-dropdown a:hover {
+      color: var(--sage);
+      background: rgba(255,255,255,0.72);
+    }
+
+    .nav-actions {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px;
+      border: 1px solid rgba(44,95,93,0.1);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.32);
+      color: rgba(122,115,106,0.55);
+      font-size: 0.78rem;
+      font-weight: 500;
       letter-spacing: 0.02em;
+    }
+
+    .language-switch a {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--gray);
+      text-decoration: none;
+      padding: 5px 8px;
+      border-radius: 999px;
+      transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .language-switch a[aria-current="true"] {
+      color: var(--sage);
+      background: rgba(255,255,255,0.78);
+      box-shadow: 0 6px 18px rgba(28,24,20,0.045);
+    }
+
+    .language-switch a:hover {
+      color: var(--sage);
     }
 
     .nav-cta {
       background: var(--terra);
       color: white;
-      padding: 10px 22px;
+      padding: 10px 18px;
       border-radius: 50px;
       text-decoration: none;
       font-size: 0.85rem;
       font-weight: 500;
       letter-spacing: 0.02em;
       transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
     .nav-cta:hover { background: var(--terra-lt); }
 
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+    .nav-cta svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(44,95,93,0.12);
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 100px 24px 60px;
-      background: linear-gradient(160deg, var(--sand-lt) 0%, var(--sand) 100%);
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      width: 16px;
+      height: 1.5px;
+      border-radius: 999px;
+      background: var(--dark);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .nav-toggle.is-open span:first-child {
+      transform: translateY(3.25px) rotate(45deg);
+    }
+
+    .nav-toggle.is-open span:last-child {
+      transform: translateY(-3.25px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 70px 0 auto 0;
+      z-index: 998;
+      padding: 10px 14px 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .mobile-menu.is-open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .mobile-menu-panel {
+      display: grid;
+      gap: 4px;
+      padding: 12px;
+      border: 1px solid rgba(44,95,93,0.1);
+      border-radius: 20px;
+      background: rgba(250,247,242,0.96);
+      box-shadow: 0 24px 70px rgba(28,24,20,0.14);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .mobile-menu-panel > a:not(.nav-cta) {
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 0.98rem;
+      font-weight: 500;
+      padding: 13px 14px;
+      border-radius: 14px;
+    }
+
+    .mobile-menu-panel > a:not(.nav-cta):hover {
+      background: rgba(255,255,255,0.62);
+    }
+
+    .mobile-menu-group {
+      padding: 8px 4px;
+      border-bottom: 1px solid rgba(44,95,93,0.08);
+    }
+
+    .mobile-menu-group:last-of-type {
+      border-bottom: 0;
+    }
+
+    .mobile-menu-heading {
+      display: block;
+      padding: 8px 10px 6px;
+      color: var(--terra);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .mobile-menu-group a {
+      display: block;
+      padding: 10px 10px;
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 0.94rem;
+      font-weight: 500;
+      border-radius: 12px;
+    }
+
+    .mobile-menu-group a:hover {
+      background: rgba(255,255,255,0.62);
+    }
+
+    .mobile-language {
+      padding: 12px 14px 8px;
+    }
+
+    .mobile-cta {
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(96px, 11vh, 128px) 24px clamp(44px, 7vh, 72px);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.54) 0%, rgba(250,247,242,0.92) 45%, rgba(245,237,224,0.74) 100%),
+        var(--sand-lt);
       position: relative;
       overflow: hidden;
     }
@@ -196,10 +409,26 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: -100px; right: -100px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(200,86,42,0.08) 0%, transparent 70%);
+      inset: 0;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(200,86,42,0.08) 0%, transparent 34%),
+        radial-gradient(circle at 8% 82%, rgba(44,95,93,0.055) 0%, transparent 30%);
       pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1160px, 100%);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 378px);
+      align-items: center;
+      gap: clamp(42px, 7vw, 92px);
+    }
+
+    .hero-copy {
+      max-width: 640px;
+      animation: heroCopyIn 620ms ease both;
     }
 
     .hero-badge {
@@ -212,18 +441,18 @@
       text-transform: uppercase;
       padding: 6px 16px;
       border-radius: 50px;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
       border: 1px solid rgba(44, 95, 93, 0.2);
     }
 
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-size: clamp(3.2rem, 6vw, 5.45rem);
       font-weight: 300;
-      line-height: 1.1;
+      line-height: 0.98;
       color: var(--dark);
-      margin-bottom: 12px;
-      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      letter-spacing: 0;
     }
 
     .hero h1 em {
@@ -234,9 +463,9 @@
     .hero-sub {
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       color: var(--gray);
-      max-width: 560px;
-      line-height: 1.7;
-      margin-bottom: 40px;
+      max-width: 590px;
+      line-height: 1.72;
+      margin-bottom: 26px;
       font-weight: 300;
     }
 
@@ -244,7 +473,227 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      justify-content: center;
+      align-items: center;
+      grid-column: 1;
+      margin-top: 8px;
+    }
+
+    .hero-actions .btn-primary {
+      box-shadow: 0 18px 42px rgba(200, 86, 42, 0.28);
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 12px;
+      margin-bottom: 28px;
+      color: var(--sage);
+      font-size: 0.84rem;
+      font-weight: 500;
+    }
+
+    .hero-trust span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 7px 12px;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(44,95,93,0.12);
+      border-radius: 50px;
+      box-shadow: 0 8px 22px rgba(28,24,20,0.035);
+    }
+
+    .hero-media {
+      justify-self: end;
+      width: min(100%, 378px);
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      animation: heroDeviceIn 760ms ease 80ms both;
+    }
+
+    .hero-video-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      background: var(--dark);
+      box-shadow:
+        0 34px 90px rgba(28, 24, 20, 0.23),
+        0 2px 0 rgba(255,255,255,0.5) inset;
+      border: 1px solid rgba(28,24,20,0.12);
+      aspect-ratio: 9 / 16;
+      max-height: min(660px, calc(100svh - 176px));
+      isolation: isolate;
+    }
+
+    .hero-video-shell::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.06) 28%, transparent 54%),
+        linear-gradient(180deg, rgba(255,255,255,0.12), transparent 22%, rgba(0,0,0,0.2) 100%);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      opacity: 1;
+      transition: opacity 420ms ease, transform 420ms ease;
+    }
+
+    .hero-video.is-fading {
+      opacity: 0;
+      transform: scale(1.012);
+    }
+
+    .video-controls {
+      position: absolute;
+      z-index: 4;
+      right: 14px;
+      bottom: 14px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .video-control {
+      width: 40px;
+      height: 40px;
+      display: inline-grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 50%;
+      background: rgba(28,24,20,0.42);
+      color: var(--white);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .video-control:hover {
+      transform: translateY(-1px);
+      background: rgba(28,24,20,0.62);
+      border-color: rgba(255,255,255,0.38);
+    }
+
+    .video-control svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .video-control .icon-sound-on,
+    .video-control.is-on .icon-sound-off {
+      display: none;
+    }
+
+    .video-control.is-on .icon-sound-on {
+      display: block;
+    }
+
+    .video-open-modal {
+      width: 100%;
+      margin-top: 14px;
+      border: 1px solid rgba(44,95,93,0.16);
+      border-radius: 50px;
+      background: rgba(255,255,255,0.54);
+      color: var(--sage);
+      padding: 12px 16px;
+      font: inherit;
+      font-size: 0.86rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .video-open-modal:hover {
+      background: var(--white);
+      border-color: rgba(44,95,93,0.26);
+      transform: translateY(-1px);
+    }
+
+    .video-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+
+    .video-modal.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .video-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(28,24,20,0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .video-modal-dialog {
+      position: relative;
+      z-index: 1;
+      width: min(420px, 100%);
+      max-height: calc(100svh - 48px);
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--dark);
+      box-shadow: 0 34px 110px rgba(0,0,0,0.42);
+      transform: translateY(10px) scale(0.98);
+      transition: transform 0.22s ease;
+    }
+
+    .video-modal.is-open .video-modal-dialog {
+      transform: translateY(0) scale(1);
+    }
+
+    .video-modal-player {
+      width: 100%;
+      max-height: calc(100svh - 48px);
+      display: block;
+      aspect-ratio: 9 / 16;
+      object-fit: contain;
+      background: var(--dark);
+    }
+
+    .video-modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 50%;
+      background: rgba(28,24,20,0.48);
+      color: var(--white);
+      font-size: 1.35rem;
+      line-height: 1;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    @keyframes heroCopyIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heroDeviceIn {
+      from { opacity: 0; transform: translateY(18px) scale(0.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
     .btn-primary {
@@ -280,7 +729,7 @@
 
     /* ── SECTION COMMON ── */
     section {
-      padding: 90px 24px;
+      padding: 72px 24px;
     }
 
     .section-inner {
@@ -368,14 +817,14 @@
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 52px;
+      gap: 16px;
+      margin-top: 36px;
     }
 
     .feature-card {
-      padding: 28px;
-      background: var(--sand);
-      border-radius: 14px;
+      padding: 24px;
+      background: rgba(255,255,255,0.48);
+      border-radius: 12px;
       border: 1px solid rgba(44, 95, 93, 0.1);
       transition: all 0.2s;
     }
@@ -412,7 +861,7 @@
       display: flex;
       gap: 24px;
       flex-wrap: wrap;
-      margin-top: 48px;
+      margin-top: 34px;
       align-items: center;
     }
 
@@ -426,6 +875,14 @@
       display: flex;
       align-items: center;
       gap: 16px;
+    }
+
+    .client-card-main {
+      flex: 1.55;
+      min-width: 320px;
+      padding: 34px;
+      border-color: rgba(200,86,42,0.26);
+      box-shadow: 0 22px 60px rgba(28,24,20,0.06);
     }
 
     .client-card img {
@@ -445,34 +902,12 @@
       font-weight: 500;
     }
 
-    /* ── TESTIMONIAL ── */
-    .testimonial {
-      background: var(--sage);
-      padding: 80px 24px;
-    }
-
-    .testimonial blockquote {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .testimonial blockquote p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-style: italic;
-      color: var(--sand);
-      line-height: 1.5;
+    .client-info p {
+      margin-top: 8px;
+      font-size: 0.86rem;
+      color: var(--gray);
+      line-height: 1.6;
       font-weight: 300;
-      margin-bottom: 24px;
-    }
-
-    .testimonial cite {
-      font-size: 0.82rem;
-      color: rgba(245, 237, 224, 0.6);
-      letter-spacing: 0.06em;
-      font-style: normal;
-      text-transform: uppercase;
     }
 
     /* ── DEMO ── */
@@ -480,106 +915,272 @@
       text-align: center;
     }
 
-    .demo-frame {
-      margin: 48px auto 0;
-      max-width: 390px;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.12);
-      border: 1px solid rgba(200,86,42,0.15);
-      height: 600px;
+    .demo-choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 34px auto 0;
+      max-width: 760px;
     }
 
-    .demo-frame iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .demo-stack {
+    .demo-choice-card {
+      min-height: 190px;
+      padding: 30px 26px;
+      border-radius: 18px;
+      border: 1px solid rgba(44,95,93,0.12);
+      background: rgba(255,255,255,0.55);
+      color: var(--dark);
+      text-decoration: none;
       display: flex;
       flex-direction: column;
-      gap: 54px;
-      margin-top: 48px;
-      align-items: center;
+      align-items: flex-start;
+      text-align: left;
+      gap: 12px;
+      box-shadow: 0 20px 54px rgba(28,24,20,0.055);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
-    .demo-card {
-      width: 100%;
-      text-align: center;
+    .demo-choice-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(200,86,42,0.32);
+      background: var(--white);
     }
 
-    .demo-card-header {
-      max-width: 640px;
-      margin: 0 auto 22px;
-      padding: 0 4px;
+    .demo-choice-icon {
+      font-size: 1.8rem;
     }
 
-    .demo-card-header h3 {
+    .demo-choice-card strong {
+      color: var(--sage);
       font-size: 1rem;
       font-weight: 500;
-      color: var(--sage);
-      margin-bottom: 8px;
     }
 
-    .demo-card-header p {
-      font-size: 0.9rem;
+    .demo-choice-card span:last-child {
       color: var(--gray);
-      line-height: 1.6;
+      font-size: 0.9rem;
+      line-height: 1.55;
       font-weight: 300;
     }
 
-    .demo-frame {
-      margin-top: 0;
-    }
-
-    .tablet-shell {
-      max-width: 940px;
-      margin: 0 auto;
-      padding: 14px;
-      border-radius: 28px;
-      background: #24201C;
-      box-shadow: 0 28px 90px rgba(0,0,0,0.18);
-    }
-
-    .demo-frame.manager-frame {
-      max-width: 100%;
-      height: 560px;
-      border-radius: 18px;
-      box-shadow: none;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .demo-note {
-      display: inline-block;
+    .demo-private-note {
       margin-top: 18px;
-      padding: 8px 14px;
-      border-radius: 50px;
-      background: var(--sage-lt);
-      color: var(--sage);
-      font-size: 0.78rem;
-      font-weight: 500;
+      color: var(--gray);
+      font-size: 0.82rem;
+      font-weight: 300;
     }
 
-    .demo-open-link {
-      display: inline-block;
-      margin-top: 16px;
-      color: var(--sage);
-      font-size: 0.86rem;
-      font-weight: 500;
-      text-decoration: none;
+    .assistant-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
     }
 
-    .demo-open-link:hover {
-      color: var(--terra);
+    .assistant-modal.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .assistant-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(28,24,20,0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .assistant-modal-dialog {
+      position: relative;
+      z-index: 1;
+      width: min(430px, 100%);
+      display: grid;
+      gap: 14px;
+      justify-items: center;
+      transform: translateY(10px) scale(0.985);
+      transition: transform 0.22s ease;
+    }
+
+    .assistant-modal.is-open .assistant-modal-dialog {
+      transform: translateY(0) scale(1);
+    }
+
+    .assistant-phone-shell {
+      position: relative;
+      width: min(390px, 100%);
+      aspect-ratio: 9 / 16;
+      max-height: calc(100svh - 128px);
+      padding: 12px;
+      border-radius: 34px;
+      background: #211D19;
+      box-shadow: 0 34px 110px rgba(0,0,0,0.44);
+      border: 1px solid rgba(255,255,255,0.16);
+      overflow: hidden;
+    }
+
+    .assistant-phone-shell::before {
+      content: '';
+      position: absolute;
+      top: 9px;
+      left: 50%;
+      width: 76px;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .assistant-phone-shell iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 24px;
+      background: var(--sand-lt);
+    }
+
+    .assistant-modal-close {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      z-index: 3;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 50%;
+      background: rgba(28,24,20,0.58);
+      color: var(--white);
+      font-size: 1.35rem;
+      line-height: 1;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .assistant-modal-actions {
+      width: min(390px, 100%);
+      display: flex;
+      justify-content: center;
+    }
+
+    .assistant-modal-actions .btn-secondary {
+      background: rgba(255,255,255,0.88);
+      border-color: rgba(255,255,255,0.34);
+    }
+
+    .manager-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+
+    .manager-modal.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .manager-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(28,24,20,0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .manager-modal-dialog {
+      position: relative;
+      z-index: 1;
+      width: min(980px, 100%);
+      display: grid;
+      gap: 14px;
+      justify-items: center;
+      transform: translateY(10px) scale(0.985);
+      transition: transform 0.22s ease;
+    }
+
+    .manager-modal.is-open .manager-modal-dialog {
+      transform: translateY(0) scale(1);
+    }
+
+    .manager-tablet-shell {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      max-height: calc(100svh - 132px);
+      padding: 16px;
+      border-radius: 30px;
+      background: #211D19;
+      box-shadow: 0 34px 110px rgba(0,0,0,0.44);
+      border: 1px solid rgba(255,255,255,0.16);
+      overflow: hidden;
+    }
+
+    .manager-tablet-shell::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 7px;
+      width: 5px;
+      height: 64px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.13);
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+    .manager-tablet-shell iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 18px;
+      background: var(--sand-lt);
+    }
+
+    .manager-modal-close {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      z-index: 3;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 50%;
+      background: rgba(28,24,20,0.58);
+      color: var(--white);
+      font-size: 1.35rem;
+      line-height: 1;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .manager-modal-actions {
+      display: flex;
+      justify-content: center;
+    }
+
+    .manager-modal-actions .btn-secondary {
+      background: rgba(255,255,255,0.88);
+      border-color: rgba(255,255,255,0.34);
     }
 
     /* ── PRICING ── */
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 52px;
+      gap: 18px;
+      margin-top: 36px;
     }
 
     .price-card {
@@ -657,13 +1258,26 @@
 
     /* ── FAQ ── */
     .faq-list {
-      margin-top: 48px;
+      margin-top: 34px;
       max-width: 680px;
     }
 
     .faq-item {
-      padding: 24px 0;
+      padding: 20px 0;
       border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+
+    .faq-more-link {
+      display: inline-block;
+      margin-top: 22px;
+      color: var(--sage);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .faq-more-link:hover {
+      color: var(--terra);
     }
 
     .faq-item h4 {
@@ -683,7 +1297,7 @@
     /* ── CTA FINAL ── */
     .cta-final {
       background: linear-gradient(135deg, var(--terra) 0%, #A34020 100%);
-      padding: 90px 24px;
+      padding: 74px 24px;
       text-align: center;
     }
 
@@ -727,9 +1341,12 @@
     }
 
     footer img {
-      height: 32px;
-      margin-bottom: 16px;
-      opacity: 0.7;
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 14px;
+      opacity: 0.88;
     }
 
     footer p {
@@ -741,6 +1358,255 @@
     footer a {
       color: rgba(245,237,224,0.5);
       text-decoration: none;
+    }
+
+    /* ── PREMIUM POLISH ── */
+    :root {
+      --surface: rgba(255,255,255,0.62);
+      --surface-strong: rgba(255,255,255,0.82);
+      --line-soft: rgba(44,95,93,0.1);
+      --shadow-soft: 0 20px 60px rgba(28,24,20,0.07);
+      --shadow-lift: 0 28px 80px rgba(28,24,20,0.11);
+      --radius-card: 18px;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 12% 8%, rgba(255,255,255,0.72), transparent 28%),
+        linear-gradient(180deg, var(--sand-lt) 0%, #FBF8F3 44%, var(--sand-lt) 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .site-nav {
+      background: rgba(250,247,242,0.78);
+      border-bottom-color: rgba(44,95,93,0.075);
+      box-shadow: 0 10px 34px rgba(28,24,20,0.045);
+    }
+
+    .nav-links,
+    .language-switch {
+      background: rgba(255,255,255,0.46);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.58);
+    }
+
+    .nav-dropdown,
+    .mobile-menu-panel {
+      background: rgba(250,247,242,0.965);
+      border-color: rgba(44,95,93,0.085);
+      box-shadow: 0 24px 70px rgba(28,24,20,0.12), inset 0 1px 0 rgba(255,255,255,0.58);
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 76% 22%, rgba(200,86,42,0.075) 0%, transparent 34%),
+        linear-gradient(145deg, rgba(255,255,255,0.72) 0%, rgba(250,247,242,0.96) 48%, rgba(245,237,224,0.58) 100%);
+    }
+
+    .hero-badge,
+    .hero-trust span,
+    .video-open-modal {
+      background: rgba(255,255,255,0.62);
+      border-color: var(--line-soft);
+      box-shadow: 0 10px 28px rgba(28,24,20,0.04);
+    }
+
+    .hero-video-shell {
+      box-shadow:
+        0 42px 110px rgba(28,24,20,0.24),
+        0 8px 24px rgba(200,86,42,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.5);
+      border-color: rgba(28,24,20,0.1);
+    }
+
+    section {
+      padding: clamp(58px, 7vw, 78px) 24px;
+    }
+
+    .section-inner {
+      max-width: 1060px;
+    }
+
+    .section-label {
+      margin-bottom: 12px;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+    }
+
+    .section-title {
+      font-size: clamp(2.15rem, 4vw, 3.15rem);
+      line-height: 1.12;
+      margin-bottom: 14px;
+    }
+
+    .section-desc {
+      line-height: 1.65;
+      color: rgba(122,115,106,0.92);
+    }
+
+    .how,
+    .clients,
+    .pricing-section {
+      background: transparent;
+    }
+
+    .features-grid,
+    .steps,
+    .pricing-grid {
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .feature-card,
+    .step,
+    .client-card,
+    .demo-choice-card,
+    .price-card {
+      background: var(--surface);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+    }
+
+    .feature-card:hover,
+    .step:hover,
+    .client-card:hover,
+    .demo-choice-card:hover,
+    .price-card:hover {
+      transform: translateY(-3px);
+      background: var(--surface-strong);
+      border-color: rgba(200,86,42,0.22);
+      box-shadow: var(--shadow-lift);
+    }
+
+    .feature-card,
+    .step {
+      padding: 26px;
+    }
+
+    .feature-icon,
+    .demo-choice-icon {
+      width: 38px;
+      height: 38px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(200,86,42,0.08);
+      border: 1px solid rgba(200,86,42,0.12);
+      color: var(--terra);
+      font-size: 0;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .feature-icon::before,
+    .demo-choice-icon::before {
+      content: '';
+      width: 17px;
+      height: 17px;
+      border: 1.8px solid currentColor;
+      border-radius: 5px;
+      display: block;
+      opacity: 0.92;
+    }
+
+    .feature-card:nth-child(2) .feature-icon::before { border-radius: 50%; }
+    .feature-card:nth-child(3) .feature-icon::before { transform: rotate(45deg); border-radius: 4px; }
+    .feature-card:nth-child(4) .feature-icon::before { border-radius: 50% 50% 44% 44%; }
+    .feature-card:nth-child(5) .feature-icon::before { width: 19px; height: 14px; border-radius: 4px; }
+    .feature-card:nth-child(6) .feature-icon::before { border-radius: 50%; }
+    .demo-choice-card:nth-child(1) .demo-choice-icon::before { width: 13px; height: 20px; border-radius: 5px; }
+    .demo-choice-card:nth-child(2) .demo-choice-icon::before { width: 21px; height: 15px; border-radius: 4px; }
+
+    .feature-card h3,
+    .step h3,
+    .demo-choice-card strong {
+      color: var(--dark);
+      font-size: 0.98rem;
+      letter-spacing: 0;
+    }
+
+    .feature-card p,
+    .step p,
+    .demo-choice-card span:last-child,
+    .client-info p,
+    .faq-item p {
+      color: rgba(122,115,106,0.92);
+      line-height: 1.62;
+    }
+
+    .step {
+      text-align: left;
+    }
+
+    .step-num {
+      width: 38px;
+      height: 38px;
+      margin: 0 0 18px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      box-shadow: 0 12px 30px rgba(200,86,42,0.2);
+    }
+
+    .client-card-main {
+      box-shadow: var(--shadow-lift);
+      border-color: rgba(200,86,42,0.2);
+    }
+
+    .client-card img {
+      max-width: 118px;
+      object-fit: contain;
+    }
+
+    .demo-choice-card {
+      min-height: 176px;
+    }
+
+    .price-card {
+      padding: 32px 28px;
+    }
+
+    .price-card.featured {
+      background: linear-gradient(145deg, #211D19 0%, #17130F 100%);
+      box-shadow: 0 28px 80px rgba(28,24,20,0.18);
+    }
+
+    .faq-list {
+      max-width: 760px;
+    }
+
+    .faq-item {
+      padding: 22px 0;
+      border-bottom-color: rgba(44,95,93,0.09);
+    }
+
+    .btn-primary,
+    .nav-cta {
+      box-shadow: 0 14px 34px rgba(200,86,42,0.2);
+    }
+
+    .btn-primary:hover,
+    .nav-cta:hover {
+      box-shadow: 0 18px 44px rgba(200,86,42,0.24);
+    }
+
+    .btn-secondary {
+      border-color: rgba(44,95,93,0.24);
+      background: rgba(255,255,255,0.44);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.78);
+      border-color: rgba(44,95,93,0.34);
+      transform: translateY(-1px);
+    }
+
+    .cta-final {
+      background: linear-gradient(135deg, #C8562A 0%, #B64A22 48%, #8E351B 100%);
     }
 
 
@@ -759,16 +1625,133 @@
       }
     }
 
+    @media (max-width: 900px) {
+      .hero {
+        padding: 88px 20px 42px;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .hero-copy {
+        max-width: 720px;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .hero-sub {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions,
+      .hero-trust {
+        justify-content: center;
+      }
+
+      .hero-actions {
+        grid-column: 1;
+        grid-row: 3;
+        margin: 2px auto 0;
+      }
+
+      .hero-media {
+        justify-self: center;
+        width: min(100%, 440px);
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .hero-video-shell {
+        max-height: 58svh;
+      }
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
-      nav { padding: 0 18px; }
-      .nav-logo span { display: none; }
+      .site-nav {
+        display: flex;
+        justify-content: space-between;
+        height: 68px;
+        padding: 0 16px 0 18px;
+      }
+      .nav-links,
+      .nav-actions { display: none; }
+      .nav-toggle { display: inline-flex; }
+      .nav-logo img { width: 39px; height: 39px; }
+      .nav-logo span {
+        display: inline-block;
+        font-size: 1.34rem;
+      }
       section { padding: 64px 18px; }
-      .demo-grid { grid-template-columns: 1fr; gap: 36px; }
-      .demo-card-header { min-height: auto; }
-      .demo-frame { height: 500px; }
-      .tablet-shell { padding: 8px; border-radius: 20px; }
-      .demo-frame.manager-frame { height: 420px; border-radius: 14px; }
+      .hero { padding: 86px 14px 34px; }
+      .hero h1 {
+        font-size: clamp(2.75rem, 13vw, 3.65rem);
+        line-height: 1;
+        margin-bottom: 20px;
+      }
+      .hero-badge { margin-bottom: 18px; }
+      .hero-sub {
+        font-size: 0.98rem;
+        line-height: 1.6;
+        margin-bottom: 22px;
+      }
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+      .hero-trust {
+        gap: 8px 12px;
+        font-size: 0.78rem;
+        margin-bottom: 2px;
+      }
+      .hero-media { width: 100%; }
+      .hero-video-shell {
+        width: 100%;
+        border-radius: 22px;
+        max-height: none;
+      }
+      .video-open-modal { margin-top: 12px; }
+      .demo-choice-grid { grid-template-columns: 1fr; }
+      .client-card-main { min-width: 100%; padding: 28px; }
+      .assistant-modal { padding: 12px; }
+      .assistant-phone-shell {
+        width: 100%;
+        max-height: calc(100svh - 104px);
+        border-radius: 26px;
+      }
+      .assistant-modal-close {
+        top: 8px;
+        right: 8px;
+      }
+      .manager-modal { padding: 12px; }
+      .manager-tablet-shell {
+        max-height: calc(100svh - 104px);
+        border-radius: 24px;
+      }
+      .manager-modal-close {
+        top: 8px;
+        right: 8px;
+      }
+      .video-modal { padding: 16px; }
+      .video-modal-dialog,
+      .video-modal-player { max-height: calc(100svh - 32px); }
+      .video-controls {
+        right: 12px;
+        bottom: 12px;
+      }
+      .video-control {
+        width: 38px;
+        height: 38px;
+      }
     }
   </style>
 </head>
@@ -776,30 +1759,210 @@
 <body>
 
   <!-- NAV -->
-  <nav>
-    <a href="/" class="nav-logo" aria-label="CostaBots inicio">
-      <img src="https://costabots.github.io/LOGO_COSTABOTS.png" alt="CostaBots logo">
+  <nav class="site-nav" aria-label="Navegación principal">
+    <a href="#inicio" class="nav-logo" aria-label="CostaBots inicio">
+      <img src="public/brand/costabots-logo.png" alt="CostaBots logo">
       <span>CostaBots</span>
     </a>
-    <a href="https://wa.me/34951963176?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20CostaBots%20para%20mi%20negocio."
-       class="nav-cta"
-       aria-label="Contactar por WhatsApp">
-      Hablar con nosotros
-    </a>
+
+    <div class="nav-links" aria-label="Secciones">
+      <div class="nav-item">
+        <a class="nav-link-primary" href="#funcionalidades">Producto</a>
+        <div class="nav-dropdown">
+          <a href="#funcionalidades">Reservas inteligentes</a>
+          <a href="#funcionalidades">Carta digital</a>
+          <a href="#funcionalidades">Eventos y experiencias</a>
+          <a href="#funcionalidades">Protección de reputación</a>
+          <a href="#funcionalidades">CostaBots Manager</a>
+          <a href="#funcionalidades">Multiidioma / sin instalación</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link-primary" href="#demo">Demo</a>
+        <div class="nav-dropdown">
+          <a href="https://demo.costabots.com" target="_blank" rel="noopener" data-assistant-demo-open>Probar asistente</a>
+          <a href="https://manager.costabots.com?demo=1" target="_blank" rel="noopener" data-manager-demo-open>Probar Manager</a>
+          <a href="#" data-video-modal-open>Ver vídeo completo</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link-primary" href="#clientes">Casos reales</a>
+        <div class="nav-dropdown">
+          <a href="#clientes">Safari Restaurant</a>
+          <a href="#clientes">Grand Italia</a>
+        </div>
+      </div>
+      <a href="#precios">Precios</a>
+      <a href="#faq">FAQ</a>
+    </div>
+
+    <div class="nav-actions">
+      <div class="language-switch" aria-label="Selector de idioma">
+        <a href="#" data-lang="es" aria-current="true">🇪🇸 ES</a>
+        <span>/</span>
+        <a href="#" data-lang="en">🇬🇧 EN</a>
+      </div>
+      <a href="https://wa.me/34951963176?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20CostaBots%20para%20mi%20negocio."
+         class="nav-cta"
+         aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7.3 19.1 4 20l.9-3.2A8 8 0 1 1 7.3 19.1Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M9.1 8.7c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.4.5c.6 1.1 1.5 1.9 2.6 2.5l.5-.5c.2-.2.4-.2.7-.1l1.4.6c.3.1.4.3.4.6v.5c0 .3 0 .5-.4.7-.4.2-.9.3-1.5.3-2.8 0-6.8-3.7-6.8-6.7 0-.6.2-1.1.4-1.5Z" fill="currentColor"/>
+        </svg>
+        Hablar con nosotros
+      </a>
+    </div>
+
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-controls="mobile-menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-panel">
+      <div class="mobile-menu-group">
+        <span class="mobile-menu-heading">Producto</span>
+        <a href="#funcionalidades">Reservas inteligentes</a>
+        <a href="#funcionalidades">Carta digital</a>
+        <a href="#funcionalidades">Eventos y experiencias</a>
+        <a href="#funcionalidades">Protección de reputación</a>
+        <a href="#funcionalidades">CostaBots Manager</a>
+        <a href="#funcionalidades">Multiidioma / sin instalación</a>
+      </div>
+      <div class="mobile-menu-group">
+        <span class="mobile-menu-heading">Demo</span>
+        <a href="https://demo.costabots.com" target="_blank" rel="noopener" data-assistant-demo-open>Probar asistente</a>
+        <a href="https://manager.costabots.com?demo=1" target="_blank" rel="noopener" data-manager-demo-open>Probar Manager</a>
+        <a href="#" data-video-modal-open>Ver vídeo completo</a>
+      </div>
+      <div class="mobile-menu-group">
+        <span class="mobile-menu-heading">Casos reales</span>
+        <a href="#clientes">Safari Restaurant</a>
+        <a href="#clientes">Grand Italia</a>
+      </div>
+      <a href="#precios">Precios</a>
+      <a href="#faq">FAQ</a>
+      <div class="language-switch mobile-language" aria-label="Selector de idioma móvil">
+        <a href="#" data-lang="es" aria-current="true">🇪🇸 ES</a>
+        <span>/</span>
+        <a href="#" data-lang="en">🇬🇧 EN</a>
+      </div>
+      <a href="https://wa.me/34951963176?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20CostaBots%20para%20mi%20negocio."
+         class="nav-cta mobile-cta"
+         aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7.3 19.1 4 20l.9-3.2A8 8 0 1 1 7.3 19.1Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M9.1 8.7c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.4.5c.6 1.1 1.5 1.9 2.6 2.5l.5-.5c.2-.2.4-.2.7-.1l1.4.6c.3.1.4.3.4.6v.5c0 .3 0 .5-.4.7-.4.2-.9.3-1.5.3-2.8 0-6.8-3.7-6.8-6.7 0-.6.2-1.1.4-1.5Z" fill="currentColor"/>
+        </svg>
+        Hablar con nosotros
+      </a>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section class="hero" id="inicio">
-    <span class="hero-badge">Restaurantes · Hoteles · Experiencia digital</span>
-    <h1>Asistentes IA para restaurantes.<br><em>Mejores reservas, menos fricción.</em></h1>
-    <p class="hero-sub">
-      Creamos asistentes digitales para reservas, carta, eventos y feedback.
-      Una experiencia sencilla para el cliente y más control para el equipo —
-      desde QR, web o WhatsApp.
-    </p>
-    <div class="hero-actions">
-      <a href="#demo" class="btn-primary">Ver demos reales</a>
-      <a href="#como-funciona" class="btn-secondary">Cómo funciona</a>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="hero-badge">Restaurantes · Hoteles · Experiencia digital</span>
+        <h1>El compañero digital<br><em>de tu restaurante.</em></h1>
+        <p class="hero-sub">
+          Automatiza reservas, carta digital, eventos y atención al cliente desde un único sistema diseñado para restaurantes.
+        </p>
+        <div class="hero-trust" aria-label="Ventajas de CostaBots">
+          <span>✓ Reservas inteligentes</span>
+          <span>✓ Carta digital</span>
+          <span>✓ Multiidioma</span>
+          <span>✓ Disponible 24/7</span>
+        </div>
+      </div>
+      <div class="hero-media" aria-label="Vista previa de CostaBots en móvil">
+        <div class="hero-video-shell">
+          <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-label="Demostración visual de CostaBots">
+            <source src="public/video/video-principal.mp4" type="video/mp4">
+          </video>
+          <div class="video-controls" aria-label="Controles del video">
+            <button class="video-control video-sound-toggle" type="button" aria-label="Activar sonido" aria-pressed="false">
+              <svg class="icon-sound-off" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 9v6h4l5 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="m17 9 4 4m0-4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              <svg class="icon-sound-on" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 9v6h4l5 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M16 9.5c.8.7 1.2 1.6 1.2 2.5s-.4 1.8-1.2 2.5M18.5 7c1.5 1.4 2.3 3 2.3 5s-.8 3.6-2.3 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button class="video-open-modal" type="button" data-video-modal-open>Ver vídeo completo</button>
+      </div>
+      <div class="hero-actions">
+        <a href="#demo" class="btn-primary">Probar Demo</a>
+        <a href="https://wa.me/34951963176?text=Hola!%20Quiero%20solicitar%20una%20reuni%C3%B3n%20sobre%20CostaBots%20para%20mi%20restaurante."
+           class="btn-secondary"
+           target="_blank"
+           rel="noopener">
+          Solicitar una reunión
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="video-modal" aria-hidden="true">
+    <div class="video-modal-backdrop" data-video-modal-close></div>
+    <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="Video completo de CostaBots">
+      <button class="video-modal-close" type="button" aria-label="Cerrar video" data-video-modal-close>×</button>
+      <video class="video-modal-player" controls playsinline preload="metadata">
+        <source src="public/video/video-principal.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- FUNCIONALIDADES -->
+  <section id="funcionalidades">
+    <div class="section-inner">
+      <p class="section-label">Qué hace CostaBots</p>
+      <h2 class="section-title">Todo lo esencial del restaurante<br>en una experiencia sencilla</h2>
+      <p class="section-desc">Un sistema práctico para reducir fricción, ordenar reservas y mejorar la atención sin añadir más trabajo al equipo.</p>
+      <div class="features-grid compact-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <h3>Reservas inteligentes</h3>
+          <p>El cliente reserva desde el asistente. El equipo controla horarios, aforo y disponibilidad.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🍽️</div>
+          <h3>Carta digital</h3>
+          <p>Menú visual, categorías y sugerencias siempre actualizadas desde el móvil.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⭐</div>
+          <h3>Reputación protegida</h3>
+          <p>Feedback privado y alertas útiles antes de que una incidencia llegue a una reseña pública.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎭</div>
+          <h3>Eventos y experiencias</h3>
+          <p>Shows, actividades y consultas visibles desde el mismo asistente del restaurante.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Manager operativo</h3>
+          <p>Panel para reservas, llegadas, mesas y aforo sin complicar el servicio diario.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>Sin instalación</h3>
+          <p>Acceso por QR, multiidioma y listo para clientes nacionales e internacionales.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -807,80 +1970,28 @@
   <section class="how" id="como-funciona">
     <div class="section-inner">
       <p class="section-label">El proceso</p>
-      <h2 class="section-title">Del QR a la reserva en pocos pasos</h2>
-      <p class="section-desc">
-        Sin aplicaciones y sin registros largos. El cliente accede desde el móvil y el equipo mantiene el control desde el panel.
-      </p>
-      <div class="steps">
+      <h2 class="section-title">Del QR al control de sala<br>en cuatro pasos</h2>
+      <p class="section-desc">Una experiencia clara para el cliente y una operación más ordenada para el equipo.</p>
+      <div class="steps compact-steps">
         <div class="step">
           <div class="step-num">1</div>
-          <h3>Escanea el QR</h3>
-          <p>El cliente escanea el código en la mesa, hamaca o habitación. Se abre el asistente al instante.</p>
+          <h3>QR</h3>
+          <p>El cliente abre el asistente desde mesa, hamaca, web o habitación.</p>
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <h3>Explora y reserva</h3>
-          <p>Carta digital, reservas, eventos, WiFi y preguntas frecuentes en una experiencia guiada.</p>
+          <h3>Reserva</h3>
+          <p>Consulta carta, eventos y disponibilidad en una experiencia guiada.</p>
         </div>
         <div class="step">
           <div class="step-num">3</div>
-          <h3>Confirmación automática</h3>
-          <p>La reserva llega al panel operativo y puede generar confirmaciones por WhatsApp o mensaje interno.</p>
+          <h3>Manager</h3>
+          <p>El equipo recibe y gestiona reservas, llegadas, mesas y aforo.</p>
         </div>
         <div class="step">
           <div class="step-num">4</div>
-          <h3>Feedback post-cena</h3>
-          <p>El sistema puede recoger valoraciones privadas y avisar al equipo antes de que una incidencia acabe en una reseña pública.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FUNCIONALIDADES -->
-  <section id="funcionalidades">
-    <div class="section-inner">
-      <p class="section-label">Qué incluye</p>
-      <h2 class="section-title">Una plataforma práctica<br>para sala, reservas y atención</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">📅</div>
-          <h3>Reservas inteligentes</h3>
-          <p>El cliente reserva mesa desde el asistente. El equipo puede controlar disponibilidad, horarios y aforo.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🍽️</div>
-          <h3>Carta digital con fotos</h3>
-          <p>Menú digital con fotos, categorías y cambios rápidos. Ideal para carta, bebidas y sugerencias.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">⭐</div>
-          <h3>Protección de reputación</h3>
-          <p>Canal privado para recoger incidencias y orientar a los clientes satisfechos hacia reseñas públicas.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🚨</div>
-          <h3>Alerta al manager</h3>
-          <p>Avisos al responsable cuando se detecta una valoración negativa o una incidencia importante.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🎭</div>
-          <h3>Shows y eventos</h3>
-          <p>Shows, eventos y actividades visibles desde el asistente, con opción de consulta o reserva.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Panel operativo</h3>
-          <p>Panel para ver reservas, llegadas, mesas, ocupación y feedback sin complicar el trabajo diario.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📱</div>
-          <h3>Sin apps ni instalaciones</h3>
-          <p>El cliente accede por QR desde cualquier móvil. Cero fricción, experiencia inmediata.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🌍</div>
-          <h3>Bilingüe ES / EN</h3>
-          <p>Experiencia preparada en español e inglés, pensada para turismo y Costa del Sol.</p>
+          <h3>Feedback</h3>
+          <p>Las incidencias llegan de forma privada y accionable para el restaurante.</p>
         </div>
       </div>
     </div>
@@ -889,14 +2000,15 @@
   <!-- CLIENTES -->
   <section class="clients" id="clientes">
     <div class="section-inner">
-      <p class="section-label">Sistemas desplegados</p>
-      <h2 class="section-title">Proyectos reales en<br>hostelería de la Costa del Sol</h2>
-      <div class="clients-grid">
-        <div class="client-card">
+      <p class="section-label">Casos reales</p>
+      <h2 class="section-title">Validado en hostelería real<br>de la Costa del Sol</h2>
+      <div class="clients-grid featured-clients">
+        <div class="client-card client-card-main">
           <img src="https://costabots.github.io/LOGO_HEADER_SAFARI.png" alt="Safari-IA logo">
           <div class="client-info">
             <h4>Safari Restaurant</h4>
             <span>Wyndham Grand Costa del Sol · Piloto activo</span>
+            <p>Asistente para reservas, carta, eventos y feedback en un entorno operativo real.</p>
           </div>
         </div>
         <div class="client-card">
@@ -910,92 +2022,68 @@
     </div>
   </section>
 
-  <!-- TESTIMONIAL -->
-  <section class="testimonial">
-    <div class="section-inner">
-      <blockquote>
-        <p>"Una forma sencilla de mejorar la experiencia del cliente sin cargar más trabajo al equipo."</p>
-        <cite>Feedback recibido durante la validación del sistema</cite>
-      </blockquote>
-    </div>
-  </section>
+  <!-- TESTIMONIAL ARCHIVADO: retirado para reducir scroll. Recuperable en outputs/costabots_web_before_simplification.html. -->
 
   <!-- DEMOS EN VIVO -->
   <section class="demo-section" id="demo">
     <div class="section-inner">
-      <p class="section-label">Demos en vivo</p>
-      <h2 class="section-title">Dos experiencias, un mismo sistema</h2>
-      <p class="section-desc" style="margin: 0 auto;">
-        El cliente usa el asistente desde un QR. El equipo controla reservas, sala y aforo desde CostaBots Manager.
-      </p>
+      <p class="section-label">Demo</p>
+      <h2 class="section-title">Prueba las dos experiencias clave</h2>
+      <p class="section-desc" style="margin: 0 auto;">El cliente usa el asistente desde el móvil. El equipo controla la operación desde CostaBots Manager.</p>
+      <div class="demo-choice-grid">
+        <a class="demo-choice-card demo-assistant-card" href="https://demo.costabots.com" target="_blank" rel="noopener" data-assistant-demo-open>
+          <span class="demo-choice-icon">📱</span>
+          <strong>Probar asistente</strong>
+          <span>Carta, reservas, eventos y atención desde el móvil del cliente.</span>
+        </a>
+        <a class="demo-choice-card" href="https://manager.costabots.com?demo=1" target="_blank" rel="noopener" data-manager-demo-open>
+          <span class="demo-choice-icon">🖥️</span>
+          <strong>Probar Manager</strong>
+          <span>Panel operativo para reservas, sala, aforo y seguimiento diario.</span>
+        </a>
+      </div>
+      <p class="demo-private-note">Credenciales y detalles técnicos disponibles bajo solicitud para mantener una experiencia limpia.</p>
+    </div>
+  </section>
 
-      <div class="demo-stack">
-        <div class="demo-card">
-          <div class="demo-card-header">
-            <h3>1. Asistente para clientes</h3>
-            <p>El cliente escanea un QR y usa el asistente desde el móvil: carta, reservas, información útil y experiencia guiada.</p>
-          </div>
-          <div class="demo-frame">
-            <iframe
-              src="https://demo.costabots.com"
-              title="Demo Restaurant cliente — CostaBots"
-              loading="lazy"
-              allow="clipboard-write">
-            </iframe>
-          </div>
-          <a class="demo-open-link" href="https://demo.costabots.com" target="_blank" rel="noopener">Abrir demo cliente ↗</a>
-        </div>
-
-        <div class="demo-card">
-          <div class="demo-card-header">
-            <h3>2. CostaBots Manager para el restaurante</h3>
-            <p>El equipo trabaja desde una tablet en sala: reservas del día, llegadas, mesas, aforo, fully booked y control operativo.</p>
-          </div>
-         <div class="demo-card">
-  <div class="demo-card-header">
-    <h3>2. CostaBots Manager para el restaurante</h3>
-    <p>El equipo trabaja desde una tablet en sala: reservas del día, llegadas, mesas, aforo, fully booked y control operativo.</p>
-  </div>
-
-  <div class="tablet-shell">
-    <div class="demo-frame manager-frame">
-      <iframe
-        src="https://manager.costabots.com?demo=1"
-        title="CostaBots Manager Demo — Panel operativo"
-        loading="lazy"
-        allow="clipboard-write">
-      </iframe>
+  <div class="assistant-modal" aria-hidden="true">
+    <div class="assistant-modal-backdrop" data-assistant-demo-close></div>
+    <div class="assistant-modal-dialog" role="dialog" aria-modal="true" aria-label="Demo del asistente para clientes">
+      <button class="assistant-modal-close" type="button" aria-label="Cerrar demo" data-assistant-demo-close>×</button>
+      <div class="assistant-phone-shell">
+        <iframe
+          src="https://demo.costabots.com"
+          title="Demo del asistente móvil CostaBots"
+          loading="lazy"
+          allow="clipboard-write">
+        </iframe>
+      </div>
+      <div class="assistant-modal-actions">
+        <a class="btn-secondary" href="https://demo.costabots.com" target="_blank" rel="noopener">Abrir en nueva pestaña</a>
+      </div>
     </div>
   </div>
 
- <div class="demo-card">
-  <div class="demo-card-header">
-    <h3>2. CostaBots Manager para el restaurante</h3>
-    <p>El equipo trabaja desde una tablet en sala: reservas del día, llegadas, mesas, aforo, fully booked y control operativo.</p>
-  </div>
-
-
-
-  <div class="demo-credentials">
-    <span class="demo-credentials-label">🔑 Acceso demo</span>
-    <div class="demo-credentials-fields">
-      <span class="demo-cred-item">Usuario <code>demo2@costabots.local</code></span>
-      <span class="demo-cred-divider">·</span>
-      <span class="demo-cred-item">Contraseña <code>Demo2026</code></span>
+  <div class="manager-modal" aria-hidden="true">
+    <div class="manager-modal-backdrop" data-manager-demo-close></div>
+    <div class="manager-modal-dialog" role="dialog" aria-modal="true" aria-label="Demo de CostaBots Manager">
+      <button class="manager-modal-close" type="button" aria-label="Cerrar Manager" data-manager-demo-close>×</button>
+      <div class="manager-tablet-shell">
+        <iframe
+          src="https://manager.costabots.com?demo=1"
+          title="CostaBots Manager Demo"
+          loading="lazy"
+          allow="clipboard-write">
+        </iframe>
+      </div>
+      <div class="manager-modal-actions">
+        <a class="btn-secondary" href="https://manager.costabots.com?demo=1" target="_blank" rel="noopener">Abrir Manager en pantalla completa</a>
+      </div>
     </div>
   </div>
 
-  <span class="demo-note">Datos simulados — no afecta a restaurantes reales.</span><br>
-
-  <a class="demo-open-link"
-     href="https://manager.costabots.com?demo=1"
-     target="_blank"
-     rel="noopener">
-    Abrir Manager en pantalla completa ↗
-  </a>
-</div>
   <!-- PRECIOS -->
-  <section style="background: var(--sand);" id="precios">
+  <section class="pricing-section" id="precios">
     <div class="section-inner">
       <p class="section-label">Inversión</p>
       <h2 class="section-title">Inversión clara<br>para empezar con control</h2>
@@ -1018,10 +2106,9 @@
           <p class="price-period">pago único · con iPad incluido</p>
           <ul class="price-features">
             <li>Todo el Setup Essential</li>
-            <li>iPad Wi‑Fi configurado para sala</li>
-            <li>CostaBots Manager instalado como acceso directo</li>
-            <li>Entrega listo para usar</li>
-            <li>Menos fricción para el restaurante</li>
+            <li>iPad Wi-Fi configurado para sala</li>
+            <li>CostaBots Manager listo para usar</li>
+            <li>Entrega operativa desde el primer día</li>
           </ul>
           <a href="https://wa.me/34951963176?text=Quiero%20información%20sobre%20CostaBots%20con%20iPad%20incluido."
              class="btn-primary" style="display:block; text-align:center;">
@@ -1031,20 +2118,17 @@
         <div class="price-card">
           <p class="price-label">Cuota mensual</p>
           <p class="price-amount">Desde 299€</p>
-          <p class="price-period">/mes · soporte y sistema activo</p>
+          <p class="price-period">/mes · sistema activo y soporte</p>
           <ul class="price-features">
             <li>Asistente digital activo</li>
-            <li>Carta digital con fotos</li>
-            <li>Reservas y control aforo</li>
+            <li>Carta digital y reservas</li>
             <li>Protección de reputación</li>
             <li>Panel operativo</li>
             <li>Soporte y mejoras continuas</li>
           </ul>
         </div>
       </div>
-      <p class="section-desc" style="margin-top: 28px; font-size: 0.88rem;">
-        Para grupos, cadenas o integraciones avanzadas con WhatsApp Business, ResDiary u otros sistemas, se prepara una propuesta Business Plus a medida.
-      </p>
+      <p class="section-desc" style="margin-top: 24px; font-size: 0.88rem;">Para grupos, cadenas o integraciones avanzadas con WhatsApp Business, ResDiary u otros sistemas, se prepara una propuesta Business Plus a medida.</p>
     </div>
   </section>
 
@@ -1052,33 +2136,26 @@
   <section id="faq">
     <div class="section-inner">
       <p class="section-label">Preguntas frecuentes</p>
-      <h2 class="section-title">Todo lo que necesitas saber</h2>
+      <h2 class="section-title">Lo importante antes de probarlo</h2>
       <div class="faq-list">
         <div class="faq-item">
           <h4>¿Necesita el cliente instalar alguna aplicación?</h4>
-          <p>No. El cliente accede escaneando el QR con la cámara de cualquier móvil. En menos de 3 segundos tiene el asistente funcionando.</p>
-        </div>
-        <div class="faq-item">
-          <h4>¿Cómo funciona la protección de reputación?</h4>
-          <p>El sistema puede enviar o mostrar una solicitud de valoración. Las incidencias negativas se recogen de forma privada para que el equipo pueda actuar, y los clientes satisfechos pueden ser guiados hacia Google o TripAdvisor.</p>
-        </div>
-        <div class="faq-item">
-          <h4>¿Se puede integrar con nuestro sistema de reservas actual?</h4>
-          <p>Sí. El Plan Business Plus incluye posibilidad de integración con ResDiary y otros sistemas de gestión hotelera. El Plan Standard funciona con su propio sistema de control de reservas.</p>
+          <p>No. El cliente accede escaneando el QR con la cámara de cualquier móvil y usa el asistente desde el navegador.</p>
         </div>
         <div class="faq-item">
           <h4>¿Funciona en todos los móviles?</h4>
-          <p>Sí. El sistema funciona en iOS y Android, en cualquier navegador, sin necesidad de actualización ni instalación.</p>
+          <p>Sí. Funciona en iOS y Android, sin descargas, actualizaciones ni registros largos.</p>
         </div>
         <div class="faq-item">
-          <h4>¿Podemos contratarlo con una tablet incluida?</h4>
-          <p>Sí. Podemos entregarlo como solución llave en mano con un iPad configurado para usar CostaBots Manager en sala desde el primer día.</p>
+          <h4>¿Se puede integrar con nuestro sistema de reservas?</h4>
+          <p>Sí. Business Plus permite valorar integraciones con ResDiary y otros sistemas. Standard funciona con su propio control de reservas.</p>
         </div>
         <div class="faq-item">
           <h4>¿Qué incluye el soporte mensual?</h4>
-          <p>Mantenimiento técnico, pequeños ajustes operativos, soporte y mejoras progresivas según el uso real del restaurante.</p>
+          <p>Mantenimiento técnico, ajustes operativos, soporte y mejoras progresivas según el uso real del restaurante.</p>
         </div>
       </div>
+      <a class="faq-more-link" href="mailto:costabots.sol@gmail.com?subject=Preguntas%20sobre%20CostaBots">Ver todas las preguntas</a>
     </div>
   </section>
 
@@ -1093,14 +2170,633 @@
       </a>
     </div>
   </section>
-
   <!-- FOOTER -->
   <footer>
-    <img src="https://costabots.github.io/LOGO_COSTABOTS.png" alt="CostaBots">
+    <img src="public/brand/costabots-logo.png" alt="CostaBots">
     <p>© 2026 CostaBots · Costa del Sol, España ·
       <a href="mailto:costabots.sol@gmail.com">costabots.sol@gmail.com</a>
     </p>
   </footer>
 
+  <script>
+    (() => {
+      const video = document.querySelector('.hero-video');
+      const shell = document.querySelector('.hero-video-shell');
+      const soundButton = document.querySelector('.video-sound-toggle');
+      const openModalButtons = document.querySelectorAll('[data-video-modal-open]');
+      const modal = document.querySelector('.video-modal');
+      const modalPlayer = document.querySelector('.video-modal-player');
+      const modalCloseButtons = document.querySelectorAll('[data-video-modal-close]');
+      const assistantOpenButtons = document.querySelectorAll('[data-assistant-demo-open]');
+      const assistantModal = document.querySelector('.assistant-modal');
+      const assistantModalCloseButtons = document.querySelectorAll('[data-assistant-demo-close]');
+      const managerOpenButtons = document.querySelectorAll('[data-manager-demo-open]');
+      const managerModal = document.querySelector('.manager-modal');
+      const managerModalCloseButtons = document.querySelectorAll('[data-manager-demo-close]');
+      const navToggle = document.querySelector('.nav-toggle');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+
+      const translations = {
+        es: {
+          meta: {
+            title: 'CostaBots | Asistentes IA para Restaurantes y Hoteles — Costa del Sol',
+            description: 'CostaBots crea asistentes digitales con IA para restaurantes y hoteles: reservas, carta digital, feedback privado y panel operativo para sala. Especialistas en hostelería de la Costa del Sol.'
+          },
+          nav: {
+            items: ['Producto', 'Demo', 'Casos reales', 'Precios', 'FAQ'],
+            dropdowns: {
+              product: ['Reservas inteligentes', 'Carta digital', 'Eventos y experiencias', 'Protección de reputación', 'CostaBots Manager', 'Multiidioma / sin instalación'],
+              demo: ['Probar asistente', 'Probar Manager', 'Ver vídeo completo'],
+              cases: ['Safari Restaurant', 'Grand Italia']
+            },
+            whatsapp: 'Hablar con nosotros',
+            whatsappAria: 'Contactar por WhatsApp',
+            openMenu: 'Abrir menú',
+            closeMenu: 'Cerrar menú',
+            sectionsAria: 'Secciones',
+            langAria: 'Selector de idioma',
+            mobileLangAria: 'Selector de idioma móvil'
+          },
+          hero: {
+            badge: 'Restaurantes · Hoteles · Experiencia digital',
+            title: 'El compañero digital<br><em>de tu restaurante.</em>',
+            subtitle: 'Automatiza reservas, carta digital, eventos y atención al cliente desde un único sistema diseñado para restaurantes.',
+            trust: ['✓ Reservas inteligentes', '✓ Carta digital', '✓ Multiidioma', '✓ Disponible 24/7'],
+            videoAria: 'Vista previa de CostaBots en móvil',
+            videoLabel: 'Demostración visual de CostaBots',
+            videoControls: 'Controles del video',
+            soundOn: 'Activar sonido',
+            soundOff: 'Silenciar video',
+            fullVideo: 'Ver vídeo completo',
+            demo: 'Probar Demo',
+            meeting: 'Solicitar una reunión'
+          },
+          videoModal: {
+            aria: 'Video completo de CostaBots',
+            close: 'Cerrar video'
+          },
+          product: {
+            label: 'Qué hace CostaBots',
+            title: 'Todo lo esencial del restaurante<br>en una experiencia sencilla',
+            desc: 'Un sistema práctico para reducir fricción, ordenar reservas y mejorar la atención sin añadir más trabajo al equipo.',
+            cards: [
+              ['Reservas inteligentes', 'El cliente reserva desde el asistente. El equipo controla horarios, aforo y disponibilidad.'],
+              ['Carta digital', 'Menú visual, categorías y sugerencias siempre actualizadas desde el móvil.'],
+              ['Reputación protegida', 'Feedback privado y alertas útiles antes de que una incidencia llegue a una reseña pública.'],
+              ['Eventos y experiencias', 'Shows, actividades y consultas visibles desde el mismo asistente del restaurante.'],
+              ['Manager operativo', 'Panel para reservas, llegadas, mesas y aforo sin complicar el servicio diario.'],
+              ['Sin instalación', 'Acceso por QR, multiidioma y listo para clientes nacionales e internacionales.']
+            ]
+          },
+          process: {
+            label: 'El proceso',
+            title: 'Del QR al control de sala<br>en cuatro pasos',
+            desc: 'Una experiencia clara para el cliente y una operación más ordenada para el equipo.',
+            steps: [
+              ['QR', 'El cliente abre el asistente desde mesa, hamaca, web o habitación.'],
+              ['Reserva', 'Consulta carta, eventos y disponibilidad en una experiencia guiada.'],
+              ['Manager', 'El equipo recibe y gestiona reservas, llegadas, mesas y aforo.'],
+              ['Feedback', 'Las incidencias llegan de forma privada y accionable para el restaurante.']
+            ]
+          },
+          clients: {
+            label: 'Casos reales',
+            title: 'Validado en hostelería real<br>de la Costa del Sol',
+            safari: 'Wyndham Grand Costa del Sol · Piloto activo',
+            safariDesc: 'Asistente para reservas, carta, eventos y feedback en un entorno operativo real.',
+            grand: 'Wyndham Grand Costa del Sol · En preparación'
+          },
+          demo: {
+            label: 'Demo',
+            title: 'Prueba las dos experiencias clave',
+            desc: 'El cliente usa el asistente desde el móvil. El equipo controla la operación desde CostaBots Manager.',
+            cards: [
+              ['Probar asistente', 'Carta, reservas, eventos y atención desde el móvil del cliente.'],
+              ['Probar Manager', 'Panel operativo para reservas, sala, aforo y seguimiento diario.']
+            ],
+            note: 'Credenciales y detalles técnicos disponibles bajo solicitud para mantener una experiencia limpia.'
+          },
+          assistantModal: {
+            aria: 'Demo del asistente para clientes',
+            close: 'Cerrar demo',
+            iframe: 'Demo del asistente móvil CostaBots',
+            openTab: 'Abrir en nueva pestaña'
+          },
+          managerModal: {
+            aria: 'Demo de CostaBots Manager',
+            close: 'Cerrar Manager',
+            iframe: 'CostaBots Manager Demo',
+            openTab: 'Abrir Manager en pantalla completa'
+          },
+          pricing: {
+            label: 'Inversión',
+            title: 'Inversión clara<br>para empezar con control',
+            cards: [
+              {
+                label: 'Setup Essential',
+                amount: 'Desde 1.500€',
+                period: 'pago único · sin tablet',
+                features: ['Configuración completa', 'Diseño personalizado del asistente', 'Códigos QR profesionales', 'Formación del equipo', 'Prueba piloto supervisada']
+              },
+              {
+                label: 'Setup Llave en mano',
+                amount: 'Desde 1.950€',
+                period: 'pago único · con iPad incluido',
+                features: ['Todo el Setup Essential', 'iPad Wi-Fi configurado para sala', 'CostaBots Manager listo para usar', 'Entrega operativa desde el primer día'],
+                cta: 'Solicitar demo'
+              },
+              {
+                label: 'Cuota mensual',
+                amount: 'Desde 299€',
+                period: '/mes · sistema activo y soporte',
+                features: ['Asistente digital activo', 'Carta digital y reservas', 'Protección de reputación', 'Panel operativo', 'Soporte y mejoras continuas']
+              }
+            ],
+            desc: 'Para grupos, cadenas o integraciones avanzadas con WhatsApp Business, ResDiary u otros sistemas, se prepara una propuesta Business Plus a medida.'
+          },
+          faq: {
+            label: 'Preguntas frecuentes',
+            title: 'Lo importante antes de probarlo',
+            items: [
+              ['¿Necesita el cliente instalar alguna aplicación?', 'No. El cliente accede escaneando el QR con la cámara de cualquier móvil y usa el asistente desde el navegador.'],
+              ['¿Funciona en todos los móviles?', 'Sí. Funciona en iOS y Android, sin descargas, actualizaciones ni registros largos.'],
+              ['¿Se puede integrar con nuestro sistema de reservas?', 'Sí. Business Plus permite valorar integraciones con ResDiary y otros sistemas. Standard funciona con su propio control de reservas.'],
+              ['¿Qué incluye el soporte mensual?', 'Mantenimiento técnico, ajustes operativos, soporte y mejoras progresivas según el uso real del restaurante.']
+            ],
+            more: 'Ver todas las preguntas'
+          },
+          cta: {
+            title: '¿Quieres ver cómo quedaría<br>en tu restaurante?',
+            desc: 'Podemos preparar una demo sencilla adaptada a tu negocio.',
+            button: 'Hablar por WhatsApp'
+          },
+          footer: '© 2026 CostaBots · Costa del Sol, España · <a href="mailto:costabots.sol@gmail.com">costabots.sol@gmail.com</a>'
+        },
+        en: {
+          meta: {
+            title: 'CostaBots | Digital Restaurant Assistants — Costa del Sol',
+            description: 'CostaBots builds digital assistants for restaurants and hotels: reservations, digital menus, private feedback and an operational manager panel for service teams.'
+          },
+          nav: {
+            items: ['Product', 'Demo', 'Real cases', 'Pricing', 'FAQ'],
+            dropdowns: {
+              product: ['Smart reservations', 'Digital menu', 'Events and experiences', 'Reputation protection', 'CostaBots Manager', 'Multilingual / no installation'],
+              demo: ['Try assistant', 'Try Manager', 'Watch full video'],
+              cases: ['Safari Restaurant', 'Grand Italia']
+            },
+            whatsapp: 'Talk to us',
+            whatsappAria: 'Contact via WhatsApp',
+            openMenu: 'Open menu',
+            closeMenu: 'Close menu',
+            sectionsAria: 'Sections',
+            langAria: 'Language selector',
+            mobileLangAria: 'Mobile language selector'
+          },
+          hero: {
+            badge: 'Restaurants · Hotels · Digital experience',
+            title: 'The digital companion<br><em>for your restaurant.</em>',
+            subtitle: 'Automate reservations, digital menus, events and customer service from one system built for restaurants.',
+            trust: ['✓ Smart reservations', '✓ Digital menu', '✓ Multilingual', '✓ Available 24/7'],
+            videoAria: 'CostaBots mobile preview',
+            videoLabel: 'CostaBots visual demo',
+            videoControls: 'Video controls',
+            soundOn: 'Turn sound on',
+            soundOff: 'Mute video',
+            fullVideo: 'Watch full video',
+            demo: 'Try Demo',
+            meeting: 'Book a meeting'
+          },
+          videoModal: {
+            aria: 'Full CostaBots video',
+            close: 'Close video'
+          },
+          product: {
+            label: 'What CostaBots does',
+            title: 'Everything your restaurant needs<br>in one simple experience',
+            desc: 'A practical system to reduce friction, organize reservations and improve service without adding work for your team.',
+            cards: [
+              ['Smart reservations', 'Guests book from the assistant. Your team controls schedules, capacity and availability.'],
+              ['Digital menu', 'A visual menu with categories and recommendations, always up to date on mobile.'],
+              ['Reputation protection', 'Private feedback and useful alerts before an issue turns into a public review.'],
+              ['Events and experiences', 'Shows, activities and guest enquiries available from the same restaurant assistant.'],
+              ['Operational Manager', 'A panel for reservations, arrivals, tables and capacity without complicating service.'],
+              ['No installation', 'QR access, multilingual experience and ready for local and international guests.']
+            ]
+          },
+          process: {
+            label: 'How it works',
+            title: 'From QR to service control<br>in four steps',
+            desc: 'A clear experience for guests and a more organized workflow for your team.',
+            steps: [
+              ['QR', 'Guests open the assistant from the table, sunbed, website or room.'],
+              ['Reservation', 'They check the menu, events and availability through a guided experience.'],
+              ['Manager', 'Your team receives and manages reservations, arrivals, tables and capacity.'],
+              ['Feedback', 'Issues arrive privately and in a way your restaurant can act on.']
+            ]
+          },
+          clients: {
+            label: 'Real cases',
+            title: 'Validated in real hospitality<br>on the Costa del Sol',
+            safari: 'Wyndham Grand Costa del Sol · Active pilot',
+            safariDesc: 'Assistant for reservations, menu, events and feedback in a real operating environment.',
+            grand: 'Wyndham Grand Costa del Sol · In preparation'
+          },
+          demo: {
+            label: 'Demo',
+            title: 'Try the two core experiences',
+            desc: 'Guests use the assistant on mobile. Your team controls operations from CostaBots Manager.',
+            cards: [
+              ['Try assistant', 'Menu, reservations, events and service from the guest’s phone.'],
+              ['Try Manager', 'Operational panel for reservations, service, capacity and daily follow-up.']
+            ],
+            note: 'Credentials and technical details are available on request to keep the experience clean.'
+          },
+          assistantModal: {
+            aria: 'Guest assistant demo',
+            close: 'Close demo',
+            iframe: 'CostaBots mobile assistant demo',
+            openTab: 'Open in new tab'
+          },
+          managerModal: {
+            aria: 'CostaBots Manager demo',
+            close: 'Close Manager',
+            iframe: 'CostaBots Manager Demo',
+            openTab: 'Open Manager full screen'
+          },
+          pricing: {
+            label: 'Investment',
+            title: 'Clear investment<br>to start with control',
+            cards: [
+              {
+                label: 'Setup Essential',
+                amount: 'From €1,500',
+                period: 'one-time payment · without tablet',
+                features: ['Complete configuration', 'Custom assistant design', 'Professional QR codes', 'Team onboarding', 'Supervised pilot test']
+              },
+              {
+                label: 'Turnkey Setup',
+                amount: 'From €1,950',
+                period: 'one-time payment · iPad included',
+                features: ['Everything in Setup Essential', 'Wi-Fi iPad configured for service', 'CostaBots Manager ready to use', 'Operational from day one'],
+                cta: 'Request demo'
+              },
+              {
+                label: 'Monthly plan',
+                amount: 'From €299',
+                period: '/month · active system and support',
+                features: ['Active digital assistant', 'Digital menu and reservations', 'Reputation protection', 'Operational panel', 'Support and continuous improvements']
+              }
+            ],
+            desc: 'For groups, chains or advanced integrations with WhatsApp Business, ResDiary or other systems, we prepare a tailored Business Plus proposal.'
+          },
+          faq: {
+            label: 'FAQ',
+            title: 'What matters before you try it',
+            items: [
+              ['Does the guest need to install an app?', 'No. Guests scan the QR with any mobile camera and use the assistant directly in the browser.'],
+              ['Does it work on all phones?', 'Yes. It works on iOS and Android, with no downloads, updates or long registrations.'],
+              ['Can it integrate with our reservation system?', 'Yes. Business Plus can assess integrations with ResDiary and other systems. Standard includes its own reservation control.'],
+              ['What does monthly support include?', 'Technical maintenance, operational adjustments, support and progressive improvements based on real restaurant usage.']
+            ],
+            more: 'See all questions'
+          },
+          cta: {
+            title: 'Want to see how it would look<br>in your restaurant?',
+            desc: 'We can prepare a simple demo adapted to your business.',
+            button: 'Talk on WhatsApp'
+          },
+          footer: '© 2026 CostaBots · Costa del Sol, Spain · <a href="mailto:costabots.sol@gmail.com">costabots.sol@gmail.com</a>'
+        }
+      };
+
+      const setText = (selector, value) => {
+        const element = document.querySelector(selector);
+        if (element && value != null) element.textContent = value;
+      };
+
+      const setHtml = (selector, value) => {
+        const element = document.querySelector(selector);
+        if (element && value != null) element.innerHTML = value;
+      };
+
+      const setList = (selector, values, mode = 'text') => {
+        document.querySelectorAll(selector).forEach((element, index) => {
+          if (values[index] == null) return;
+          if (mode === 'html') element.innerHTML = values[index];
+          else element.textContent = values[index];
+        });
+      };
+
+      const setAttr = (selector, attr, value) => {
+        const element = document.querySelector(selector);
+        if (element && value != null) element.setAttribute(attr, value);
+      };
+
+      const setCtaLabels = (selector, value) => {
+        document.querySelectorAll(selector).forEach((element) => {
+          [...element.childNodes].forEach((node) => {
+            if (node.nodeType === Node.TEXT_NODE) node.remove();
+          });
+          element.append(` ${value}`);
+        });
+      };
+
+      const setFeatureCards = (copy) => {
+        document.querySelectorAll('#funcionalidades .feature-card').forEach((card, index) => {
+          const item = copy[index];
+          if (!item) return;
+          card.querySelector('h3').textContent = item[0];
+          card.querySelector('p').textContent = item[1];
+        });
+      };
+
+      const setPairCards = (selector, copy) => {
+        document.querySelectorAll(selector).forEach((card, index) => {
+          const item = copy[index];
+          if (!item) return;
+          card.querySelector('h3, h4, strong').textContent = item[0];
+          card.querySelector('p, span:last-child').textContent = item[1];
+        });
+      };
+
+      const setPricing = (copy) => {
+        document.querySelectorAll('#precios .price-card').forEach((card, index) => {
+          const item = copy[index];
+          if (!item) return;
+          card.querySelector('.price-label').textContent = item.label;
+          card.querySelector('.price-amount').textContent = item.amount;
+          card.querySelector('.price-period').textContent = item.period;
+          card.querySelectorAll('.price-features li').forEach((li, liIndex) => {
+            if (item.features[liIndex]) li.textContent = item.features[liIndex];
+          });
+          const cta = card.querySelector('.btn-primary');
+          if (cta && item.cta) cta.textContent = item.cta;
+        });
+      };
+
+      const applyLanguage = (lang) => {
+        const currentLang = translations[lang] ? lang : 'es';
+        const t = translations[currentLang];
+        document.documentElement.lang = currentLang;
+        document.title = t.meta.title;
+        setAttr('meta[name="description"]', 'content', t.meta.description);
+        setAttr('meta[property="og:title"]', 'content', t.meta.title);
+        setAttr('meta[property="og:description"]', 'content', t.meta.description);
+        setAttr('meta[name="twitter:title"]', 'content', t.meta.title);
+        setAttr('meta[name="twitter:description"]', 'content', t.meta.description);
+        localStorage.setItem('costabots-lang', currentLang);
+
+        setList('.nav-link-primary, .nav-links > a[href="#precios"], .nav-links > a[href="#faq"]', t.nav.items);
+        setList('.mobile-menu-heading', [t.nav.items[0], t.nav.items[1], t.nav.items[2]]);
+        setList('.mobile-menu-panel > a[href="#precios"], .mobile-menu-panel > a[href="#faq"]', [t.nav.items[3], t.nav.items[4]]);
+        setList('.nav-item:nth-child(1) .nav-dropdown a', t.nav.dropdowns.product);
+        setList('.nav-item:nth-child(2) .nav-dropdown a', t.nav.dropdowns.demo);
+        setList('.nav-item:nth-child(3) .nav-dropdown a', t.nav.dropdowns.cases);
+        setList('.mobile-menu-group:nth-child(1) a', t.nav.dropdowns.product);
+        setList('.mobile-menu-group:nth-child(2) a', t.nav.dropdowns.demo);
+        setList('.mobile-menu-group:nth-child(3) a', t.nav.dropdowns.cases);
+        setCtaLabels('.nav-cta', t.nav.whatsapp);
+        setAttr('.nav-cta', 'aria-label', t.nav.whatsappAria);
+        setAttr('.mobile-cta', 'aria-label', t.nav.whatsappAria);
+        setAttr('.nav-links', 'aria-label', t.nav.sectionsAria);
+        setAttr('.nav-actions .language-switch', 'aria-label', t.nav.langAria);
+        setAttr('.mobile-language', 'aria-label', t.nav.mobileLangAria);
+        if (!navToggle?.classList.contains('is-open')) {
+          navToggle?.setAttribute('aria-label', t.nav.openMenu);
+        }
+
+        document.querySelectorAll('[data-lang]').forEach((link) => {
+          const isActive = link.dataset.lang === currentLang;
+          if (isActive) link.setAttribute('aria-current', 'true');
+          else link.removeAttribute('aria-current');
+        });
+
+        setText('.hero-badge', t.hero.badge);
+        setHtml('.hero h1', t.hero.title);
+        setText('.hero-sub', t.hero.subtitle);
+        setList('.hero-trust span', t.hero.trust);
+        setAttr('.hero-media', 'aria-label', t.hero.videoAria);
+        setAttr('.hero-video', 'aria-label', t.hero.videoLabel);
+        setAttr('.video-controls', 'aria-label', t.hero.videoControls);
+        setText('.video-open-modal', t.hero.fullVideo);
+        setText('.hero-actions .btn-primary', t.hero.demo);
+        setText('.hero-actions .btn-secondary', t.hero.meeting);
+
+        setAttr('.video-modal-dialog', 'aria-label', t.videoModal.aria);
+        setAttr('.video-modal-close', 'aria-label', t.videoModal.close);
+
+        setText('#funcionalidades .section-label', t.product.label);
+        setHtml('#funcionalidades .section-title', t.product.title);
+        setText('#funcionalidades .section-desc', t.product.desc);
+        setFeatureCards(t.product.cards);
+
+        setText('#como-funciona .section-label', t.process.label);
+        setHtml('#como-funciona .section-title', t.process.title);
+        setText('#como-funciona .section-desc', t.process.desc);
+        setPairCards('#como-funciona .step', t.process.steps);
+
+        setText('#clientes .section-label', t.clients.label);
+        setHtml('#clientes .section-title', t.clients.title);
+        setText('.client-card-main .client-info span', t.clients.safari);
+        setText('.client-card-main .client-info p', t.clients.safariDesc);
+        setText('#clientes .client-card:not(.client-card-main) .client-info span', t.clients.grand);
+
+        setText('#demo .section-label', t.demo.label);
+        setText('#demo .section-title', t.demo.title);
+        setText('#demo .section-desc', t.demo.desc);
+        setPairCards('#demo .demo-choice-card', t.demo.cards);
+        setText('.demo-private-note', t.demo.note);
+
+        setAttr('.assistant-modal-dialog', 'aria-label', t.assistantModal.aria);
+        setAttr('.assistant-modal-close', 'aria-label', t.assistantModal.close);
+        setAttr('.assistant-phone-shell iframe', 'title', t.assistantModal.iframe);
+        setText('.assistant-modal-actions .btn-secondary', t.assistantModal.openTab);
+        setAttr('.manager-modal-dialog', 'aria-label', t.managerModal.aria);
+        setAttr('.manager-modal-close', 'aria-label', t.managerModal.close);
+        setAttr('.manager-tablet-shell iframe', 'title', t.managerModal.iframe);
+        setText('.manager-modal-actions .btn-secondary', t.managerModal.openTab);
+
+        setText('#precios .section-label', t.pricing.label);
+        setHtml('#precios .section-title', t.pricing.title);
+        setPricing(t.pricing.cards);
+        setText('#precios .section-desc', t.pricing.desc);
+
+        setText('#faq .section-label', t.faq.label);
+        setText('#faq .section-title', t.faq.title);
+        setPairCards('#faq .faq-item', t.faq.items);
+        setText('.faq-more-link', t.faq.more);
+
+        setHtml('.cta-final h2', t.cta.title);
+        setText('.cta-final p', t.cta.desc);
+        setText('.btn-white', t.cta.button);
+        setHtml('footer p', t.footer);
+
+        syncSoundButton();
+      };
+
+      document.querySelectorAll('[data-lang]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          applyLanguage(link.dataset.lang);
+          closeMobileMenu();
+        });
+      });
+
+      if (!video || !shell) return;
+
+      let isRestarting = false;
+
+      video.muted = true;
+      video.loop = false;
+      video.playsInline = true;
+
+      const syncSoundButton = () => {
+        if (!soundButton) return;
+        const activeCopy = translations[document.documentElement.lang] || translations.es;
+        const soundOn = !video.muted;
+        soundButton.classList.toggle('is-on', soundOn);
+        soundButton.setAttribute('aria-pressed', String(soundOn));
+        soundButton.setAttribute('aria-label', soundOn ? activeCopy.hero.soundOff : activeCopy.hero.soundOn);
+      };
+
+      soundButton?.addEventListener('click', async () => {
+        video.muted = !video.muted;
+        video.volume = video.muted ? 0 : 1;
+        syncSoundButton();
+        try { await video.play(); } catch (error) {}
+      });
+
+      const openModal = async () => {
+        if (!modal || !modalPlayer) return;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        modalPlayer.currentTime = video.currentTime || 0;
+        modalPlayer.muted = false;
+        try { await modalPlayer.play(); } catch (error) {}
+      };
+
+      const closeModal = () => {
+        if (!modal || !modalPlayer) return;
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        if (!assistantModal?.classList.contains('is-open') && !managerModal?.classList.contains('is-open')) {
+          document.body.style.overflow = '';
+        }
+        modalPlayer.pause();
+      };
+
+      openModalButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+          event.preventDefault();
+          openModal();
+          closeMobileMenu();
+        });
+      });
+      modalCloseButtons.forEach((button) => button.addEventListener('click', closeModal));
+
+      const isDesktopDemo = () => window.matchMedia('(min-width: 761px)').matches;
+
+      const openAssistantModal = (event) => {
+        if (!assistantModal || !isDesktopDemo()) return;
+        event.preventDefault();
+        assistantModal.classList.add('is-open');
+        assistantModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeAssistantModal = () => {
+        if (!assistantModal) return;
+        assistantModal.classList.remove('is-open');
+        assistantModal.setAttribute('aria-hidden', 'true');
+        if (!modal?.classList.contains('is-open') && !managerModal?.classList.contains('is-open')) {
+          document.body.style.overflow = '';
+        }
+      };
+
+      assistantOpenButtons.forEach((button) => button.addEventListener('click', openAssistantModal));
+      assistantModalCloseButtons.forEach((button) => button.addEventListener('click', closeAssistantModal));
+
+      const openManagerModal = (event) => {
+        if (!managerModal || !isDesktopDemo()) return;
+        event.preventDefault();
+        managerModal.classList.add('is-open');
+        managerModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeMobileMenu();
+      };
+
+      const closeManagerModal = () => {
+        if (!managerModal) return;
+        managerModal.classList.remove('is-open');
+        managerModal.setAttribute('aria-hidden', 'true');
+        if (!modal?.classList.contains('is-open') && !assistantModal?.classList.contains('is-open')) {
+          document.body.style.overflow = '';
+        }
+      };
+
+      managerOpenButtons.forEach((button) => button.addEventListener('click', openManagerModal));
+      managerModalCloseButtons.forEach((button) => button.addEventListener('click', closeManagerModal));
+
+      const closeMobileMenu = () => {
+        if (!navToggle || !mobileMenu) return;
+        const activeCopy = translations[document.documentElement.lang] || translations.es;
+        navToggle.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', activeCopy.nav.openMenu);
+        mobileMenu.classList.remove('is-open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        if (!modal?.classList.contains('is-open') && !assistantModal?.classList.contains('is-open') && !managerModal?.classList.contains('is-open')) {
+          document.body.style.overflow = '';
+        }
+      };
+
+      navToggle?.addEventListener('click', () => {
+        if (!mobileMenu) return;
+        const activeCopy = translations[document.documentElement.lang] || translations.es;
+        const isOpen = navToggle.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        navToggle.setAttribute('aria-label', isOpen ? activeCopy.nav.closeMenu : activeCopy.nav.openMenu);
+        mobileMenu.classList.toggle('is-open', isOpen);
+        mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+
+      mobileMenuLinks.forEach((link) => link.addEventListener('click', closeMobileMenu));
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeModal();
+          closeAssistantModal();
+          closeManagerModal();
+          closeMobileMenu();
+        }
+      });
+
+      video.addEventListener('timeupdate', () => {
+        if (!video.duration || isRestarting) return;
+        if (video.duration - video.currentTime < 0.55) {
+          video.classList.add('is-fading');
+        }
+      });
+
+      video.addEventListener('ended', () => {
+        isRestarting = true;
+        video.classList.add('is-fading');
+        window.setTimeout(async () => {
+          video.currentTime = 0;
+          try { await video.play(); } catch (error) {}
+          window.setTimeout(() => {
+            video.classList.remove('is-fading');
+            isRestarting = false;
+          }, 80);
+        }, 260);
+      });
+
+      syncSoundButton();
+      applyLanguage(localStorage.getItem('costabots-lang') || 'es');
+    })();
+  </script>
 </body>
 </html>
