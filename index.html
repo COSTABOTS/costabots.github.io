@@ -678,24 +678,32 @@
       transform: translateY(-1px);
     }
 
+    .hero {
+      min-height: min(940px, 96svh);
+    }
+
     .hero-inner {
-      width: min(1240px, 100%);
-      grid-template-columns: minmax(0, 0.82fr) minmax(520px, 1.18fr);
-      gap: clamp(44px, 6vw, 86px);
+      width: min(1320px, 100%);
+      grid-template-columns: minmax(440px, 0.74fr) minmax(610px, 1.26fr);
+      gap: clamp(40px, 5vw, 74px);
     }
 
     .hero-copy {
-      max-width: 610px;
+      max-width: 690px;
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 5.25vw, 5.1rem);
-      line-height: 1.01;
-      max-width: 680px;
+      font-size: clamp(3.1rem, 4.7vw, 5.05rem);
+      line-height: 1.02;
+      max-width: 760px;
+    }
+
+    .hero-sub {
+      max-width: 640px;
     }
 
     .hero-media {
-      width: min(100%, 720px);
+      width: min(100%, 840px);
       perspective: 1400px;
     }
 
@@ -755,6 +763,134 @@
       font-size: 0.76rem;
       font-weight: 600;
       letter-spacing: 0.12em;
+    }
+
+    .experience-bridge {
+      scroll-margin-top: 88px;
+      padding-top: clamp(24px, 4vw, 42px);
+      background: linear-gradient(180deg, rgba(250,247,242,0.35), rgba(255,255,255,0.32));
+    }
+
+    .experience-bridge .section-inner {
+      max-width: 1180px;
+    }
+
+    .experience-layout {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.78fr) auto minmax(420px, 1.22fr);
+      gap: clamp(22px, 3.5vw, 44px);
+      align-items: center;
+      margin-top: clamp(34px, 5vw, 54px);
+    }
+
+    .experience-card {
+      min-width: 0;
+      border: 1px solid rgba(44,95,93,0.1);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.56);
+      box-shadow: 0 22px 70px rgba(28,24,20,0.07), inset 0 1px 0 rgba(255,255,255,0.62);
+      padding: clamp(18px, 2.5vw, 28px);
+    }
+
+    .experience-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.85rem, 2.6vw, 2.35rem);
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 8px;
+      letter-spacing: 0;
+    }
+
+    .experience-card p {
+      color: rgba(122,115,106,0.92);
+      font-size: 0.98rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .experience-phone-card {
+      justify-self: end;
+      max-width: 320px;
+    }
+
+    .experience-phone-shell {
+      position: relative;
+      overflow: hidden;
+      width: min(100%, 252px);
+      margin: 0 auto 24px;
+      border-radius: 32px;
+      aspect-ratio: 9 / 16;
+      background: var(--dark);
+      border: 1px solid rgba(28,24,20,0.12);
+      box-shadow: 0 28px 80px rgba(28,24,20,0.18), inset 0 1px 0 rgba(255,255,255,0.5);
+      isolation: isolate;
+    }
+
+    .experience-phone-shell::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.04) 32%, transparent 56%), linear-gradient(180deg, rgba(255,255,255,0.08), transparent 30%, rgba(0,0,0,0.16));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .experience-video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: var(--dark);
+    }
+
+    .experience-manager-card {
+      max-width: 700px;
+    }
+
+    .experience-manager-shell {
+      position: relative;
+      overflow: hidden;
+      margin: 0 0 24px;
+      border-radius: 18px;
+      background: rgba(28,24,20,0.92);
+      border: 1px solid rgba(28,24,20,0.1);
+      box-shadow: 0 26px 76px rgba(28,24,20,0.14), inset 0 1px 0 rgba(255,255,255,0.54);
+    }
+
+    .experience-manager-shell::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(255,255,255,0.13), transparent 34%, rgba(0,0,0,0.06));
+      pointer-events: none;
+    }
+
+    .experience-manager-shell img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1536 / 1067;
+    }
+
+    .experience-connector {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 132px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: rgba(44,95,93,0.78);
+      border: 1px solid rgba(44,95,93,0.12);
+      background: rgba(255,255,255,0.48);
+      box-shadow: 0 12px 34px rgba(28,24,20,0.055);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
     .video-modal {
       position: fixed;
@@ -1828,6 +1964,25 @@
       .intro-grid {
         grid-template-columns: 1fr;
       }
+
+      .experience-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .experience-phone-card,
+      .experience-manager-card {
+        justify-self: stretch;
+        max-width: none;
+      }
+
+      .experience-phone-shell {
+        width: min(100%, 286px);
+      }
+
+      .experience-connector {
+        justify-self: center;
+      }
     }
 
     /* ── RESPONSIVE ── */
@@ -1888,6 +2043,12 @@
         font-size: 0.82rem;
         text-align: center;
       }
+      .experience-bridge { padding-top: 36px; }
+      .experience-layout { margin-top: 28px; }
+      .experience-card { border-radius: 20px; padding: 16px; }
+      .experience-phone-shell { width: min(100%, 248px); border-radius: 28px; margin-bottom: 18px; }
+      .experience-manager-shell { border-radius: 14px; margin-bottom: 18px; }
+      .experience-connector { width: 100%; font-size: 0.68rem; }
       .demo-choice-grid { grid-template-columns: 1fr; }
       .client-card-main { min-width: 100%; padding: 28px; }
       .assistant-modal { padding: 12px; }
@@ -2088,6 +2249,35 @@
           <h3>Operaciones</h3>
           <p>Controla ocupación, llegadas, mesas, peticiones especiales y disponibilidad desde Manager.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOS EXPERIENCIAS -->
+  <section class="experience-bridge" id="experiencias">
+    <div class="section-inner">
+      <p class="section-label">COSTABOTS Hospitality</p>
+      <h2 class="section-title">Una plataforma, dos experiencias conectadas</h2>
+      <p class="section-desc">El cliente consulta, reserva y recibe información desde el móvil. El equipo gestiona reservas, ocupación, llegadas y operativa diaria desde COSTABOTS Manager. Todo permanece conectado.</p>
+      <div class="experience-layout">
+        <article class="experience-card experience-phone-card">
+          <div class="experience-phone-shell" aria-label="Vista del asistente digital para clientes">
+            <video class="experience-video" autoplay muted loop playsinline preload="metadata" aria-label="Vídeo del asistente digital de CostaBots">
+              <source src="public/video/video-principal.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este vídeo.
+            </video>
+          </div>
+          <h3>Asistente para el cliente</h3>
+          <p>Atiende consultas, muestra información y permite reservar desde cualquier lugar, las 24 horas.</p>
+        </article>
+        <div class="experience-connector" aria-hidden="true">Cliente ? COSTABOTS ? Equipo</div>
+        <article class="experience-card experience-manager-card">
+          <figure class="experience-manager-shell">
+            <img src="public/site/home-manager-safari.jpg" width="1536" height="1067" loading="lazy" decoding="async" alt="Vista de COSTABOTS Manager gestionando reservas y ocupación de un restaurante">
+          </figure>
+          <h3>Manager para el equipo</h3>
+          <p>Centraliza reservas, disponibilidad, llegadas, ocupación y peticiones especiales en una ?nica pantalla.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -2380,6 +2570,20 @@
               ['Operaciones', 'Controla ocupaci\u00f3n, llegadas, mesas, peticiones especiales y disponibilidad desde Manager.']
             ]
           },
+          experiences: {
+            label: 'COSTABOTS Hospitality',
+            title: 'Una plataforma, dos experiencias conectadas',
+            desc: 'El cliente consulta, reserva y recibe informaci\u00f3n desde el m\u00f3vil. El equipo gestiona reservas, ocupaci\u00f3n, llegadas y operativa diaria desde COSTABOTS Manager. Todo permanece conectado.',
+            connector: 'Cliente \u2192 COSTABOTS \u2192 Equipo',
+            assistantTitle: 'Asistente para el cliente',
+            assistantText: 'Atiende consultas, muestra informaci\u00f3n y permite reservar desde cualquier lugar, las 24 horas.',
+            assistantAria: 'Vista del asistente digital para clientes',
+            assistantVideo: 'V\u00eddeo del asistente digital de CostaBots',
+            videoFallback: 'Tu navegador no puede reproducir este v\u00eddeo.',
+            managerTitle: 'Manager para el equipo',
+            managerText: 'Centraliza reservas, disponibilidad, llegadas, ocupaci\u00f3n y peticiones especiales en una \u00fanica pantalla.',
+            managerAlt: 'Vista de COSTABOTS Manager gestionando reservas y ocupaci\u00f3n de un restaurante'
+          },
           process: {
             label: 'El proceso',
             title: 'Del QR al control de sala<br>en cuatro pasos',
@@ -2515,6 +2719,20 @@
               ['Bookings', 'Centralize online, WhatsApp, phone and walk-in bookings.'],
               ['Operations', 'Manage occupancy, arrivals, tables, special requests and availability from Manager.']
             ]
+          },
+          experiences: {
+            label: 'COSTABOTS Hospitality',
+            title: 'One platform, two connected experiences',
+            desc: 'Guests enquire, book and receive information from their phones. Teams manage bookings, occupancy, arrivals and daily operations from COSTABOTS Manager. Everything stays connected.',
+            connector: 'Guest \u2192 COSTABOTS \u2192 Team',
+            assistantTitle: 'Guest assistant',
+            assistantText: 'Answers questions, provides information and lets guests book from anywhere, 24/7.',
+            assistantAria: 'Guest assistant mobile preview',
+            assistantVideo: 'CostaBots guest assistant video',
+            videoFallback: 'Your browser cannot play this video.',
+            managerTitle: 'Manager for the team',
+            managerText: 'Centralizes bookings, availability, arrivals, occupancy and special requests in one screen.',
+            managerAlt: 'COSTABOTS Manager displaying restaurant bookings and occupancy'
           },
           process: {
             label: 'How it works',
@@ -2734,6 +2952,18 @@
         setHtml('#funcionalidades .section-title', t.product.title);
         setText('#funcionalidades .section-desc', t.product.desc);
         setFeatureCards(t.product.cards);
+
+        setText('#experiencias .section-label', t.experiences.label);
+        setText('#experiencias .section-title', t.experiences.title);
+        setText('#experiencias .section-desc', t.experiences.desc);
+        setText('.experience-connector', t.experiences.connector);
+        setText('.experience-phone-card h3', t.experiences.assistantTitle);
+        setText('.experience-phone-card p', t.experiences.assistantText);
+        setAttr('.experience-phone-shell', 'aria-label', t.experiences.assistantAria);
+        setAttr('.experience-video', 'aria-label', t.experiences.assistantVideo);
+        setText('.experience-manager-card h3', t.experiences.managerTitle);
+        setText('.experience-manager-card p', t.experiences.managerText);
+        setAttr('.experience-manager-shell img', 'alt', t.experiences.managerAlt);
 
         setText('#como-funciona .section-label', t.process.label);
         setHtml('#como-funciona .section-title', t.process.title);
