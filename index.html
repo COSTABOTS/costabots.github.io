@@ -868,11 +868,16 @@
       pointer-events: none;
     }
 
-    .experience-manager-shell img {
+    .experience-manager-shell img,
+    .experience-manager-shell video {
       display: block;
       width: 100%;
       height: auto;
-      aspect-ratio: 1536 / 1067;
+    }
+
+    .experience-manager-video {
+      aspect-ratio: 1280 / 890;
+      background: var(--dark);
     }
 
     .experience-connector {
@@ -2273,7 +2278,10 @@
         <div class="experience-connector" aria-hidden="true">Cliente ? COSTABOTS ? Equipo</div>
         <article class="experience-card experience-manager-card">
           <figure class="experience-manager-shell">
-            <img src="public/site/home-manager-safari.jpg" width="1536" height="1067" loading="lazy" decoding="async" alt="Vista de COSTABOTS Manager gestionando reservas y ocupación de un restaurante">
+            <video class="experience-manager-video" autoplay muted loop playsinline preload="metadata" aria-label="Vídeo de COSTABOTS Manager en iPad">
+              <source src="public/video/manager-ipad.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este vídeo.
+            </video>
           </figure>
           <h3>Manager para el equipo</h3>
           <p>Centraliza reservas, disponibilidad, llegadas, ocupación y peticiones especiales en una ?nica pantalla.</p>
@@ -2582,7 +2590,7 @@
             videoFallback: 'Tu navegador no puede reproducir este v\u00eddeo.',
             managerTitle: 'Manager para el equipo',
             managerText: 'Centraliza reservas, disponibilidad, llegadas, ocupaci\u00f3n y peticiones especiales en una \u00fanica pantalla.',
-            managerAlt: 'Vista de COSTABOTS Manager gestionando reservas y ocupaci\u00f3n de un restaurante'
+            managerVideo: 'V\u00eddeo de COSTABOTS Manager en iPad'
           },
           process: {
             label: 'El proceso',
@@ -2732,7 +2740,7 @@
             videoFallback: 'Your browser cannot play this video.',
             managerTitle: 'Manager for the team',
             managerText: 'Centralizes bookings, availability, arrivals, occupancy and special requests in one screen.',
-            managerAlt: 'COSTABOTS Manager displaying restaurant bookings and occupancy'
+            managerVideo: 'COSTABOTS Manager video on iPad'
           },
           process: {
             label: 'How it works',
@@ -2963,7 +2971,7 @@
         setAttr('.experience-video', 'aria-label', t.experiences.assistantVideo);
         setText('.experience-manager-card h3', t.experiences.managerTitle);
         setText('.experience-manager-card p', t.experiences.managerText);
-        setAttr('.experience-manager-shell img', 'alt', t.experiences.managerAlt);
+        setAttr('.experience-manager-video', 'aria-label', t.experiences.managerVideo);
 
         setText('#como-funciona .section-label', t.process.label);
         setHtml('#como-funciona .section-title', t.process.title);
