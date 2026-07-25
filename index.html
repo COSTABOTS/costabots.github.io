@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -678,6 +678,84 @@
       transform: translateY(-1px);
     }
 
+    .hero-inner {
+      width: min(1240px, 100%);
+      grid-template-columns: minmax(0, 0.82fr) minmax(520px, 1.18fr);
+      gap: clamp(44px, 6vw, 86px);
+    }
+
+    .hero-copy {
+      max-width: 610px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 5.25vw, 5.1rem);
+      line-height: 1.01;
+      max-width: 680px;
+    }
+
+    .hero-media {
+      width: min(100%, 720px);
+      perspective: 1400px;
+    }
+
+    .hero-manager-shell {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 26px;
+      background: rgba(28,24,20,0.92);
+      border: 1px solid rgba(28,24,20,0.12);
+      box-shadow:
+        0 32px 90px rgba(28,24,20,0.2),
+        0 1px 0 rgba(255,255,255,0.65) inset;
+      transform: rotateX(1deg) rotateY(-2deg);
+      transform-origin: center;
+      animation: heroDeviceIn 760ms ease 80ms both;
+    }
+
+    .hero-manager-shell::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      border-radius: inherit;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16);
+      background: linear-gradient(135deg, rgba(255,255,255,0.16), transparent 30%, rgba(0,0,0,0.08));
+    }
+
+    .hero-manager-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1536 / 1067;
+    }
+
+    .hero-note {
+      margin-top: 16px;
+      max-width: 520px;
+      color: rgba(122,115,106,0.88);
+      font-size: 0.88rem;
+      line-height: 1.55;
+      font-weight: 400;
+    }
+
+    .intro-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .intro-grid .feature-icon {
+      width: auto;
+      height: auto;
+      margin-bottom: 22px;
+      color: var(--terra);
+      background: transparent;
+      box-shadow: none;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+    }
     .video-modal {
       position: fixed;
       inset: 0;
@@ -1728,6 +1806,28 @@
       .hero-video-shell {
         max-height: 58svh;
       }
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-media {
+        width: min(100%, 760px);
+        grid-row: 3;
+      }
+
+      .hero-manager-shell {
+        border-radius: 22px;
+        transform: none;
+      }
+
+      .hero-note {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ── RESPONSIVE ── */
@@ -1781,6 +1881,13 @@
         max-height: none;
       }
       .video-open-modal { margin-top: 12px; }
+      .hero-manager-shell {
+        border-radius: 18px;
+      }
+      .hero-note {
+        font-size: 0.82rem;
+        text-align: center;
+      }
       .demo-choice-grid { grid-template-columns: 1fr; }
       .client-card-main { min-width: 100%; padding: 28px; }
       .assistant-modal { padding: 12px; }
@@ -1831,20 +1938,18 @@
       <div class="nav-item">
         <a class="nav-link-primary" href="#funcionalidades">Producto</a>
         <div class="nav-dropdown">
-          <a href="#funcionalidades">Reservas inteligentes</a>
-          <a href="#funcionalidades">Carta digital</a>
-          <a href="#funcionalidades">Eventos y experiencias</a>
-          <a href="#funcionalidades">Protección de reputación</a>
+          <a href="#funcionalidades">Plataforma operativa</a>
           <a href="#funcionalidades">CostaBots Manager</a>
-          <a href="#funcionalidades">Multiidioma / sin instalación</a>
+          <a href="#funcionalidades">Atención y reservas</a>
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link-primary" href="#demo">Demo</a>
+        <a class="nav-link-primary" href="#como-funciona">Soluciones</a>
         <div class="nav-dropdown">
-          <a href="https://demo.costabots.com" target="_blank" rel="noopener" data-assistant-demo-open>Probar asistente</a>
-          <a href="https://manager.costabots.com?demo=1" target="_blank" rel="noopener" data-manager-demo-open>Probar Manager</a>
-          <a href="#" data-video-modal-open>Ver vídeo completo</a>
+          <a href="#funcionalidades">Restaurantes</a>
+          <a href="#funcionalidades">Hoteles</a>
+          <a href="#funcionalidades">Resorts</a>
+          <a href="#funcionalidades">Beach clubs</a>
         </div>
       </div>
       <div class="nav-item">
@@ -1855,9 +1960,8 @@
         </div>
       </div>
       <a href="#precios">Precios</a>
-      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
     </div>
-
     <div class="nav-actions">
       <div class="language-switch" aria-label="Selector de idioma">
         <a href="#" data-lang="es" aria-current="true">🇪🇸 ES</a>
@@ -1888,18 +1992,16 @@
     <div class="mobile-menu-panel">
       <div class="mobile-menu-group">
         <span class="mobile-menu-heading">Producto</span>
-        <a href="#funcionalidades">Reservas inteligentes</a>
-        <a href="#funcionalidades">Carta digital</a>
-        <a href="#funcionalidades">Eventos y experiencias</a>
-        <a href="#funcionalidades">Protección de reputación</a>
+        <a href="#funcionalidades">Plataforma operativa</a>
         <a href="#funcionalidades">CostaBots Manager</a>
-        <a href="#funcionalidades">Multiidioma / sin instalación</a>
+        <a href="#funcionalidades">Atención y reservas</a>
       </div>
       <div class="mobile-menu-group">
-        <span class="mobile-menu-heading">Demo</span>
-        <a href="https://demo.costabots.com" target="_blank" rel="noopener" data-assistant-demo-open>Probar asistente</a>
-        <a href="https://manager.costabots.com?demo=1" target="_blank" rel="noopener" data-manager-demo-open>Probar Manager</a>
-        <a href="#" data-video-modal-open>Ver vídeo completo</a>
+        <span class="mobile-menu-heading">Soluciones</span>
+        <a href="#funcionalidades">Restaurantes</a>
+        <a href="#funcionalidades">Hoteles</a>
+        <a href="#funcionalidades">Resorts</a>
+        <a href="#funcionalidades">Beach clubs</a>
       </div>
       <div class="mobile-menu-group">
         <span class="mobile-menu-heading">Casos reales</span>
@@ -1907,7 +2009,7 @@
         <a href="#clientes">Grand Italia</a>
       </div>
       <a href="#precios">Precios</a>
-      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
       <div class="language-switch mobile-language" aria-label="Selector de idioma móvil">
         <a href="#" data-lang="es" aria-current="true">🇪🇸 ES</a>
         <span>/</span>
@@ -1929,57 +2031,31 @@
   <section class="hero" id="inicio">
     <div class="hero-inner">
       <div class="hero-copy">
-        <span class="hero-badge">Restaurantes · Hoteles · Experiencia digital</span>
-        <h1>El compañero digital<br><em>de tu restaurante.</em></h1>
+        <span class="hero-badge">COSTABOTS HOSPITALITY</span>
+        <h1>La plataforma que conecta reservas, clientes y operaciones</h1>
         <p class="hero-sub">
-          Automatiza reservas, carta digital, eventos y atención al cliente desde un único sistema diseñado para restaurantes.
+          Centraliza la atención al cliente, las reservas y la operativa diaria de restaurantes, hoteles, resorts y beach clubs desde un único sistema.
         </p>
-        <div class="hero-trust" aria-label="Ventajas de CostaBots">
-          <span>✓ Reservas inteligentes</span>
-          <span>✓ Carta digital</span>
-          <span>✓ Multiidioma</span>
-          <span>✓ Disponible 24/7</span>
+        <div class="hero-actions">
+          <a href="#demo" class="btn-primary">Solicitar una demo</a>
+          <a href="#funcionalidades" class="btn-secondary">Ver cómo funciona</a>
         </div>
+        <p class="hero-note">Diseñado para simplificar el trabajo diario de los equipos de hospitality.</p>
       </div>
-      <div class="hero-media" aria-label="Vista previa de CostaBots en móvil">
-        <div class="hero-video-shell">
-          <video
-            class="hero-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            aria-label="Demostración visual de CostaBots">
-            <source src="public/video/video-principal.mp4" type="video/mp4">
-          </video>
-          <div class="video-controls" aria-label="Controles del video">
-            <button class="video-control video-sound-toggle" type="button" aria-label="Activar sonido" aria-pressed="false">
-              <svg class="icon-sound-off" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 9v6h4l5 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                <path d="m17 9 4 4m0-4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              </svg>
-              <svg class="icon-sound-on" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 9v6h4l5 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                <path d="M16 9.5c.8.7 1.2 1.6 1.2 2.5s-.4 1.8-1.2 2.5M18.5 7c1.5 1.4 2.3 3 2.3 5s-.8 3.6-2.3 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <button class="video-open-modal" type="button" data-video-modal-open>Ver vídeo completo</button>
-      </div>
-      <div class="hero-actions">
-        <a href="#demo" class="btn-primary">Probar Demo</a>
-        <a href="https://wa.me/34951963176?text=Hola!%20Quiero%20solicitar%20una%20reuni%C3%B3n%20sobre%20CostaBots%20para%20mi%20restaurante."
-           class="btn-secondary"
-           target="_blank"
-           rel="noopener">
-          Solicitar una reunión
-        </a>
+      <div class="hero-media" aria-label="Vista de COSTABOTS Manager">
+        <figure class="hero-manager-shell">
+          <img
+            class="hero-manager-image"
+            src="public/site/home-manager-safari.jpg"
+            width="1536"
+            height="1067"
+            alt="Vista de COSTABOTS Manager gestionando reservas y ocupación de un restaurante"
+            fetchpriority="high"
+            decoding="async">
+        </figure>
       </div>
     </div>
   </section>
-
   <div class="video-modal" aria-hidden="true">
     <div class="video-modal-backdrop" data-video-modal-close></div>
     <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="Video completo de CostaBots">
@@ -1993,44 +2069,28 @@
   <!-- FUNCIONALIDADES -->
   <section id="funcionalidades">
     <div class="section-inner">
-      <p class="section-label">Qué hace CostaBots</p>
-      <h2 class="section-title">Todo lo esencial del restaurante<br>en una experiencia sencilla</h2>
-      <p class="section-desc">Un sistema práctico para reducir fricción, ordenar reservas y mejorar la atención sin añadir más trabajo al equipo.</p>
-      <div class="features-grid compact-grid">
+      <p class="section-label">COSTABOTS Hospitality</p>
+      <h2 class="section-title">Todo lo que ocurre antes, durante y después de una reserva</h2>
+      <p class="section-desc">COSTABOTS conecta la atención al cliente con la operativa del equipo. Desde la primera consulta hasta la llegada del cliente, toda la información queda organizada en un mismo lugar.</p>
+      <div class="features-grid compact-grid intro-grid">
         <div class="feature-card">
-          <div class="feature-icon">📅</div>
-          <h3>Reservas inteligentes</h3>
-          <p>El cliente reserva desde el asistente. El equipo controla horarios, aforo y disponibilidad.</p>
+          <div class="feature-icon">01</div>
+          <h3>Atención al cliente</h3>
+          <p>Responde consultas y guía al cliente sin saturar al equipo.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🍽️</div>
-          <h3>Carta digital</h3>
-          <p>Menú visual, categorías y sugerencias siempre actualizadas desde el móvil.</p>
+          <div class="feature-icon">02</div>
+          <h3>Reservas</h3>
+          <p>Centraliza reservas online, WhatsApp, teléfono y walk-ins.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">⭐</div>
-          <h3>Reputación protegida</h3>
-          <p>Feedback privado y alertas útiles antes de que una incidencia llegue a una reseña pública.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🎭</div>
-          <h3>Eventos y experiencias</h3>
-          <p>Shows, actividades y consultas visibles desde el mismo asistente del restaurante.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Manager operativo</h3>
-          <p>Panel para reservas, llegadas, mesas y aforo sin complicar el servicio diario.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🌍</div>
-          <h3>Sin instalación</h3>
-          <p>Acceso por QR, multiidioma y listo para clientes nacionales e internacionales.</p>
+          <div class="feature-icon">03</div>
+          <h3>Operaciones</h3>
+          <p>Controla ocupación, llegadas, mesas, peticiones especiales y disponibilidad desde Manager.</p>
         </div>
       </div>
     </div>
   </section>
-
   <!-- CÓMO FUNCIONA -->
   <section class="how" id="como-funciona">
     <div class="section-inner">
@@ -2227,7 +2287,7 @@
   </section>
 
   <!-- CTA FINAL -->
-  <section class="cta-final">
+  <section class="cta-final" id="contacto">
     <div class="section-inner">
       <h2>¿Quieres ver cómo quedaría<br>en tu restaurante?</h2>
       <p>Podemos preparar una demo sencilla adaptada a tu negocio.</p>
@@ -2277,49 +2337,47 @@
             locale: 'es_ES'
           },
           nav: {
-            items: ['Producto', 'Demo', 'Casos reales', 'Precios', 'FAQ'],
+            items: ['Producto', 'Soluciones', 'Casos reales', 'Precios', 'Contacto'],
             dropdowns: {
-              product: ['Reservas inteligentes', 'Carta digital', 'Eventos y experiencias', 'Protección de reputación', 'CostaBots Manager', 'Multiidioma / sin instalación'],
-              demo: ['Probar asistente', 'Probar Manager', 'Ver vídeo completo'],
+              product: ['Plataforma operativa', 'CostaBots Manager', 'Atenci\u00f3n y reservas'],
+              solutions: ['Restaurantes', 'Hoteles', 'Resorts', 'Beach clubs'],
               cases: ['Safari Restaurant', 'Grand Italia']
             },
             whatsapp: 'Hablar con nosotros',
             whatsappAria: 'Contactar por WhatsApp',
-            openMenu: 'Abrir menú',
-            closeMenu: 'Cerrar menú',
+            openMenu: 'Abrir men\u00fa',
+            closeMenu: 'Cerrar men\u00fa',
             sectionsAria: 'Secciones',
             langAria: 'Selector de idioma',
-            mobileLangAria: 'Selector de idioma móvil'
+            mobileLangAria: 'Selector de idioma m\u00f3vil'
           },
           hero: {
-            badge: 'Restaurantes · Hoteles · Experiencia digital',
-            title: 'El compañero digital<br><em>de tu restaurante.</em>',
-            subtitle: 'Automatiza reservas, carta digital, eventos y atención al cliente desde un único sistema diseñado para restaurantes.',
-            trust: ['✓ Reservas inteligentes', '✓ Carta digital', '✓ Multiidioma', '✓ Disponible 24/7'],
-            videoAria: 'Vista previa de CostaBots en móvil',
-            videoLabel: 'Demostración visual de CostaBots',
+            badge: 'COSTABOTS HOSPITALITY',
+            title: 'La plataforma que conecta reservas, clientes y operaciones',
+            subtitle: 'Centraliza la atenci\u00f3n al cliente, las reservas y la operativa diaria de restaurantes, hoteles, resorts y beach clubs desde un \u00fanico sistema.',
+            note: 'Dise\u00f1ado para simplificar el trabajo diario de los equipos de hospitality.',
+            managerAria: 'Vista de COSTABOTS Manager',
+            imageAlt: 'Vista de COSTABOTS Manager gestionando reservas y ocupaci\u00f3n de un restaurante',
+            videoLabel: 'Demostraci\u00f3n visual de CostaBots',
             videoControls: 'Controles del video',
             soundOn: 'Activar sonido',
             soundOff: 'Silenciar video',
-            fullVideo: 'Ver vídeo completo',
-            demo: 'Probar Demo',
-            meeting: 'Solicitar una reunión'
+            fullVideo: 'Ver v\u00eddeo completo',
+            demo: 'Solicitar una demo',
+            meeting: 'Ver c\u00f3mo funciona'
           },
           videoModal: {
             aria: 'Video completo de CostaBots',
             close: 'Cerrar video'
           },
           product: {
-            label: 'Qué hace CostaBots',
-            title: 'Todo lo esencial del restaurante<br>en una experiencia sencilla',
-            desc: 'Un sistema práctico para reducir fricción, ordenar reservas y mejorar la atención sin añadir más trabajo al equipo.',
+            label: 'COSTABOTS Hospitality',
+            title: 'Todo lo que ocurre antes, durante y despu\u00e9s de una reserva',
+            desc: 'COSTABOTS conecta la atenci\u00f3n al cliente con la operativa del equipo. Desde la primera consulta hasta la llegada del cliente, toda la informaci\u00f3n queda organizada en un mismo lugar.',
             cards: [
-              ['Reservas inteligentes', 'El cliente reserva desde el asistente. El equipo controla horarios, aforo y disponibilidad.'],
-              ['Carta digital', 'Menú visual, categorías y sugerencias siempre actualizadas desde el móvil.'],
-              ['Reputación protegida', 'Feedback privado y alertas útiles antes de que una incidencia llegue a una reseña pública.'],
-              ['Eventos y experiencias', 'Shows, actividades y consultas visibles desde el mismo asistente del restaurante.'],
-              ['Manager operativo', 'Panel para reservas, llegadas, mesas y aforo sin complicar el servicio diario.'],
-              ['Sin instalación', 'Acceso por QR, multiidioma y listo para clientes nacionales e internacionales.']
+              ['Atenci\u00f3n al cliente', 'Responde consultas y gu\u00eda al cliente sin saturar al equipo.'],
+              ['Reservas', 'Centraliza reservas online, WhatsApp, tel\u00e9fono y walk-ins.'],
+              ['Operaciones', 'Controla ocupaci\u00f3n, llegadas, mesas, peticiones especiales y disponibilidad desde Manager.']
             ]
           },
           process: {
@@ -2415,10 +2473,10 @@
             locale: 'en_US'
           },
           nav: {
-            items: ['Product', 'Demo', 'Real cases', 'Pricing', 'FAQ'],
+            items: ['Product', 'Solutions', 'Real cases', 'Pricing', 'Contact'],
             dropdowns: {
-              product: ['Smart reservations', 'Digital menu', 'Events and experiences', 'Reputation protection', 'CostaBots Manager', 'Multilingual / no installation'],
-              demo: ['Try assistant', 'Try Manager', 'Watch full video'],
+              product: ['Operating platform', 'CostaBots Manager', 'Guest service and bookings'],
+              solutions: ['Restaurants', 'Hotels', 'Resorts', 'Beach clubs'],
               cases: ['Safari Restaurant', 'Grand Italia']
             },
             whatsapp: 'Talk to us',
@@ -2430,34 +2488,32 @@
             mobileLangAria: 'Mobile language selector'
           },
           hero: {
-            badge: 'Restaurants · Hotels · Digital experience',
-            title: 'The digital companion<br><em>for your restaurant.</em>',
-            subtitle: 'Automate reservations, digital menus, events and customer service from one system built for restaurants.',
-            trust: ['✓ Smart reservations', '✓ Digital menu', '✓ Multilingual', '✓ Available 24/7'],
-            videoAria: 'CostaBots mobile preview',
+            badge: 'COSTABOTS HOSPITALITY',
+            title: 'The platform connecting bookings, guests and operations',
+            subtitle: 'Centralize guest service, bookings and daily operations for restaurants, hotels, resorts and beach clubs in one simple system.',
+            note: 'Designed to simplify the daily work of hospitality teams.',
+            managerAria: 'COSTABOTS Manager preview',
+            imageAlt: 'COSTABOTS Manager displaying restaurant bookings and occupancy',
             videoLabel: 'CostaBots visual demo',
             videoControls: 'Video controls',
             soundOn: 'Turn sound on',
             soundOff: 'Mute video',
             fullVideo: 'Watch full video',
-            demo: 'Try Demo',
-            meeting: 'Book a meeting'
+            demo: 'Request a demo',
+            meeting: 'See how it works'
           },
           videoModal: {
             aria: 'Full CostaBots video',
             close: 'Close video'
           },
           product: {
-            label: 'What CostaBots does',
-            title: 'Everything your restaurant needs<br>in one simple experience',
-            desc: 'A practical system to reduce friction, organize reservations and improve service without adding work for your team.',
+            label: 'COSTABOTS Hospitality',
+            title: 'Everything happening before, during and after a booking',
+            desc: 'COSTABOTS connects guest service with daily operations. From the first enquiry to the guest\'s arrival, all relevant information stays organized in one place.',
             cards: [
-              ['Smart reservations', 'Guests book from the assistant. Your team controls schedules, capacity and availability.'],
-              ['Digital menu', 'A visual menu with categories and recommendations, always up to date on mobile.'],
-              ['Reputation protection', 'Private feedback and useful alerts before an issue turns into a public review.'],
-              ['Events and experiences', 'Shows, activities and guest enquiries available from the same restaurant assistant.'],
-              ['Operational Manager', 'A panel for reservations, arrivals, tables and capacity without complicating service.'],
-              ['No installation', 'QR access, multilingual experience and ready for local and international guests.']
+              ['Guest service', 'Answer enquiries and guide guests without overloading the team.'],
+              ['Bookings', 'Centralize online, WhatsApp, phone and walk-in bookings.'],
+              ['Operations', 'Manage occupancy, arrivals, tables, special requests and availability from Manager.']
             ]
           },
           process: {
@@ -2611,6 +2667,16 @@
         });
       };
 
+      const syncSoundButton = () => {
+        if (!soundButton || !video) return;
+        const activeCopy = translations[document.documentElement.lang] || translations.es;
+        const soundOn = !video.muted;
+        soundButton.classList.toggle('is-on', soundOn);
+        soundButton.setAttribute('aria-pressed', String(soundOn));
+        soundButton.setAttribute('aria-label', soundOn ? activeCopy.hero.soundOff : activeCopy.hero.soundOn);
+        soundButton.textContent = soundOn ? '\u{1F50A}' : '\u{1F507}';
+      };
+
       const applyLanguage = (lang) => {
         const currentLang = translations[lang] ? lang : 'es';
         const t = translations[currentLang];
@@ -2624,14 +2690,14 @@
         setAttr('meta[name="twitter:description"]', 'content', t.meta.ogDescription);
         localStorage.setItem('costabots-lang', currentLang);
 
-        setList('.nav-link-primary, .nav-links > a[href="#precios"], .nav-links > a[href="#faq"]', t.nav.items);
+        setList('.nav-link-primary, .nav-links > a[href="#precios"], .nav-links > a[href="#contacto"]', t.nav.items);
         setList('.mobile-menu-heading', [t.nav.items[0], t.nav.items[1], t.nav.items[2]]);
-        setList('.mobile-menu-panel > a[href="#precios"], .mobile-menu-panel > a[href="#faq"]', [t.nav.items[3], t.nav.items[4]]);
+        setList('.mobile-menu-panel > a[href="#precios"], .mobile-menu-panel > a[href="#contacto"]', [t.nav.items[3], t.nav.items[4]]);
         setList('.nav-item:nth-child(1) .nav-dropdown a', t.nav.dropdowns.product);
-        setList('.nav-item:nth-child(2) .nav-dropdown a', t.nav.dropdowns.demo);
+        setList('.nav-item:nth-child(2) .nav-dropdown a', t.nav.dropdowns.solutions);
         setList('.nav-item:nth-child(3) .nav-dropdown a', t.nav.dropdowns.cases);
         setList('.mobile-menu-group:nth-child(1) a', t.nav.dropdowns.product);
-        setList('.mobile-menu-group:nth-child(2) a', t.nav.dropdowns.demo);
+        setList('.mobile-menu-group:nth-child(2) a', t.nav.dropdowns.solutions);
         setList('.mobile-menu-group:nth-child(3) a', t.nav.dropdowns.cases);
         setCtaLabels('.nav-cta', t.nav.whatsapp);
         setAttr('.nav-cta', 'aria-label', t.nav.whatsappAria);
@@ -2652,8 +2718,9 @@
         setText('.hero-badge', t.hero.badge);
         setHtml('.hero h1', t.hero.title);
         setText('.hero-sub', t.hero.subtitle);
-        setList('.hero-trust span', t.hero.trust);
-        setAttr('.hero-media', 'aria-label', t.hero.videoAria);
+        setText('.hero-note', t.hero.note);
+        setAttr('.hero-media', 'aria-label', t.hero.managerAria);
+        setAttr('.hero-manager-image', 'alt', t.hero.imageAlt);
         setAttr('.hero-video', 'aria-label', t.hero.videoLabel);
         setAttr('.video-controls', 'aria-label', t.hero.videoControls);
         setText('.video-open-modal', t.hero.fullVideo);
@@ -2720,36 +2787,27 @@
         });
       });
 
-      if (!video || !shell) return;
-
       let isRestarting = false;
 
-      video.muted = true;
-      video.loop = false;
-      video.playsInline = true;
+      if (video && shell) {
+        video.muted = true;
+        video.loop = false;
+        video.playsInline = true;
 
-      const syncSoundButton = () => {
-        if (!soundButton) return;
-        const activeCopy = translations[document.documentElement.lang] || translations.es;
-        const soundOn = !video.muted;
-        soundButton.classList.toggle('is-on', soundOn);
-        soundButton.setAttribute('aria-pressed', String(soundOn));
-        soundButton.setAttribute('aria-label', soundOn ? activeCopy.hero.soundOff : activeCopy.hero.soundOn);
-      };
-
-      soundButton?.addEventListener('click', async () => {
-        video.muted = !video.muted;
-        video.volume = video.muted ? 0 : 1;
-        syncSoundButton();
-        try { await video.play(); } catch (error) {}
-      });
+        soundButton?.addEventListener('click', async () => {
+          video.muted = !video.muted;
+          video.volume = video.muted ? 0 : 1;
+          syncSoundButton();
+          try { await video.play(); } catch (error) {}
+        });
+      }
 
       const openModal = async () => {
         if (!modal || !modalPlayer) return;
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
-        modalPlayer.currentTime = video.currentTime || 0;
+        modalPlayer.currentTime = video?.currentTime || 0;
         modalPlayer.muted = false;
         try { await modalPlayer.play(); } catch (error) {}
       };
@@ -2857,25 +2915,27 @@
         }
       });
 
-      video.addEventListener('timeupdate', () => {
-        if (!video.duration || isRestarting) return;
-        if (video.duration - video.currentTime < 0.55) {
-          video.classList.add('is-fading');
-        }
-      });
+      if (video) {
+        video.addEventListener('timeupdate', () => {
+          if (!video.duration || isRestarting) return;
+          if (video.duration - video.currentTime < 0.55) {
+            video.classList.add('is-fading');
+          }
+        });
 
-      video.addEventListener('ended', () => {
-        isRestarting = true;
-        video.classList.add('is-fading');
-        window.setTimeout(async () => {
-          video.currentTime = 0;
-          try { await video.play(); } catch (error) {}
-          window.setTimeout(() => {
-            video.classList.remove('is-fading');
-            isRestarting = false;
-          }, 80);
-        }, 260);
-      });
+        video.addEventListener('ended', () => {
+          isRestarting = true;
+          video.classList.add('is-fading');
+          window.setTimeout(async () => {
+            video.currentTime = 0;
+            try { await video.play(); } catch (error) {}
+            window.setTimeout(() => {
+              video.classList.remove('is-fading');
+              isRestarting = false;
+            }, 80);
+          }, 260);
+        });
+      }
 
       syncSoundButton();
       applyLanguage(localStorage.getItem('costabots-lang') || 'es');
