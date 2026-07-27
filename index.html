@@ -3883,7 +3883,15 @@
         soundButton.textContent = soundOn ? '\u{1F50A}' : '\u{1F507}';
       };
 
-      const applyLanguage = (lang) => {
+      const getInitialLanguage = () => {
+        const savedLanguage = localStorage.getItem('costabots-lang');
+        if (translations[savedLanguage]) return savedLanguage;
+
+        const browserLanguage = (navigator.languages?.[0] || navigator.language || '').toLowerCase();
+        return browserLanguage === 'es' || browserLanguage.startsWith('es-') ? 'es' : 'en';
+      };
+
+      const applyLanguage = (lang, persistPreference = false) => {
         const currentLang = translations[lang] ? lang : 'es';
         const t = translations[currentLang];
         document.documentElement.lang = currentLang;
@@ -3894,7 +3902,9 @@
         setAttr('meta[property="og:locale"]', 'content', t.meta.locale);
         setAttr('meta[name="twitter:title"]', 'content', t.meta.ogTitle);
         setAttr('meta[name="twitter:description"]', 'content', t.meta.ogDescription);
-        localStorage.setItem('costabots-lang', currentLang);
+        if (persistPreference) {
+          localStorage.setItem('costabots-lang', currentLang);
+        }
 
         setList('.nav-link-primary, .nav-links > a[href="#precios"], .nav-links > a[href="#contacto"]', t.nav.items);
         setList('.mobile-menu-heading', [t.nav.items[0], t.nav.items[1], t.nav.items[2]]);
@@ -3994,7 +4004,7 @@
       document.querySelectorAll('[data-lang]').forEach((link) => {
         link.addEventListener('click', (event) => {
           event.preventDefault();
-          applyLanguage(link.dataset.lang);
+          applyLanguage(link.dataset.lang, true);
           closeMobileMenu();
         });
       });
@@ -4150,7 +4160,7 @@
       }
 
       syncSoundButton();
-      applyLanguage(localStorage.getItem('costabots-lang') || 'es');
+      applyLanguage(getInitialLanguage());
     })();
   </script>
 </body>
