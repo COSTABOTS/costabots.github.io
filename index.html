@@ -2917,8 +2917,77 @@
       align-items: stretch;
     }
 
-    .client-card img {
-      filter: saturate(0.86) brightness(0.9);
+    .clients .client-card {
+      padding: 28px;
+      gap: 24px;
+      background: #131C26;
+      border-color: rgba(199,149,85,0.28);
+      box-shadow: inset 0 1px 0 rgba(242,238,231,0.035);
+    }
+
+    .clients .client-card-main {
+      padding: 28px;
+      border-color: rgba(199,149,85,0.32);
+    }
+
+    .clients .client-card:hover {
+      background: #151E28;
+      border-color: rgba(199,149,85,0.4);
+      box-shadow: inset 0 1px 0 rgba(242,238,231,0.05);
+    }
+
+    .client-logo-wrap {
+      width: 190px;
+      min-width: 190px;
+      height: 72px;
+      padding: 12px 16px;
+      background: rgba(245,241,233,0.94);
+      border: 1px solid rgba(199,149,85,0.18);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .client-logo-wrap img {
+      width: 100%;
+      height: auto;
+      max-height: 42px;
+      max-width: none;
+      object-fit: contain;
+      filter: none;
+      opacity: 1;
+    }
+
+    .client-card-main .client-logo-wrap img {
+      width: 158px;
+    }
+
+    .client-card:not(.client-card-main) .client-logo-wrap img {
+      width: 170px;
+    }
+
+    .clients .client-info {
+      min-width: 0;
+    }
+
+    .clients .client-info h4 {
+      margin-bottom: 4px;
+      color: #F2EEE7;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .clients .client-info span {
+      display: block;
+      color: #D0A466;
+      line-height: 1.45;
+    }
+
+    .clients .client-info p {
+      margin-top: 10px;
+      color: rgba(226,220,210,0.82);
+      line-height: 1.58;
     }
 
     .client-info span,
@@ -3062,6 +3131,28 @@
       .price-card,
       .faq-item {
         border-radius: 14px;
+      }
+
+      .clients-grid {
+        gap: 18px;
+      }
+
+      .clients .client-card,
+      .clients .client-card-main {
+        flex: 0 0 100%;
+        width: 100%;
+        min-width: 0;
+        padding: 22px;
+        gap: 18px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .client-logo-wrap {
+        width: 190px;
+        min-width: 0;
+        height: 68px;
+        padding: 11px 16px;
       }
     }
 
@@ -3297,7 +3388,9 @@
       <h2 class="section-title">Diseñado para la operativa real<br>de la Costa del Sol</h2>
       <div class="clients-grid featured-clients">
         <div class="client-card client-card-main">
-          <img src="https://costabots.github.io/LOGO_HEADER_SAFARI.png" alt="Safari-IA logo">
+          <div class="client-logo-wrap">
+            <img src="https://costabots.github.io/LOGO_HEADER_SAFARI.png" alt="Safari-IA logo">
+          </div>
           <div class="client-info">
             <h4>Safari Restaurant</h4>
             <span>Wyndham Grand Costa del Sol · Propuesta en evaluación</span>
@@ -3305,7 +3398,9 @@
           </div>
         </div>
         <div class="client-card">
-          <img src="https://costabots.github.io/LOGO_HEADER_GRANDITALIA.png" alt="Grand Italia logo">
+          <div class="client-logo-wrap">
+            <img src="https://costabots.github.io/LOGO_HEADER_GRANDITALIA.png" alt="Grand Italia logo">
+          </div>
           <div class="client-info">
             <h4>Grand Italia</h4>
             <span>Wyndham Grand Costa del Sol · En evaluación</span>
