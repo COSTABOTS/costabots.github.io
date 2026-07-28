@@ -3293,22 +3293,23 @@
   <!-- CLIENTES -->
   <section class="clients" id="clientes">
     <div class="section-inner">
-      <p class="section-label">Casos reales</p>
-      <h2 class="section-title">Validado en hostelería real<br>de la Costa del Sol</h2>
+      <p class="section-label">Aplicaciones reales</p>
+      <h2 class="section-title">Diseñado para la operativa real<br>de la Costa del Sol</h2>
       <div class="clients-grid featured-clients">
         <div class="client-card client-card-main">
           <img src="https://costabots.github.io/LOGO_HEADER_SAFARI.png" alt="Safari-IA logo">
           <div class="client-info">
             <h4>Safari Restaurant</h4>
-            <span>Wyndham Grand Costa del Sol · Piloto activo</span>
-            <p>Asistente para reservas, carta, eventos y feedback en un entorno operativo real.</p>
+            <span>Wyndham Grand Costa del Sol · Propuesta en evaluación</span>
+            <p>Solución configurada y preparada para gestionar reservas, atención al cliente, eventos y feedback, adaptada a su operativa real.</p>
           </div>
         </div>
         <div class="client-card">
           <img src="https://costabots.github.io/LOGO_HEADER_GRANDITALIA.png" alt="Grand Italia logo">
           <div class="client-info">
             <h4>Grand Italia</h4>
-            <span>Wyndham Grand Costa del Sol · En preparación</span>
+            <span>Wyndham Grand Costa del Sol · En evaluación</span>
+            <p>Configuración planteada para centralizar reservas y simplificar la operativa diaria del equipo.</p>
           </div>
         </div>
       </div>
@@ -3584,11 +3585,12 @@
             ]
           },
           clients: {
-            label: 'Casos reales',
-            title: 'Validado en hostelería real<br>de la Costa del Sol',
-            safari: 'Wyndham Grand Costa del Sol · Piloto activo',
-            safariDesc: 'Asistente para reservas, carta, eventos y feedback en un entorno operativo real.',
-            grand: 'Wyndham Grand Costa del Sol · En preparación'
+            label: 'Aplicaciones reales',
+            title: 'Diseñado para la operativa real<br>de la Costa del Sol',
+            safari: 'Wyndham Grand Costa del Sol · Propuesta en evaluación',
+            safariDesc: 'Solución configurada y preparada para gestionar reservas, atención al cliente, eventos y feedback, adaptada a su operativa real.',
+            grand: 'Wyndham Grand Costa del Sol · En evaluación',
+            grandDesc: 'Configuración planteada para centralizar reservas y simplificar la operativa diaria del equipo.'
           },
           demo: {
             label: 'Demo',
@@ -3734,11 +3736,12 @@
             ]
           },
           clients: {
-            label: 'Real cases',
-            title: 'Validated in real hospitality<br>on the Costa del Sol',
-            safari: 'Wyndham Grand Costa del Sol · Active pilot',
-            safariDesc: 'Assistant for reservations, menu, events and feedback in a real operating environment.',
-            grand: 'Wyndham Grand Costa del Sol · In preparation'
+            label: 'Real-world applications',
+            title: 'Designed for real hospitality operations<br>on the Costa del Sol',
+            safari: 'Wyndham Grand Costa del Sol · Proposal under evaluation',
+            safariDesc: 'A configured solution prepared to manage reservations, guest support, events and feedback, adapted to its real operational needs.',
+            grand: 'Wyndham Grand Costa del Sol · Under evaluation',
+            grandDesc: 'A proposed configuration to centralise reservations and simplify the team’s daily operations.'
           },
           demo: {
             label: 'Demo',
@@ -3883,7 +3886,15 @@
         soundButton.textContent = soundOn ? '\u{1F50A}' : '\u{1F507}';
       };
 
-      const applyLanguage = (lang) => {
+      const getInitialLanguage = () => {
+        const savedLanguage = localStorage.getItem('costabots-lang');
+        if (translations[savedLanguage]) return savedLanguage;
+
+        const browserLanguage = (navigator.languages?.[0] || navigator.language || '').toLowerCase();
+        return browserLanguage === 'es' || browserLanguage.startsWith('es-') ? 'es' : 'en';
+      };
+
+      const applyLanguage = (lang, persistPreference = false) => {
         const currentLang = translations[lang] ? lang : 'es';
         const t = translations[currentLang];
         document.documentElement.lang = currentLang;
@@ -3894,7 +3905,9 @@
         setAttr('meta[property="og:locale"]', 'content', t.meta.locale);
         setAttr('meta[name="twitter:title"]', 'content', t.meta.ogTitle);
         setAttr('meta[name="twitter:description"]', 'content', t.meta.ogDescription);
-        localStorage.setItem('costabots-lang', currentLang);
+        if (persistPreference) {
+          localStorage.setItem('costabots-lang', currentLang);
+        }
 
         setList('.nav-link-primary, .nav-links > a[href="#precios"], .nav-links > a[href="#contacto"]', t.nav.items);
         setList('.mobile-menu-heading', [t.nav.items[0], t.nav.items[1], t.nav.items[2]]);
@@ -3957,6 +3970,7 @@
         setText('.client-card-main .client-info span', t.clients.safari);
         setText('.client-card-main .client-info p', t.clients.safariDesc);
         setText('#clientes .client-card:not(.client-card-main) .client-info span', t.clients.grand);
+        setText('#clientes .client-card:not(.client-card-main) .client-info p', t.clients.grandDesc);
 
         setText('#demo .section-label', t.demo.label);
         setText('#demo .section-title', t.demo.title);
@@ -3994,7 +4008,7 @@
       document.querySelectorAll('[data-lang]').forEach((link) => {
         link.addEventListener('click', (event) => {
           event.preventDefault();
-          applyLanguage(link.dataset.lang);
+          applyLanguage(link.dataset.lang, true);
           closeMobileMenu();
         });
       });
@@ -4150,7 +4164,7 @@
       }
 
       syncSoundButton();
-      applyLanguage(localStorage.getItem('costabots-lang') || 'es');
+      applyLanguage(getInitialLanguage());
     })();
   </script>
 </body>
