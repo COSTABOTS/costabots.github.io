@@ -2966,6 +2966,124 @@
       flex: 0 0 auto;
     }
 
+    .pricing-section .section-inner {
+      max-width: 980px;
+    }
+
+    .pricing-section .section-desc {
+      max-width: 680px;
+    }
+
+    .pricing-offer {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
+      gap: 22px;
+      align-items: stretch;
+      margin-top: 38px;
+    }
+
+    .pricing-main-card {
+      padding: 38px 36px;
+    }
+
+    .pricing-description {
+      max-width: 560px;
+      margin: 16px 0 24px;
+      color: var(--cb-text-muted);
+      line-height: 1.65;
+    }
+
+    .price-feature-copy {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-status {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      padding: 3px 8px;
+      border: 1px solid rgba(208,164,102,0.28);
+      border-radius: 999px;
+      color: var(--cb-bronze-light);
+      font-size: 0.67rem;
+      font-weight: 600;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .pricing-main-card .btn-primary,
+    .pricing-custom .btn-secondary {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+
+    .pricing-custom {
+      display: flex;
+      flex-direction: column;
+      padding: 34px 30px;
+      border: 1px solid rgba(208,164,102,0.2);
+      border-radius: var(--radius-card);
+      background: rgba(17,25,35,0.82);
+    }
+
+    .pricing-custom h3 {
+      margin: 10px 0 14px;
+      color: var(--cb-ivory);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 400;
+      line-height: 1.05;
+    }
+
+    .pricing-custom > p:not(.price-label) {
+      color: var(--cb-text-muted);
+      line-height: 1.65;
+    }
+
+    .pricing-custom-list {
+      display: grid;
+      gap: 10px;
+      margin: 22px 0 28px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pricing-custom-list li {
+      position: relative;
+      padding-left: 17px;
+      color: rgba(242,238,231,0.76);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .pricing-custom-list li::before {
+      content: '';
+      position: absolute;
+      top: 0.62em;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--cb-bronze-light);
+    }
+
+    .pricing-custom .btn-secondary {
+      margin-top: auto;
+    }
+
+    .pricing-setup-note {
+      max-width: 760px;
+      margin: 22px auto 0;
+      color: rgba(169,160,150,0.9);
+      font-size: 0.82rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
     .faq-list {
       display: grid;
       gap: 12px;
@@ -3070,6 +3188,30 @@
       .price-card,
       .faq-item {
         border-radius: 14px;
+      }
+
+      .pricing-offer {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .pricing-main-card,
+      .pricing-custom {
+        padding: 28px 22px;
+      }
+
+      .pricing-main-card .price-amount {
+        font-size: 2.75rem;
+      }
+
+      .pricing-description {
+        margin-bottom: 18px;
+      }
+
+      .pricing-setup-note {
+        margin-top: 18px;
+        text-align: left;
       }
     }
 
@@ -3389,50 +3531,41 @@
   <!-- PRECIOS -->
   <section class="pricing-section" id="precios">
     <div class="section-inner">
-      <p class="section-label">Inversión</p>
-      <h2 class="section-title">Inversión clara<br>para empezar con control</h2>
-      <div class="pricing-grid">
-        <div class="price-card">
-          <p class="price-label">Setup Essential</p>
-          <p class="price-amount">Desde 1.500€</p>
-          <p class="price-period">pago único · sin tablet</p>
+      <p class="section-label">COSTABOTS HOSPITALITY</p>
+      <h2 class="section-title">Un sistema de reservas sencillo, completo y adaptado a tu negocio</h2>
+      <p class="section-desc">Empieza con lo esencial y amplía la solución cuando lo necesites.</p>
+      <div class="pricing-offer">
+        <div class="price-card featured pricing-main-card">
+          <p class="price-label">PLAN BASE</p>
+          <p class="price-amount">Desde 99 €</p>
+          <p class="price-period">/mes + IVA · por restaurante</p>
+          <p class="pricing-description">Todo lo necesario para recibir y gestionar reservas desde una única plataforma.</p>
           <ul class="price-features">
-            <li>Configuración completa</li>
-            <li>Diseño personalizado del asistente</li>
-            <li>Códigos QR profesionales</li>
-            <li>Formación del equipo</li>
-            <li>Prueba piloto supervisada</li>
+            <li><span class="price-feature-copy"><span>Widget de reservas integrado en tu web</span><span class="feature-status">Próximamente</span></span></li>
+            <li><span class="price-feature-copy">COSTABOTS Manager</span></li>
+            <li><span class="price-feature-copy">Gestión de disponibilidad y horarios</span></li>
+            <li><span class="price-feature-copy">Reservas manuales y walk-ins</span></li>
+            <li><span class="price-feature-copy">Confirmaciones y cancelaciones</span></li>
+            <li><span class="price-feature-copy">Historial básico de clientes</span></li>
+            <li><span class="price-feature-copy">Soporte y actualizaciones</span></li>
           </ul>
+          <a href="https://wa.me/34951963176?text=Hola!%20Quiero%20una%20demo%20de%20CostaBots%20para%20mi%20restaurante." class="btn-primary">Solicitar una demo</a>
         </div>
-        <div class="price-card featured">
-          <p class="price-label">Setup Llave en mano</p>
-          <p class="price-amount" style="color: var(--sand);">Desde 1.950€</p>
-          <p class="price-period">pago único · con iPad incluido</p>
-          <ul class="price-features">
-            <li>Todo el Setup Essential</li>
-            <li>iPad Wi-Fi configurado para sala</li>
-            <li>CostaBots Manager listo para usar</li>
-            <li>Entrega operativa desde el primer día</li>
+        <div class="pricing-custom">
+          <p class="price-label">PARA OPERATIVAS MÁS COMPLEJAS</p>
+          <h3>Hoteles, grupos y servicios especiales</h3>
+          <p>Preparamos propuestas adaptadas para varios restaurantes, reservas de balinesas, WhatsApp con IA, integraciones y necesidades operativas específicas.</p>
+          <ul class="pricing-custom-list">
+            <li>Varios restaurantes o locales</li>
+            <li>Balinesas y otros recursos reservables</li>
+            <li>WhatsApp con IA</li>
+            <li>Integraciones con sistemas externos</li>
+            <li>Configuración y formación personalizada</li>
           </ul>
-          <a href="https://wa.me/34951963176?text=Quiero%20información%20sobre%20CostaBots%20con%20iPad%20incluido."
-             class="btn-primary" style="display:block; text-align:center;">
-            Solicitar demo
-          </a>
-        </div>
-        <div class="price-card">
-          <p class="price-label">Cuota mensual</p>
-          <p class="price-amount">Desde 299€</p>
-          <p class="price-period">/mes · sistema activo y soporte</p>
-          <ul class="price-features">
-            <li>Asistente digital activo</li>
-            <li>Carta digital y reservas</li>
-            <li>Protección de reputación</li>
-            <li>Panel operativo</li>
-            <li>Soporte y mejoras continuas</li>
-          </ul>
+          <a href="https://wa.me/34951963176?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20CostaBots%20para%20mi%20negocio." class="btn-secondary">Solicitar propuesta</a>
         </div>
       </div>
-      <p class="section-desc" style="margin-top: 24px; font-size: 0.88rem;">Para grupos, cadenas o integraciones avanzadas con WhatsApp Business, ResDiary u otros sistemas, se prepara una propuesta Business Plus a medida.</p>
+      <p class="pricing-setup-note">La configuración inicial se valora según las necesidades del negocio. En proyectos estándar puede estar incluida en la propuesta.</p>
     </div>
   </section>
 
@@ -3443,16 +3576,16 @@
       <h2 class="section-title">Lo importante antes de probarlo</h2>
       <div class="faq-list">
         <div class="faq-item">
-          <h4>¿Necesita el cliente instalar alguna aplicación?</h4>
-          <p>No. El cliente accede escaneando el QR con la cámara de cualquier móvil y usa el asistente desde el navegador.</p>
+          <h4>¿Hay coste de configuración inicial?</h4>
+          <p>Depende de las necesidades del negocio, el número de servicios y las integraciones necesarias. En proyectos estándar, la configuración puede estar incluida en la propuesta.</p>
         </div>
         <div class="faq-item">
-          <h4>¿Funciona en todos los móviles?</h4>
-          <p>Sí. Funciona en iOS y Android, sin descargas, actualizaciones ni registros largos.</p>
+          <h4>¿El precio es por restaurante?</h4>
+          <p>El plan base parte de 99 € al mes por restaurante. Para hoteles, grupos o varios locales preparamos una propuesta conjunta.</p>
         </div>
         <div class="faq-item">
-          <h4>¿Se puede integrar con nuestro sistema de reservas?</h4>
-          <p>Sí. Business Plus permite valorar integraciones con ResDiary y otros sistemas. Standard funciona con su propio control de reservas.</p>
+          <h4>¿WhatsApp con IA está incluido?</h4>
+          <p>WhatsApp con IA se ofrece como solución adicional según la operativa y el volumen de conversaciones del negocio.</p>
         </div>
         <div class="faq-item">
           <h4>¿Qué incluye el soporte mensual?</h4>
@@ -3623,38 +3756,30 @@
             openTab: 'Abrir Manager en pantalla completa'
           },
           pricing: {
-            label: 'Inversión',
-            title: 'Inversión clara<br>para empezar con control',
-            cards: [
-              {
-                label: 'Setup Essential',
-                amount: 'Desde 1.500€',
-                period: 'pago único · sin tablet',
-                features: ['Configuración completa', 'Diseño personalizado del asistente', 'Códigos QR profesionales', 'Formación del equipo', 'Prueba piloto supervisada']
-              },
-              {
-                label: 'Setup Llave en mano',
-                amount: 'Desde 1.950€',
-                period: 'pago único · con iPad incluido',
-                features: ['Todo el Setup Essential', 'iPad Wi-Fi configurado para sala', 'CostaBots Manager listo para usar', 'Entrega operativa desde el primer día'],
-                cta: 'Solicitar demo'
-              },
-              {
-                label: 'Cuota mensual',
-                amount: 'Desde 299€',
-                period: '/mes · sistema activo y soporte',
-                features: ['Asistente digital activo', 'Carta digital y reservas', 'Protección de reputación', 'Panel operativo', 'Soporte y mejoras continuas']
-              }
-            ],
-            desc: 'Para grupos, cadenas o integraciones avanzadas con WhatsApp Business, ResDiary u otros sistemas, se prepara una propuesta Business Plus a medida.'
+            label: 'COSTABOTS HOSPITALITY',
+            title: 'Un sistema de reservas sencillo, completo y adaptado a tu negocio',
+            subtitle: 'Empieza con lo esencial y amplía la solución cuando lo necesites.',
+            planLabel: 'PLAN BASE',
+            amount: 'Desde 99 €',
+            period: '/mes + IVA · por restaurante',
+            description: 'Todo lo necesario para recibir y gestionar reservas desde una única plataforma.',
+            features: ['Widget de reservas integrado en tu web', 'COSTABOTS Manager', 'Gestión de disponibilidad y horarios', 'Reservas manuales y walk-ins', 'Confirmaciones y cancelaciones', 'Historial básico de clientes', 'Soporte y actualizaciones'],
+            status: 'Próximamente',
+            demoCta: 'Solicitar una demo',
+            customLabel: 'PARA OPERATIVAS MÁS COMPLEJAS',
+            customTitle: 'Hoteles, grupos y servicios especiales',
+            customText: 'Preparamos propuestas adaptadas para varios restaurantes, reservas de balinesas, WhatsApp con IA, integraciones y necesidades operativas específicas.',
+            customFeatures: ['Varios restaurantes o locales', 'Balinesas y otros recursos reservables', 'WhatsApp con IA', 'Integraciones con sistemas externos', 'Configuración y formación personalizada'],
+            customCta: 'Solicitar propuesta',
+            setupNote: 'La configuración inicial se valora según las necesidades del negocio. En proyectos estándar puede estar incluida en la propuesta.'
           },
           faq: {
             label: 'Preguntas frecuentes',
             title: 'Lo importante antes de probarlo',
             items: [
-              ['¿Necesita el cliente instalar alguna aplicación?', 'No. El cliente accede escaneando el QR con la cámara de cualquier móvil y usa el asistente desde el navegador.'],
-              ['¿Funciona en todos los móviles?', 'Sí. Funciona en iOS y Android, sin descargas, actualizaciones ni registros largos.'],
-              ['¿Se puede integrar con nuestro sistema de reservas?', 'Sí. Business Plus permite valorar integraciones con ResDiary y otros sistemas. Standard funciona con su propio control de reservas.'],
+              ['¿Hay coste de configuración inicial?', 'Depende de las necesidades del negocio, el número de servicios y las integraciones necesarias. En proyectos estándar, la configuración puede estar incluida en la propuesta.'],
+              ['¿El precio es por restaurante?', 'El plan base parte de 99 € al mes por restaurante. Para hoteles, grupos o varios locales preparamos una propuesta conjunta.'],
+              ['¿WhatsApp con IA está incluido?', 'WhatsApp con IA se ofrece como solución adicional según la operativa y el volumen de conversaciones del negocio.'],
               ['¿Qué incluye el soporte mensual?', 'Mantenimiento técnico, ajustes operativos, soporte y mejoras progresivas según el uso real del restaurante.']
             ],
             more: 'Ver todas las preguntas'
@@ -3774,38 +3899,30 @@
             openTab: 'Open Manager full screen'
           },
           pricing: {
-            label: 'Investment',
-            title: 'Clear investment<br>to start with control',
-            cards: [
-              {
-                label: 'Setup Essential',
-                amount: 'From €1,500',
-                period: 'one-time payment · without tablet',
-                features: ['Complete configuration', 'Custom assistant design', 'Professional QR codes', 'Team onboarding', 'Supervised pilot test']
-              },
-              {
-                label: 'Turnkey Setup',
-                amount: 'From €1,950',
-                period: 'one-time payment · iPad included',
-                features: ['Everything in Setup Essential', 'Wi-Fi iPad configured for service', 'CostaBots Manager ready to use', 'Operational from day one'],
-                cta: 'Request demo'
-              },
-              {
-                label: 'Monthly plan',
-                amount: 'From €299',
-                period: '/month · active system and support',
-                features: ['Active digital assistant', 'Digital menu and reservations', 'Reputation protection', 'Operational panel', 'Support and continuous improvements']
-              }
-            ],
-            desc: 'For groups, chains or advanced integrations with WhatsApp Business, ResDiary or other systems, we prepare a tailored Business Plus proposal.'
+            label: 'COSTABOTS HOSPITALITY',
+            title: 'A simple, complete reservation system adapted to your business',
+            subtitle: 'Start with the essentials and expand the solution when you need it.',
+            planLabel: 'BASE PLAN',
+            amount: 'From €99',
+            period: '/month + VAT · per restaurant',
+            description: 'Everything you need to receive and manage reservations from one platform.',
+            features: ['Booking widget embedded in your website', 'COSTABOTS Manager', 'Availability and schedule management', 'Manual bookings and walk-ins', 'Confirmations and cancellations', 'Basic guest history', 'Support and updates'],
+            status: 'Coming soon',
+            demoCta: 'Request a demo',
+            customLabel: 'FOR MORE COMPLEX OPERATIONS',
+            customTitle: 'Hotels, groups and special services',
+            customText: 'We prepare tailored proposals for multiple restaurants, daybed reservations, AI-powered WhatsApp, integrations and specific operational needs.',
+            customFeatures: ['Multiple restaurants or venues', 'Daybeds and other bookable resources', 'AI-powered WhatsApp', 'External system integrations', 'Custom setup and team training'],
+            customCta: 'Request a proposal',
+            setupNote: 'Initial setup is assessed according to the needs of the business. For standard projects, it may be included in the proposal.'
           },
           faq: {
             label: 'FAQ',
             title: 'What matters before you try it',
             items: [
-              ['Does the guest need to install an app?', 'No. Guests scan the QR with any mobile camera and use the assistant directly in the browser.'],
-              ['Does it work on all phones?', 'Yes. It works on iOS and Android, with no downloads, updates or long registrations.'],
-              ['Can it integrate with our reservation system?', 'Yes. Business Plus can assess integrations with ResDiary and other systems. Standard includes its own reservation control.'],
+              ['Is there an initial setup cost?', 'It depends on the needs of the business, the number of services and the integrations required. For standard projects, setup may be included in the proposal.'],
+              ['Is the price per restaurant?', 'The base plan starts at €99 per month per restaurant. For hotels, groups or multiple venues, we prepare a combined proposal.'],
+              ['Is AI-powered WhatsApp included?', 'AI-powered WhatsApp is available as an additional solution depending on the operation and the business’s conversation volume.'],
               ['What does monthly support include?', 'Technical maintenance, operational adjustments, support and progressive improvements based on real restaurant usage.']
             ],
             more: 'See all questions'
@@ -3870,18 +3987,22 @@
       };
 
       const setPricing = (copy) => {
-        document.querySelectorAll('#precios .price-card').forEach((card, index) => {
-          const item = copy[index];
-          if (!item) return;
-          card.querySelector('.price-label').textContent = item.label;
-          card.querySelector('.price-amount').textContent = item.amount;
-          card.querySelector('.price-period').textContent = item.period;
-          card.querySelectorAll('.price-features li').forEach((li, liIndex) => {
-            if (item.features[liIndex]) li.textContent = item.features[liIndex];
-          });
-          const cta = card.querySelector('.btn-primary');
-          if (cta && item.cta) cta.textContent = item.cta;
+        setText('.pricing-main-card .price-label', copy.planLabel);
+        setText('.pricing-main-card .price-amount', copy.amount);
+        setText('.pricing-main-card .price-period', copy.period);
+        setText('.pricing-description', copy.description);
+        document.querySelectorAll('.pricing-main-card .price-feature-copy').forEach((element, index) => {
+          const featureText = element.querySelector('span:first-child') || element;
+          featureText.textContent = copy.features[index];
         });
+        setText('.feature-status', copy.status);
+        setText('.pricing-main-card .btn-primary', copy.demoCta);
+        setText('.pricing-custom .price-label', copy.customLabel);
+        setText('.pricing-custom h3', copy.customTitle);
+        setText('.pricing-custom > p:not(.price-label)', copy.customText);
+        setList('.pricing-custom-list li', copy.customFeatures);
+        setText('.pricing-custom .btn-secondary', copy.customCta);
+        setText('.pricing-setup-note', copy.setupNote);
       };
 
       const syncSoundButton = () => {
@@ -3997,8 +4118,8 @@
 
         setText('#precios .section-label', t.pricing.label);
         setHtml('#precios .section-title', t.pricing.title);
-        setPricing(t.pricing.cards);
-        setText('#precios .section-desc', t.pricing.desc);
+        setText('#precios .section-desc', t.pricing.subtitle);
+        setPricing(t.pricing);
 
         setText('#faq .section-label', t.faq.label);
         setText('#faq .section-title', t.faq.title);
