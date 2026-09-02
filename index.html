@@ -3084,6 +3084,50 @@
       text-align: center;
     }
 
+    .booking-demo-section {
+      background:
+        linear-gradient(180deg, rgba(5,10,17,0.98), rgba(7,16,24,0.98));
+      border-top: 1px solid rgba(208,164,102,0.12);
+      border-bottom: 1px solid rgba(208,164,102,0.12);
+    }
+
+    .booking-demo-section .section-inner {
+      max-width: 1040px;
+    }
+
+    .booking-demo-intro {
+      max-width: 720px;
+      margin: 0 auto 32px;
+      text-align: center;
+    }
+
+    .booking-demo-intro .section-desc {
+      margin: 0 auto;
+    }
+
+    .booking-demo-note {
+      margin-top: 14px;
+      color: rgba(169,160,150,0.88);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .booking-demo-host {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: clip;
+    }
+
+    #costabots-booking {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    #costabots-booking iframe {
+      max-width: 100%;
+    }
+
     .faq-list {
       display: grid;
       gap: 12px;
@@ -3212,6 +3256,19 @@
       .pricing-setup-note {
         margin-top: 18px;
         text-align: left;
+      }
+
+      .booking-demo-intro {
+        margin-bottom: 24px;
+        text-align: left;
+      }
+
+      .booking-demo-intro .section-desc {
+        margin-left: 0;
+      }
+
+      .booking-demo-host {
+        overflow-x: hidden;
       }
     }
 
@@ -3528,6 +3585,22 @@
     </div>
   </div>
 
+  <!-- BOOKING DEMO -->
+  <section class="booking-demo-section" id="booking-demo">
+    <div class="section-inner">
+      <div class="booking-demo-intro">
+        <p class="section-label">DEMO INTERACTIVA</p>
+        <h2 class="section-title">Pruébalo tú mismo</h2>
+        <p class="section-desc">Haz una reserva de prueba y descubre cómo será la experiencia de tus clientes.</p>
+        <p class="booking-demo-note">Esta es una demostración. La reserva se registrará en nuestro entorno de prueba.</p>
+      </div>
+      <div class="booking-demo-host">
+        <div id="costabots-booking"></div>
+      </div>
+      <script src="https://booking.costabots.com/widget.js" data-slug="demo" data-theme="integrated"></script>
+    </div>
+  </section>
+
   <!-- PRECIOS -->
   <section class="pricing-section" id="precios">
     <div class="section-inner">
@@ -3541,7 +3614,7 @@
           <p class="price-period">/mes + IVA · por restaurante</p>
           <p class="pricing-description">Todo lo necesario para recibir y gestionar reservas desde una única plataforma.</p>
           <ul class="price-features">
-            <li><span class="price-feature-copy"><span>Widget de reservas integrado en tu web</span><span class="feature-status">Próximamente</span></span></li>
+            <li><span class="price-feature-copy"><span>Widget de reservas integrado en tu web</span><span class="feature-status">Disponible</span></span></li>
             <li><span class="price-feature-copy">COSTABOTS Manager</span></li>
             <li><span class="price-feature-copy">Gestión de disponibilidad y horarios</span></li>
             <li><span class="price-feature-copy">Reservas manuales y walk-ins</span></li>
@@ -3743,6 +3816,12 @@
             ],
             note: 'Credenciales y detalles técnicos disponibles bajo solicitud para mantener una experiencia limpia.'
           },
+          bookingDemo: {
+            label: 'DEMO INTERACTIVA',
+            title: 'Pruébalo tú mismo',
+            desc: 'Haz una reserva de prueba y descubre cómo será la experiencia de tus clientes.',
+            note: 'Esta es una demostración. La reserva se registrará en nuestro entorno de prueba.'
+          },
           assistantModal: {
             aria: 'Demo del asistente para clientes',
             close: 'Cerrar demo',
@@ -3764,7 +3843,7 @@
             period: '/mes + IVA · por restaurante',
             description: 'Todo lo necesario para recibir y gestionar reservas desde una única plataforma.',
             features: ['Widget de reservas integrado en tu web', 'COSTABOTS Manager', 'Gestión de disponibilidad y horarios', 'Reservas manuales y walk-ins', 'Confirmaciones y cancelaciones', 'Historial básico de clientes', 'Soporte y actualizaciones'],
-            status: 'Próximamente',
+            status: 'Disponible',
             demoCta: 'Solicitar una demo',
             customLabel: 'PARA OPERATIVAS MÁS COMPLEJAS',
             customTitle: 'Hoteles, grupos y servicios especiales',
@@ -3886,6 +3965,12 @@
             ],
             note: 'Credentials and technical details are available on request to keep the experience clean.'
           },
+          bookingDemo: {
+            label: 'INTERACTIVE DEMO',
+            title: 'Try it yourself',
+            desc: 'Make a test booking and discover the experience your guests will have.',
+            note: 'This is a demonstration. The booking will be recorded in our test environment.'
+          },
           assistantModal: {
             aria: 'Guest assistant demo',
             close: 'Close demo',
@@ -3907,7 +3992,7 @@
             period: '/month + VAT · per restaurant',
             description: 'Everything you need to receive and manage reservations from one platform.',
             features: ['Booking widget embedded in your website', 'COSTABOTS Manager', 'Availability and schedule management', 'Manual bookings and walk-ins', 'Confirmations and cancellations', 'Basic guest history', 'Support and updates'],
-            status: 'Coming soon',
+            status: 'Available',
             demoCta: 'Request a demo',
             customLabel: 'FOR MORE COMPLEX OPERATIONS',
             customTitle: 'Hotels, groups and special services',
@@ -4106,6 +4191,11 @@
         setText('#demo .section-desc', t.demo.desc);
         setPairCards('#demo .demo-choice-card', t.demo.cards);
         setText('.demo-private-note', t.demo.note);
+
+        setText('#booking-demo .section-label', t.bookingDemo.label);
+        setText('#booking-demo .section-title', t.bookingDemo.title);
+        setText('#booking-demo .section-desc', t.bookingDemo.desc);
+        setText('.booking-demo-note', t.bookingDemo.note);
 
         setAttr('.assistant-modal-dialog', 'aria-label', t.assistantModal.aria);
         setAttr('.assistant-modal-close', 'aria-label', t.assistantModal.close);
