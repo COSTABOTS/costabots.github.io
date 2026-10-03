@@ -1,9 +1,10 @@
-const CACHE_NAME = 'costabots-card-v1';
+const CACHE_NAME = 'costabots-card-v2';
 const ASSETS = [
   './',
   './index.html',
   './manifest.webmanifest',
   './qr.svg',
+  './card.webp',
   '../public/brand/icon-192.png',
   '../public/brand/icon-512.png',
   '../public/brand/costabots-logo.png'
