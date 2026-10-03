@@ -1,6 +1,6 @@
 {
-  "name": "COSTABOTS",
-  "short_name": "COSTABOTS",
+  "name": "Tarjeta COSTABOTS",
+  "short_name": "Tarjeta",
   "description": "Tu restaurante, conectado.",
   "start_url": "/tarjeta/",
   "scope": "/tarjeta/",
