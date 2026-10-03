@@ -3363,7 +3363,41 @@
       .featured-clients { grid-template-columns: 1fr; }
       .chat-option-inner { grid-template-columns: 1fr; gap: 18px; padding: 22px; }
       .chat-option .btn-secondary { width: 100%; text-align: center; }
+
+      .experience-showcase { padding: 70px 0; }
+      .experience-showcase__intro { text-align: left; }
+      .experience-showcase__actions .btn-primary { width: 100%; text-align: center; }
+      .experience-showcase__grid { grid-template-columns: 1fr; }
+      .experience-showcase__preview { min-height: 240px; }
     }
+
+    .experience-showcase {
+      padding: 96px 0;
+      background: linear-gradient(180deg, #071018 0%, #0a1720 52%, #071018 100%);
+      border-top: 1px solid rgba(208,164,102,.14);
+      border-bottom: 1px solid rgba(208,164,102,.14);
+    }
+    .experience-showcase__inner { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .experience-showcase__intro { max-width: 760px; margin: 0 auto 34px; text-align: center; }
+    .experience-showcase__intro .section-desc { margin: 0 auto; }
+    .experience-showcase__note { margin: 16px auto 0; color: rgba(242,238,231,.6); font-size: .87rem; line-height: 1.55; }
+    .experience-showcase__actions { display:flex; justify-content:center; margin-top:24px; }
+    .experience-showcase__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .experience-showcase__card { overflow:hidden; border:1px solid rgba(208,164,102,.2); border-radius:16px; background:#0b151d; box-shadow:0 18px 46px rgba(0,0,0,.18); }
+    .experience-showcase__preview { position:relative; min-height:265px; overflow:hidden; background:#101b22; }
+    .experience-showcase__preview iframe { position:absolute; inset:0; width:100%; height:100%; border:0; pointer-events:none; background:#fff; }
+    .experience-showcase__preview--capture { background:#101b22; }
+    .experience-showcase__preview--capture img { width:100%; height:100%; object-fit:cover; object-position:center; }
+    .experience-showcase__preview--manager img { width:100%; height:100%; object-fit:cover; object-position:center; }
+    .experience-showcase__preview--messages { display:grid; place-items:center; padding:24px; background:linear-gradient(145deg,#e7f0ec,#d6e5df); }
+    .experience-showcase__message { width:min(290px,100%); padding:16px; border-radius:12px; background:#fff; color:#173235; box-shadow:0 10px 26px rgba(22,57,51,.16); font-size:.78rem; line-height:1.45; }
+    .experience-showcase__message-head { display:flex; align-items:center; gap:9px; margin-bottom:12px; color:#075e54; font-weight:700; }
+    .experience-showcase__message-head img { width:28px; height:28px; border-radius:50%; object-fit:contain; }
+    .experience-showcase__message strong { display:block; margin-bottom:5px; }
+    .experience-showcase__copy { padding:20px 22px 22px; }
+    .experience-showcase__copy h3 { margin:0 0 7px; color:var(--cb-ivory); font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:500; }
+    .experience-showcase__copy p { margin:0; color:var(--cb-text-muted); font-size:.93rem; line-height:1.55; }
+    .experience-showcase__tag { display:block; margin-bottom:8px; color:var(--cb-bronze-light); font-size:.68rem; font-weight:700; letter-spacing:.13em; }
 
   </style>
 </head>
@@ -3388,11 +3422,11 @@
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link-primary" href="#booking-demo">Demo</a>
+        <a class="nav-link-primary" href="#experience">Experience</a>
         <div class="nav-dropdown">
-          <a href="#booking-demo">Probar Booking</a>
-          <a href="#booking-demo" data-assistant-demo-open>Probar Assistant</a>
-          <a href="#booking-demo" data-manager-demo-open>Probar Manager</a>
+          <a href="#experience">Widget Bruma</a>
+          <a href="#experience">Bruma Assistant</a>
+          <a href="#experience">Manager Demo</a>
         </div>
       </div>
       <div class="nav-item">
@@ -3441,10 +3475,10 @@
         <a href="#producto">Manager</a>
       </div>
       <div class="mobile-menu-group">
-        <span class="mobile-menu-heading">Demo</span>
-        <a href="#booking-demo">Probar Booking</a>
-        <a href="#booking-demo" data-assistant-demo-open>Probar Assistant</a>
-        <a href="#booking-demo" data-manager-demo-open>Probar Manager</a>
+        <span class="mobile-menu-heading">Experience</span>
+        <a href="#experience">Widget Bruma</a>
+        <a href="#experience">Bruma Assistant</a>
+        <a href="#experience">Manager Demo</a>
       </div>
       <div class="mobile-menu-group">
         <span class="mobile-menu-heading">Configuraciones</span>
@@ -3481,7 +3515,7 @@
           Booking, Assistant y Manager trabajan sobre un mismo sistema para que tus clientes reserven fácilmente y tu equipo gestione toda la operativa desde un único lugar.
         </p>
         <div class="hero-actions">
-          <a href="#booking-demo" class="btn-primary">Probar la demo</a>
+          <a href="/experience/" class="btn-primary">Probar COSTABOTS Experience</a>
           <a href="https://wa.me/34951963176?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20CostaBots%20para%20mi%20negocio." class="btn-secondary">Hablar con nosotros</a>
         </div>
         <p class="hero-note">Diseñado para simplificar el trabajo diario de los equipos de hospitality.</p>
@@ -3498,12 +3532,30 @@
     </div>
   </div>
 
+  <section class="experience-showcase" id="experience" aria-labelledby="experience-title">
+    <div class="experience-showcase__inner">
+      <div class="experience-showcase__intro">
+        <p class="section-label">COSTABOTS EXPERIENCE</p>
+        <h2 class="section-title" id="experience-title">Descubre COSTABOTS en funcionamiento.</h2>
+        <p class="section-desc">Recorre una reserva, conversa con el Assistant, conoce el seguimiento automático y mira cómo llega todo al equipo.</p>
+        <p class="experience-showcase__note">La demostración utiliza BRUMA, un restaurante ficticio creado exclusivamente para mostrar el funcionamiento de COSTABOTS.</p>
+        <div class="experience-showcase__actions"><a class="btn-primary" href="/experience/">Probar COSTABOTS Experience</a></div>
+      </div>
+      <div class="experience-showcase__grid">
+        <article class="experience-showcase__card"><div class="experience-showcase__preview experience-showcase__preview--capture"><img src="public/site/experience/bruma-widget.webp" alt="Widget real de reservas de Bruma con calendario" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">WIDGET · BRUMA</span><h3>Reserva de demostración</h3><p>El visitante puede realizar una reserva de prueba desde la web de Bruma.</p></div></article>
+        <article class="experience-showcase__card"><div class="experience-showcase__preview experience-showcase__preview--capture"><img src="public/site/experience/bruma-assistant.webp" alt="Bruma Assistant real" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">ASSISTANT · BRUMA</span><h3>Assistant real</h3><p>Una experiencia guiada real para informar y acompañar la reserva.</p></div></article>
+        <article class="experience-showcase__card"><div class="experience-showcase__preview experience-showcase__preview--manager"><img src="public/site/experience/manager-demo.webp" alt="Vista real de COSTABOTS Manager Demo" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">MANAGER DEMO</span><h3>Operativa centralizada</h3><p>Las reservas llegan a Manager Demo para que el equipo gestione el servicio.</p></div></article>
+        <article class="experience-showcase__card"><div class="experience-showcase__preview experience-showcase__preview--messages"><div class="experience-showcase__message"><div class="experience-showcase__message-head"><img src="https://assets.costabots.com/logos/logo_bruma.png" alt="Bruma">Bruma · automático</div><strong>Tu reserva ha sido confirmada.</strong>Confirmación, recordatorio y solicitud de valoración: el recorrido que se puede explorar en COSTABOTS Experience.</div></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">AUTOMATIZACIONES</span><h3>Seguimiento y satisfacción</h3><p>Confirmación, recordatorio, feedback y resultados diferenciados en una simulación fiel.</p></div></article>
+      </div>
+    </div>
+  </section>
+
   <!-- PRODUCTOS -->
   <section id="producto">
     <div class="section-inner">
       <p class="section-label">UN SISTEMA CONECTADO</p>
       <h2 class="section-title">Booking, Assistant y Manager</h2>
-      <p class="section-desc">Cada experiencia resuelve una parte del recorrido y comparte la misma operativa.</p>
+      <p class="section-desc">Cada experiencia resuelve una parte del recorrido y comparte la misma operativa. Las automatizaciones de WhatsApp mantienen informado al cliente antes y después de la visita.</p>
       <div class="features-grid compact-grid intro-grid">
         <div class="feature-card">
           <div class="feature-icon">01</div>
@@ -3563,6 +3615,8 @@
 
   <!-- TESTIMONIAL ARCHIVADO: retirado para reducir scroll. Recuperable en outputs/costabots_web_before_simplification.html. -->
 
+  <!-- Interactive product demos live in /experience/; the commercial homepage stays lightweight. -->
+  <!--
   <div class="assistant-modal" aria-hidden="true">
     <div class="assistant-modal-backdrop" data-assistant-demo-close></div>
     <div class="assistant-modal-dialog" role="dialog" aria-modal="true" aria-label="Demo del asistente para clientes">
@@ -3619,7 +3673,7 @@
     </div>
   </div>
 
-  <!-- BOOKING DEMO -->
+  BOOKING DEMO (retirado: disponible en /experience/)
   <section class="booking-demo-section" id="booking-demo">
     <div class="section-inner">
       <div class="booking-demo-intro">
@@ -3654,6 +3708,7 @@
       </div>
     </div>
   </section>
+  -->
 
   <!-- CONFIGURACIONES -->
   <section class="clients" id="configuraciones">
@@ -3826,10 +3881,10 @@
             locale: 'es_ES'
           },
           nav: {
-            items: ['Producto', 'Demo', 'Configuraciones', 'Precios', 'Contacto'],
+            items: ['Producto', 'Experience', 'Configuraciones', 'Precios', 'Contacto'],
             dropdowns: {
               product: ['Booking', 'Assistant', 'Manager'],
-              solutions: ['Probar Booking', 'Probar Assistant', 'Probar Manager'],
+              solutions: ['Widget Bruma', 'Bruma Assistant', 'Manager Demo'],
               cases: ['Safari Restaurant', 'Grand Italia', 'ZAC\'S']
             },
             whatsapp: 'Hablar con nosotros',
@@ -3842,8 +3897,8 @@
           },
           hero: {
             badge: 'COSTABOTS HOSPITALITY',
-            title: 'Reservas, atenci\u00f3n al cliente y operativa.<br>Todo conectado.',
-            subtitle: 'Booking, Assistant y Manager trabajan sobre un mismo sistema para que tus clientes reserven f\u00e1cilmente y tu equipo gestione toda la operativa desde un \u00fanico lugar.',
+            title: 'Menos gesti\u00f3n.<br>M\u00e1s tiempo para tus clientes.',
+            subtitle: 'Automatiza tus reservas, centraliza la operativa de tu establecimiento y mejora la comunicaci\u00f3n con tus clientes desde una sola plataforma.',
             note: 'Dise\u00f1ado para simplificar el trabajo diario de los equipos de hospitality.',
             managerAria: 'Vista de COSTABOTS Manager',
             imageAlt: 'Vista de COSTABOTS Manager gestionando reservas y ocupaci\u00f3n de un restaurante',
@@ -3852,7 +3907,7 @@
             soundOn: 'Activar sonido',
             soundOff: 'Silenciar video',
             fullVideo: 'Ver v\u00eddeo completo',
-            demo: 'Probar la demo',
+            demo: 'Probar COSTABOTS Experience',
             meeting: 'Hablar con nosotros'
           },
           videoModal: {
@@ -3862,7 +3917,7 @@
           product: {
             label: 'UN SISTEMA CONECTADO',
             title: 'Booking, Assistant y Manager',
-            desc: 'Cada experiencia resuelve una parte del recorrido y comparte la misma operativa.',
+            desc: 'Cada experiencia resuelve una parte del recorrido y comparte la misma operativa. Las automatizaciones de WhatsApp mantienen informado al cliente antes y después de la visita.',
             cards: [
               ['Booking', 'Widget de reservas integrado en tu web. Disponibilidad, horarios y confirmaci\u00f3n sin sacar al cliente de tu p\u00e1gina.'],
               ['Assistant', 'Experiencia guiada para resolver consultas, mostrar servicios y acompa\u00f1ar al cliente durante su reserva.'],
@@ -3998,10 +4053,10 @@
             locale: 'en_US'
           },
           nav: {
-            items: ['Product', 'Demo', 'Configurations', 'Pricing', 'Contact'],
+            items: ['Product', 'Experience', 'Configurations', 'Pricing', 'Contact'],
             dropdowns: {
               product: ['Booking', 'Assistant', 'Manager'],
-              solutions: ['Try Booking', 'Try Assistant', 'Try Manager'],
+              solutions: ['Bruma Widget', 'Bruma Assistant', 'Manager Demo'],
               cases: ['Safari Restaurant', 'Grand Italia', 'ZAC\'S']
             },
             whatsapp: 'Talk to us',
@@ -4014,8 +4069,8 @@
           },
           hero: {
             badge: 'COSTABOTS HOSPITALITY',
-            title: 'Bookings, guest service and operations.<br>All connected.',
-            subtitle: 'Booking, Assistant and Manager work on one system, making it easy for guests to book and for your team to manage daily operations in one place.',
+            title: 'Less admin.<br>More time for your guests.',
+            subtitle: 'Automate bookings, centralize your venue operations and improve guest communication from one platform.',
             note: 'Designed to simplify the daily work of hospitality teams.',
             managerAria: 'COSTABOTS Manager preview',
             imageAlt: 'COSTABOTS Manager displaying restaurant bookings and occupancy',
@@ -4024,7 +4079,7 @@
             soundOn: 'Turn sound on',
             soundOff: 'Mute video',
             fullVideo: 'Watch full video',
-            demo: 'Try the demo',
+            demo: 'Try COSTABOTS Experience',
             meeting: 'Talk to us'
           },
           videoModal: {
@@ -4034,7 +4089,7 @@
           product: {
             label: 'ONE CONNECTED SYSTEM',
             title: 'Booking, Assistant and Manager',
-            desc: 'Each experience handles one part of the journey while sharing the same operation.',
+            desc: 'Each experience handles one part of the journey while sharing the same operation. WhatsApp automations keep guests informed before and after their visit.',
             cards: [
               ['Booking', 'A booking widget embedded in your website, with availability, times and confirmation without sending guests elsewhere.'],
               ['Assistant', 'A guided experience that answers questions, presents services and supports guests throughout their booking.'],
