@@ -3382,22 +3382,31 @@
     .experience-showcase__intro .section-desc { margin: 0 auto; }
     .experience-showcase__note { margin: 16px auto 0; color: rgba(242,238,231,.6); font-size: .87rem; line-height: 1.55; }
     .experience-showcase__actions { display:flex; justify-content:center; margin-top:24px; }
-    .experience-showcase__grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
-    .experience-showcase__card { overflow:hidden; border:1px solid rgba(208,164,102,.2); border-radius:16px; background:#0b151d; box-shadow:0 18px 46px rgba(0,0,0,.18); }
-    .experience-showcase__preview { position:relative; min-height:265px; overflow:hidden; background:#101b22; }
-    .experience-showcase__preview iframe { position:absolute; inset:0; width:100%; height:100%; border:0; pointer-events:none; background:#fff; }
-    .experience-showcase__preview--capture { background:#101b22; }
-    .experience-showcase__preview--capture img { width:100%; height:100%; object-fit:cover; object-position:center; }
-    .experience-showcase__preview--manager img { width:100%; height:100%; object-fit:cover; object-position:center; }
-    .experience-showcase__preview--messages { display:grid; place-items:center; padding:24px; background:linear-gradient(145deg,#e7f0ec,#d6e5df); }
-    .experience-showcase__message { width:min(290px,100%); padding:16px; border-radius:12px; background:#fff; color:#173235; box-shadow:0 10px 26px rgba(22,57,51,.16); font-size:.78rem; line-height:1.45; }
-    .experience-showcase__message-head { display:flex; align-items:center; gap:9px; margin-bottom:12px; color:#075e54; font-weight:700; }
-    .experience-showcase__message-head img { width:28px; height:28px; border-radius:50%; object-fit:contain; }
-    .experience-showcase__message strong { display:block; margin-bottom:5px; }
-    .experience-showcase__copy { padding:20px 22px 22px; }
-    .experience-showcase__copy h3 { margin:0 0 7px; color:var(--cb-ivory); font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:500; }
-    .experience-showcase__copy p { margin:0; color:var(--cb-text-muted); font-size:.93rem; line-height:1.55; }
+    .experience-showcase__grid { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:clamp(22px,3vw,38px); align-items:center; }
+    .experience-showcase__item { min-width:0; }
+    .experience-showcase__item--booking,.experience-showcase__item--manager { grid-column:span 7; }
+    .experience-showcase__item--assistant,.experience-showcase__item--automation { grid-column:span 5; }
+    .experience-showcase__copy { padding:18px 0 0; }
+    .experience-showcase__copy h3 { margin:0 0 6px; color:var(--cb-ivory); font-family:'Cormorant Garamond',serif; font-size:clamp(1.55rem,2.4vw,2rem); font-weight:500; }
+    .experience-showcase__copy p { margin:0; color:var(--cb-text-muted); font-size:.92rem; line-height:1.55; }
     .experience-showcase__tag { display:block; margin-bottom:8px; color:var(--cb-bronze-light); font-size:.68rem; font-weight:700; letter-spacing:.13em; }
+    .experience-device { position:relative; overflow:hidden; background:#071018; box-shadow:0 28px 64px rgba(0,0,0,.42),0 0 0 1px rgba(208,164,102,.18); }
+    .experience-browser { aspect-ratio:16/9; padding:31px 10px 10px; border-radius:16px; }
+    .experience-browser:before { content:""; position:absolute; top:0; left:0; right:0; height:31px; background:#13232f; border-bottom:1px solid rgba(208,164,102,.19); }
+    .experience-browser:after { content:"●  ●  ●"; position:absolute; top:9px; left:13px; color:#d0a466; font-size:8px; letter-spacing:4px; }
+    .experience-browser img { display:block; width:100%; height:100%; object-fit:cover; object-position:center top; }
+    .experience-phone { width:min(100%,284px); margin:auto; padding:10px; border:8px solid #101d27; border-radius:34px; background:#101d27; box-shadow:0 28px 64px rgba(0,0,0,.42),0 0 0 1px rgba(208,164,102,.25); }
+    .experience-phone:before { content:""; display:block; width:86px; height:18px; margin:-10px auto 8px; border-radius:0 0 12px 12px; background:#101d27; position:relative; z-index:1; }
+    .experience-phone img { display:block; width:100%; aspect-ratio:9/13; object-fit:cover; object-position:center top; border-radius:21px; }
+    .experience-tablet { padding:14px; border:9px solid #192935; border-radius:22px; background:#192935; }
+    .experience-tablet img { display:block; width:100%; aspect-ratio:16/10; object-fit:cover; object-position:center top; border-radius:5px; }
+    .automation-stage { position:relative; min-height:285px; padding:28px; border:1px solid rgba(208,164,102,.2); border-radius:16px; background:radial-gradient(circle at 18% 12%,rgba(88,161,159,.2),transparent 36%),#0a1720; overflow:hidden; }
+    .automation-stage:before { content:"MANAGER"; position:absolute; right:18px; bottom:16px; color:rgba(208,164,102,.22); font-size:.65rem; font-weight:800; letter-spacing:.18em; }
+    .automation-notice { position:relative; z-index:1; width:min(100%,325px); padding:15px; border-radius:13px; background:#edf5f0; color:#143733; box-shadow:0 18px 38px rgba(0,0,0,.28); font-size:.82rem; line-height:1.5; }
+    .automation-notice__head { display:flex; align-items:center; gap:9px; margin-bottom:9px; color:#075e54; font-weight:800; }
+    .automation-notice__head:before { content:""; width:9px; height:9px; border-radius:50%; background:#25d366; box-shadow:0 0 0 4px rgba(37,211,102,.16); }
+    .automation-notice small { display:block; margin-top:12px; color:#5e736d; font-size:.67rem; }
+    @media (max-width:767px) { .experience-showcase { padding:70px 0; } .experience-showcase__inner { width:min(100% - 32px,1160px); } .experience-showcase__grid { grid-template-columns:1fr; gap:34px; } .experience-showcase__item { grid-column:auto; } .experience-showcase__item--assistant { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:20px; align-items:center; } .experience-showcase__item--assistant .experience-showcase__copy { padding:0; } .experience-browser { aspect-ratio:1.35/1; } .automation-stage { min-height:240px; } }
 
   </style>
 </head>
@@ -3542,10 +3551,10 @@
         <div class="experience-showcase__actions"><a class="btn-primary" href="/experience/">Probar COSTABOTS Experience</a></div>
       </div>
       <div class="experience-showcase__grid">
-        <article class="experience-showcase__card"><div class="experience-showcase__preview experience-showcase__preview--capture"><img src="public/site/experience/bruma-widget.webp" alt="Widget real de reservas de Bruma con calendario" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">WIDGET · BRUMA</span><h3>Reserva de demostración</h3><p>El visitante puede realizar una reserva de prueba desde la web de Bruma.</p></div></article>
-        <article class="experience-showcase__card"><div class="experience-showcase__preview experience-showcase__preview--capture"><img src="public/site/experience/bruma-assistant.webp" alt="Bruma Assistant real" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">ASSISTANT · BRUMA</span><h3>Assistant real</h3><p>Una experiencia guiada real para informar y acompañar la reserva.</p></div></article>
-        <article class="experience-showcase__card"><div class="experience-showcase__preview experience-showcase__preview--manager"><img src="public/site/experience/manager-demo.webp" alt="Vista real de COSTABOTS Manager Demo" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">MANAGER DEMO</span><h3>Operativa centralizada</h3><p>Las reservas llegan a Manager Demo para que el equipo gestione el servicio.</p></div></article>
-        <article class="experience-showcase__card"><div class="experience-showcase__preview experience-showcase__preview--messages"><div class="experience-showcase__message"><div class="experience-showcase__message-head"><img src="https://assets.costabots.com/logos/logo_bruma.png" alt="Bruma">Bruma · automático</div><strong>Tu reserva ha sido confirmada.</strong>Confirmación, recordatorio y solicitud de valoración: el recorrido que se puede explorar en COSTABOTS Experience.</div></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">AUTOMATIZACIONES</span><h3>Seguimiento y satisfacción</h3><p>Confirmación, recordatorio, feedback y resultados diferenciados en una simulación fiel.</p></div></article>
+        <article class="experience-showcase__item experience-showcase__item--booking"><div class="experience-device experience-browser"><img src="public/site/experience/bruma-widget.webp" alt="Widget real de reservas de Bruma con calendario" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">WIDGET · BRUMA</span><h3>Reservas en tu propia web</h3><p>Una ventana de reserva real integrada en la experiencia de Bruma.</p></div></article>
+        <article class="experience-showcase__item experience-showcase__item--assistant"><div class="experience-phone"><img src="public/site/experience/bruma-assistant.webp" alt="Interfaz real de Bruma Assistant" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">ASSISTANT · BRUMA</span><h3>Una conversación que acompaña</h3><p>El Assistant real informa, guía y puede llevar la reserva a Manager.</p></div></article>
+        <article class="experience-showcase__item experience-showcase__item--manager"><div class="experience-device experience-tablet"><img src="public/site/experience/manager-demo.webp" alt="Captura real de la interfaz de COSTABOTS Manager Demo" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">COSTABOTS Manager</span><h3>La operativa, en un solo lugar</h3><p>La experiencia de Bruma permite explorar cómo las reservas llegan a Manager. La captura conserva datos del entorno mostrado.</p></div></article>
+        <article class="experience-showcase__item experience-showcase__item--automation"><div class="automation-stage"><div class="automation-notice"><div class="automation-notice__head">Bruma · mensaje automático</div>🍽️ <strong>Bruma</strong><br><br>✅ Tu reserva ha sido confirmada.<br><br>¡Te esperamos!<br><br>Bruma<small>SIMULACIÓN ILUSTRATIVA · Fragmento de la plantilla real. No se envían mensajes desde esta vista.</small></div></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">AUTOMATIZACIONES</span><h3>Seguimiento conectado a la operación</h3><p>Descubre el recorrido completo de comunicación y satisfacción dentro de Experience.</p></div></article>
       </div>
     </div>
   </section>
