@@ -15,7 +15,7 @@
 
   <!-- SEO Primary -->
   <title>COSTABOTS Hospitality | Reservas, atención y operaciones</title>
-  <meta name="description" content="Conecta reservas, atención al cliente y operaciones con Booking, Assistant y Manager para restaurantes, hoteles, resorts y beach clubs.">
+  <meta name="description" content="Conecta reservas y operaciones con COSTABOTS Widget, COSTABOTS Assistant y COSTABOTS Manager para restaurantes, hoteles, resorts y beach clubs.">
   <meta name="author" content="COSTABOTS">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#050A11">
@@ -55,7 +55,7 @@
         "name": "COSTABOTS",
         "url": "https://costabots.com/",
         "logo": "https://costabots.com/public/brand/costabots-logo.png",
-        "description": "Conecta reservas, atención al cliente y operaciones con Booking, Assistant y Manager para restaurantes, hoteles, resorts y beach clubs."
+        "description": "Conecta reservas y operaciones con COSTABOTS Widget, COSTABOTS Assistant y COSTABOTS Manager para restaurantes, hoteles, resorts y beach clubs."
       },
       {
         "@type": "WebSite",
@@ -2975,20 +2975,61 @@
     }
 
     .pricing-offer {
-      display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
-      gap: 22px;
-      align-items: stretch;
+      display: block;
       margin-top: 38px;
     }
 
     .pricing-main-card {
-      padding: 38px 36px;
+      padding: 42px 40px;
+      border-color: rgba(208,164,102,0.34);
+    }
+
+    .pricing-standard-price {
+      margin: 0 0 8px;
+      color: rgba(242,238,231,0.54);
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .pricing-launch-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      gap: 10px 16px;
+    }
+
+    .pricing-main-card .price-amount {
+      margin: 0;
+      color: var(--cb-ivory);
+      font-size: clamp(3.8rem, 8vw, 5.5rem);
+      line-height: 0.88;
+    }
+
+    .pricing-main-card .price-period {
+      max-width: 210px;
+      margin: 0 0 5px;
+      color: rgba(242,238,231,0.7);
+      line-height: 1.5;
+    }
+
+    .pricing-launch-badge {
+      display: inline-flex;
+      margin-top: 20px;
+      padding: 7px 11px;
+      border: 1px solid rgba(208,164,102,0.32);
+      border-radius: 999px;
+      color: var(--cb-bronze-light);
+      background: rgba(208,164,102,0.08);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      line-height: 1;
+      text-transform: uppercase;
     }
 
     .pricing-description {
       max-width: 560px;
-      margin: 16px 0 24px;
+      margin: 18px 0 24px;
       color: var(--cb-text-muted);
       line-height: 1.65;
     }
@@ -3014,65 +3055,49 @@
       text-transform: uppercase;
     }
 
-    .pricing-main-card .btn-primary,
-    .pricing-custom .btn-secondary {
+    .pricing-main-card .btn-primary {
       display: block;
       width: 100%;
       text-align: center;
     }
 
+    .pricing-reassurance {
+      margin: 12px 0 0;
+      color: rgba(242,238,231,0.58);
+      font-size: 0.78rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
     .pricing-custom {
-      display: flex;
-      flex-direction: column;
-      padding: 34px 30px;
-      border: 1px solid rgba(208,164,102,0.2);
-      border-radius: var(--radius-card);
-      background: rgba(17,25,35,0.82);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      margin-top: 18px;
+      padding: 24px 26px;
+      border: 1px solid rgba(208,164,102,0.14);
+      border-radius: 14px;
+      background: rgba(17,25,35,0.48);
     }
 
     .pricing-custom h3 {
-      margin: 10px 0 14px;
+      margin: 0 0 6px;
       color: var(--cb-ivory);
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-size: clamp(1.45rem, 2.5vw, 1.85rem);
       font-weight: 400;
-      line-height: 1.05;
+      line-height: 1.1;
     }
 
-    .pricing-custom > p:not(.price-label) {
+    .pricing-custom p {
+      margin: 0;
       color: var(--cb-text-muted);
       line-height: 1.65;
     }
 
-    .pricing-custom-list {
-      display: grid;
-      gap: 10px;
-      margin: 22px 0 28px;
-      padding: 0;
-      list-style: none;
-    }
-
-    .pricing-custom-list li {
-      position: relative;
-      padding-left: 17px;
-      color: rgba(242,238,231,0.76);
-      font-size: 0.88rem;
-      line-height: 1.45;
-    }
-
-    .pricing-custom-list li::before {
-      content: '';
-      position: absolute;
-      top: 0.62em;
-      left: 0;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--cb-bronze-light);
-    }
-
     .pricing-custom .btn-secondary {
-      margin-top: auto;
+      white-space: nowrap;
     }
 
     .pricing-setup-note {
@@ -3330,7 +3355,7 @@
       }
 
       .pricing-main-card .price-amount {
-        font-size: 2.75rem;
+        font-size: clamp(3.3rem, 17vw, 4.25rem);
       }
 
       .pricing-description {
@@ -3340,6 +3365,16 @@
       .pricing-setup-note {
         margin-top: 18px;
         text-align: left;
+      }
+
+      .pricing-custom {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .pricing-custom .btn-secondary {
+        width: 100%;
+        text-align: center;
       }
 
       .booking-demo-intro {
@@ -3425,17 +3460,17 @@
       <div class="nav-item">
         <a class="nav-link-primary" href="#producto">Producto</a>
         <div class="nav-dropdown">
-          <a href="#producto">Booking</a>
-          <a href="#producto">Assistant</a>
-          <a href="#producto">Manager</a>
+          <a href="#producto">COSTABOTS Widget</a>
+          <a href="#producto">COSTABOTS Assistant</a>
+          <a href="#producto">COSTABOTS Manager</a>
         </div>
       </div>
       <div class="nav-item">
         <a class="nav-link-primary" href="#experience">Experience</a>
         <div class="nav-dropdown">
-          <a href="#experience">Widget Bruma</a>
-          <a href="#experience">Bruma Assistant</a>
-          <a href="#experience">Manager Demo</a>
+          <a href="#experience">COSTABOTS Widget</a>
+          <a href="#experience">COSTABOTS Assistant</a>
+          <a href="#experience">COSTABOTS Manager</a>
         </div>
       </div>
       <div class="nav-item">
@@ -3479,15 +3514,15 @@
     <div class="mobile-menu-panel">
       <div class="mobile-menu-group">
         <span class="mobile-menu-heading">Producto</span>
-        <a href="#producto">Booking</a>
-        <a href="#producto">Assistant</a>
-        <a href="#producto">Manager</a>
+        <a href="#producto">COSTABOTS Widget</a>
+        <a href="#producto">COSTABOTS Assistant</a>
+        <a href="#producto">COSTABOTS Manager</a>
       </div>
       <div class="mobile-menu-group">
         <span class="mobile-menu-heading">Experience</span>
-        <a href="#experience">Widget Bruma</a>
-        <a href="#experience">Bruma Assistant</a>
-        <a href="#experience">Manager Demo</a>
+        <a href="#experience">COSTABOTS Widget</a>
+        <a href="#experience">COSTABOTS Assistant</a>
+        <a href="#experience">COSTABOTS Manager</a>
       </div>
       <div class="mobile-menu-group">
         <span class="mobile-menu-heading">Configuraciones</span>
@@ -3521,7 +3556,7 @@
         <span class="hero-badge">COSTABOTS HOSPITALITY</span>
         <h1>Reservas, atención al cliente y operativa.<br>Todo conectado.</h1>
         <p class="hero-sub">
-          Booking, Assistant y Manager trabajan sobre un mismo sistema para que tus clientes reserven fácilmente y tu equipo gestione toda la operativa desde un único lugar.
+          COSTABOTS Widget, COSTABOTS Assistant y COSTABOTS Manager trabajan sobre un mismo sistema para que tus clientes reserven fácilmente y tu equipo gestione toda la operativa desde un único lugar.
         </p>
         <div class="hero-actions">
           <a href="/experience/" class="btn-primary">Probar COSTABOTS Experience</a>
@@ -3546,14 +3581,14 @@
       <div class="experience-showcase__intro">
         <p class="section-label">COSTABOTS EXPERIENCE</p>
         <h2 class="section-title" id="experience-title">Descubre COSTABOTS en funcionamiento.</h2>
-        <p class="section-desc">Recorre una reserva, conversa con el Assistant, conoce el seguimiento automático y mira cómo llega todo al equipo.</p>
+        <p class="section-desc">Recorre una reserva con COSTABOTS Widget o COSTABOTS Assistant, conoce el seguimiento automático y mira cómo llega todo al equipo.</p>
         <p class="experience-showcase__note">La demostración utiliza BRUMA, un restaurante ficticio creado exclusivamente para mostrar el funcionamiento de COSTABOTS.</p>
         <div class="experience-showcase__actions"><a class="btn-primary" href="/experience/">Probar COSTABOTS Experience</a></div>
       </div>
       <div class="experience-showcase__grid">
-        <article class="experience-showcase__item experience-showcase__item--booking"><div class="experience-device experience-browser"><img src="public/site/experience/bruma-widget.webp" alt="Widget real de reservas de Bruma con calendario" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">WIDGET · BRUMA</span><h3>Reservas en tu propia web</h3><p>Una ventana de reserva real integrada en la experiencia de Bruma.</p></div></article>
-        <article class="experience-showcase__item experience-showcase__item--assistant"><div class="experience-phone"><img src="public/site/experience/bruma-assistant.webp" alt="Interfaz real de Bruma Assistant" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">ASSISTANT · BRUMA</span><h3>Una conversación que acompaña</h3><p>El Assistant real informa, guía y puede llevar la reserva a Manager.</p></div></article>
-        <article class="experience-showcase__item experience-showcase__item--manager"><div class="experience-device experience-tablet"><img src="public/site/experience/manager-demo.webp" alt="Captura real de la interfaz de COSTABOTS Manager Demo" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">COSTABOTS Manager</span><h3>La operativa, en un solo lugar</h3><p>La experiencia de Bruma permite explorar cómo las reservas llegan a Manager. La captura conserva datos del entorno mostrado.</p></div></article>
+        <article class="experience-showcase__item experience-showcase__item--booking"><div class="experience-device experience-browser"><img src="public/site/experience/bruma-widget.webp" alt="COSTABOTS Widget integrado en la web ficticia de Bruma" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">COSTABOTS WIDGET · BRUMA DEMO</span><h3>Reservas en tu propia web</h3><p>COSTABOTS Widget integrado en la web ficticia de Bruma.</p></div></article>
+        <article class="experience-showcase__item experience-showcase__item--assistant"><div class="experience-phone"><img src="public/site/experience/bruma-assistant.webp" alt="COSTABOTS Assistant configurado para el restaurante ficticio Bruma" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">COSTABOTS ASSISTANT · BRUMA DEMO</span><h3>Otra forma de reservar</h3><p>Un recorrido independiente y guiado que utiliza la misma disponibilidad y registra la reserva en COSTABOTS Manager.</p></div></article>
+        <article class="experience-showcase__item experience-showcase__item--manager"><div class="experience-device experience-tablet"><img src="public/site/experience/manager-demo.webp" alt="COSTABOTS Manager en el entorno de demostración" loading="lazy" decoding="async"></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">COSTABOTS MANAGER · BRUMA DEMO</span><h3>La operativa, en un solo lugar</h3><p>La demostración con Bruma permite explorar cómo las reservas llegan a COSTABOTS Manager. La captura conserva datos del entorno mostrado.</p></div></article>
         <article class="experience-showcase__item experience-showcase__item--automation"><div class="automation-stage"><div class="automation-notice"><div class="automation-notice__head">Bruma · mensaje automático</div>🍽️ <strong>Bruma</strong><br><br>✅ Tu reserva ha sido confirmada.<br><br>¡Te esperamos!<br><br>Bruma<small>SIMULACIÓN ILUSTRATIVA · Fragmento de la plantilla real. No se envían mensajes desde esta vista.</small></div></div><div class="experience-showcase__copy"><span class="experience-showcase__tag">AUTOMATIZACIONES</span><h3>Seguimiento conectado a la operación</h3><p>Descubre el recorrido completo de comunicación y satisfacción dentro de Experience.</p></div></article>
       </div>
     </div>
@@ -3563,22 +3598,22 @@
   <section id="producto">
     <div class="section-inner">
       <p class="section-label">UN SISTEMA CONECTADO</p>
-      <h2 class="section-title">Booking, Assistant y Manager</h2>
+      <h2 class="section-title">Widget, Assistant y Manager</h2>
       <p class="section-desc">Cada experiencia resuelve una parte del recorrido y comparte la misma operativa. Las automatizaciones de WhatsApp mantienen informado al cliente antes y después de la visita.</p>
       <div class="features-grid compact-grid intro-grid">
         <div class="feature-card">
           <div class="feature-icon">01</div>
-          <h3>Booking</h3>
-          <p>Widget de reservas integrado en tu web. Disponibilidad, horarios y confirmación sin sacar al cliente de tu página.</p>
+          <h3>COSTABOTS Widget</h3>
+          <p>Sistema de reservas integrado en tu web. Disponibilidad, horarios y confirmación sin sacar al cliente de tu página.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">02</div>
-          <h3>Assistant</h3>
-          <p>Experiencia guiada para resolver consultas, mostrar servicios y acompañar al cliente durante su reserva.</p>
+          <h3>COSTABOTS Assistant</h3>
+          <p>Interfaz independiente y guiada para realizar reservas con la misma disponibilidad y el mismo COSTABOTS Manager.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">03</div>
-          <h3>Manager</h3>
+          <h3>COSTABOTS Manager</h3>
           <p>Panel operativo para gestionar reservas, mesas, walk-ins, disponibilidad, llegadas y feedback.</p>
         </div>
       </div>
@@ -3592,7 +3627,7 @@
       <div class="connected-experience__copy">
         <p class="section-label">CÓMO SE CONECTAN</p>
         <h2 class="section-title">Del cliente al equipo, en tiempo real</h2>
-        <p class="section-desc">Una reserva realizada desde la web o Assistant llega directamente a Manager, donde el equipo controla disponibilidad, mesas, llegadas y seguimiento.</p>
+        <p class="section-desc">Una reserva realizada desde la web con COSTABOTS Widget o desde COSTABOTS Assistant llega directamente a COSTABOTS Manager, donde el equipo controla disponibilidad, mesas, llegadas y seguimiento.</p>
       </div>
 
       <figure class="connected-experience__visual">
@@ -3760,42 +3795,40 @@
   <!-- PRECIOS -->
   <section class="pricing-section" id="precios">
     <div class="section-inner">
-      <p class="section-label">COSTABOTS HOSPITALITY</p>
-      <h2 class="section-title">Un sistema de reservas sencillo, completo y adaptado a tu negocio</h2>
-      <p class="section-desc">Empieza con lo esencial y amplía la solución cuando lo necesites.</p>
+      <p class="section-label">PRECIOS</p>
+      <h2 class="section-title">Todo COSTABOTS desde el primer día</h2>
       <div class="pricing-offer">
         <div class="price-card featured pricing-main-card">
-          <p class="price-label">PLAN BASE</p>
-          <p class="price-amount">Desde 99 €</p>
-          <p class="price-period">/mes + IVA · por restaurante</p>
-          <p class="pricing-description">Todo lo necesario para recibir y gestionar reservas desde una única plataforma.</p>
+          <p class="pricing-standard-price">PRECIO ESTÁNDAR</p>
+          <div class="pricing-launch-row">
+            <p class="price-amount">59,99 €</p>
+            <p class="price-period">/mes + IVA · por establecimiento</p>
+          </div>
+          <p class="pricing-launch-badge">CONDICIONES DE LANZAMIENTO</p>
+          <p class="pricing-description">Estamos incorporando nuestros primeros establecimientos con condiciones especiales de lanzamiento.</p>
           <ul class="price-features">
-            <li><span class="price-feature-copy"><span>Widget de reservas integrado en tu web</span><span class="feature-status">Disponible</span></span></li>
+            <li><span class="price-feature-copy">Reservas integradas en tu web</span></li>
             <li><span class="price-feature-copy">COSTABOTS Manager</span></li>
+            <li><span class="price-feature-copy">COSTABOTS Assistant</span></li>
             <li><span class="price-feature-copy">Gestión de disponibilidad y horarios</span></li>
             <li><span class="price-feature-copy">Reservas manuales y walk-ins</span></li>
+            <li><span class="price-feature-copy">Gestión de mesas y operativa</span></li>
             <li><span class="price-feature-copy">Confirmaciones y cancelaciones</span></li>
-            <li><span class="price-feature-copy">Historial básico de clientes</span></li>
+            <li><span class="price-feature-copy">Alta y configuración inicial estándar</span></li>
             <li><span class="price-feature-copy">Soporte y actualizaciones</span></li>
           </ul>
-          <a href="https://wa.me/34645147925?text=Hola!%20Quiero%20una%20demo%20de%20CostaBots%20para%20mi%20restaurante." class="btn-primary">Solicitar una demo</a>
+          <a href="https://wa.me/34645147925?text=Hola!%20Quiero%20una%20demo%20de%20CostaBots%20para%20mi%20restaurante." class="btn-primary">Consultar condiciones</a>
+          <p class="pricing-reassurance">Sin permanencia · Configuración estándar incluida</p>
         </div>
         <div class="pricing-custom">
-          <p class="price-label">OPCIONES CONFIGURABLES</p>
-          <h3>Assistant, WhatsApp y configuraciones especiales</h3>
-          <p>Añade experiencias y capacidades según las necesidades reales de tu operativa.</p>
-          <ul class="pricing-custom-list">
-            <li>Assistant para información y servicios</li>
-            <li>Chat conversacional adaptado al negocio</li>
-            <li>WhatsApp como canal adicional</li>
-            <li>Varios restaurantes o locales</li>
-            <li>Balinesas y otros recursos reservables</li>
-            <li>Integraciones y formación personalizada</li>
-          </ul>
-          <a href="https://wa.me/34645147925?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20CostaBots%20para%20mi%20negocio." class="btn-secondary">Solicitar propuesta</a>
+          <div>
+            <h3>¿Necesitas una configuración especial?</h3>
+            <p>Para grupos, varios establecimientos, recursos reservables o integraciones específicas, preparamos una configuración adaptada al negocio.</p>
+          </div>
+          <a href="https://wa.me/34645147925?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20CostaBots%20para%20mi%20negocio." class="btn-secondary">Hablar con nosotros</a>
         </div>
       </div>
-      <p class="pricing-setup-note">La configuración inicial se valora según las necesidades del negocio. En proyectos estándar puede estar incluida en la propuesta.</p>
+      <p class="pricing-setup-note">El alta y la configuración inicial estándar están incluidas. Los proyectos con integraciones o configuraciones especiales se valoran aparte.</p>
     </div>
   </section>
 
@@ -3806,20 +3839,20 @@
       <h2 class="section-title">Lo importante antes de probarlo</h2>
       <div class="faq-list">
         <div class="faq-item">
-          <h4>¿Hay coste de configuración inicial?</h4>
-          <p>Depende de las necesidades del negocio, el número de servicios y las integraciones necesarias. En proyectos estándar, la configuración puede estar incluida en la propuesta.</p>
+          <h4>¿Qué incluye COSTABOTS?</h4>
+          <p>Incluye reservas integradas en tu web, COSTABOTS Manager, COSTABOTS Assistant, gestión de disponibilidad y horarios, reservas manuales y walk-ins, gestión de mesas y operativa, confirmaciones y cancelaciones, soporte y actualizaciones.</p>
         </div>
         <div class="faq-item">
-          <h4>¿El precio es por restaurante?</h4>
-          <p>El plan base parte de 99 € al mes por restaurante. Para hoteles, grupos o varios locales preparamos una propuesta conjunta.</p>
+          <h4>¿Cuál es el precio por restaurante?</h4>
+          <p>El precio estándar es de 59,99 €/mes + IVA por establecimiento. Actualmente existen condiciones especiales para los primeros establecimientos, que pueden consultarse contactando con COSTABOTS. Sin permanencia.</p>
         </div>
         <div class="faq-item">
-          <h4>¿Puedo añadir Assistant o WhatsApp?</h4>
-          <p>Sí. Se configuran como opciones adicionales según los servicios y canales que necesite cada negocio.</p>
+          <h4>¿Cómo funciona WhatsApp?</h4>
+          <p>Las automatizaciones y configuraciones específicas de WhatsApp pueden adaptarse según las necesidades del establecimiento.</p>
         </div>
         <div class="faq-item">
-          <h4>¿Qué incluye el soporte mensual?</h4>
-          <p>Mantenimiento técnico, ajustes operativos, soporte y mejoras progresivas según el uso real del restaurante.</p>
+          <h4>¿Qué ocurre si necesito una configuración especial?</h4>
+          <p>Los grupos, varios establecimientos, recursos reservables o integraciones específicas pueden requerir una propuesta personalizada.</p>
         </div>
       </div>
       <a class="faq-more-link" href="mailto:costabots.sol@gmail.com?subject=Preguntas%20sobre%20CostaBots">Ver todas las preguntas</a>
@@ -3886,7 +3919,7 @@
         es: {
           meta: {
             title: 'COSTABOTS Hospitality | Reservas, atención y operaciones',
-            description: 'Conecta reservas, atención al cliente y operaciones con Booking, Assistant y Manager para restaurantes, hoteles, resorts y beach clubs.',
+            description: 'Conecta reservas y operaciones con COSTABOTS Widget, COSTABOTS Assistant y COSTABOTS Manager para restaurantes, hoteles, resorts y beach clubs.',
             ogTitle: 'COSTABOTS Hospitality | Reservas y operaciones conectadas',
             ogDescription: 'Centraliza reservas, atención al cliente y operaciones desde una única plataforma diseñada para hospitality.',
             locale: 'es_ES'
@@ -3894,8 +3927,8 @@
           nav: {
             items: ['Producto', 'Experience', 'Configuraciones', 'Precios', 'Contacto'],
             dropdowns: {
-              product: ['Booking', 'Assistant', 'Manager'],
-              solutions: ['Widget Bruma', 'Bruma Assistant', 'Manager Demo'],
+              product: ['COSTABOTS Widget', 'COSTABOTS Assistant', 'COSTABOTS Manager'],
+              solutions: ['COSTABOTS Widget', 'COSTABOTS Assistant', 'COSTABOTS Manager'],
               cases: ['Safari Restaurant', 'Grand Italia', 'ZAC\'S']
             },
             whatsapp: 'Hablar con nosotros',
@@ -3927,12 +3960,12 @@
           },
           product: {
             label: 'UN SISTEMA CONECTADO',
-            title: 'Booking, Assistant y Manager',
+            title: 'Widget, Assistant y Manager',
             desc: 'Cada experiencia resuelve una parte del recorrido y comparte la misma operativa. Las automatizaciones de WhatsApp mantienen informado al cliente antes y después de la visita.',
             cards: [
-              ['Booking', 'Widget de reservas integrado en tu web. Disponibilidad, horarios y confirmaci\u00f3n sin sacar al cliente de tu p\u00e1gina.'],
-              ['Assistant', 'Experiencia guiada para resolver consultas, mostrar servicios y acompa\u00f1ar al cliente durante su reserva.'],
-              ['Manager', 'Panel operativo para gestionar reservas, mesas, walk-ins, disponibilidad, llegadas y feedback.']
+              ['COSTABOTS Widget', 'Sistema de reservas integrado en tu web. Disponibilidad, horarios y confirmaci\u00f3n sin sacar al cliente de tu p\u00e1gina.'],
+              ['COSTABOTS Assistant', 'Una interfaz independiente y guiada para realizar reservas con la misma disponibilidad y el mismo COSTABOTS Manager.'],
+              ['COSTABOTS Manager', 'Panel operativo para gestionar reservas, mesas, walk-ins, disponibilidad, llegadas y feedback.']
             ],
             closing: 'Tres experiencias conectadas.<br>Una sola operativa.'
           },
@@ -3946,17 +3979,39 @@
             iframe: 'Demo conversacional de CostaBots Chat',
             openTab: 'Abrir en nueva pestaña'
           },
+          experienceShowcase: {
+            label: 'COSTABOTS EXPERIENCE',
+            title: 'Descubre COSTABOTS en funcionamiento.',
+            desc: 'Recorre una reserva con COSTABOTS Widget o COSTABOTS Assistant, conoce el seguimiento automático y mira cómo llega todo al equipo.',
+            note: 'La demostración utiliza BRUMA, un restaurante ficticio creado exclusivamente para mostrar el funcionamiento de COSTABOTS.',
+            cta: 'Probar COSTABOTS Experience',
+            widgetTag: 'COSTABOTS WIDGET · BRUMA DEMO',
+            widgetTitle: 'Reservas en tu propia web',
+            widgetText: 'COSTABOTS Widget integrado en la web ficticia de Bruma.',
+            widgetAlt: 'COSTABOTS Widget integrado en la web ficticia de Bruma',
+            assistantTag: 'COSTABOTS ASSISTANT · BRUMA DEMO',
+            assistantTitle: 'Otra forma de reservar',
+            assistantText: 'Un recorrido independiente y guiado que utiliza la misma disponibilidad y registra la reserva en COSTABOTS Manager.',
+            assistantAlt: 'COSTABOTS Assistant configurado para el restaurante ficticio Bruma',
+            managerTag: 'COSTABOTS MANAGER · BRUMA DEMO',
+            managerTitle: 'La operativa, en un solo lugar',
+            managerText: 'La demostración con Bruma permite explorar cómo las reservas llegan a COSTABOTS Manager. La captura conserva datos del entorno mostrado.',
+            managerAlt: 'COSTABOTS Manager en el entorno de demostración',
+            automationTag: 'AUTOMATIZACIONES',
+            automationTitle: 'Seguimiento conectado a la operación',
+            automationText: 'Descubre el recorrido completo de comunicación y satisfacción dentro de Experience.'
+          },
           experiences: {
             label: 'CÓMO SE CONECTAN',
             title: 'Del cliente al equipo, en tiempo real',
-            desc: 'Una reserva realizada desde la web o Assistant llega directamente a Manager, donde el equipo controla disponibilidad, mesas, llegadas y seguimiento.',
-            connector: 'Cliente \u2192 Booking / Assistant \u2192 COSTABOTS \u2192 Manager \u2192 Equipo',
-            assistantTitle: 'Asistente para el cliente',
-            assistantText: 'Atiende consultas, muestra informaci\u00f3n y permite reservar desde cualquier lugar, las 24 horas.',
-            assistantAria: 'Vista del asistente digital para clientes',
-            assistantVideo: 'Demostraci\u00f3n del asistente de reservas para clientes',
+            desc: 'Una reserva realizada desde la web con COSTABOTS Widget o desde COSTABOTS Assistant llega directamente a COSTABOTS Manager, donde el equipo controla disponibilidad, mesas, llegadas y seguimiento.',
+            connector: 'Cliente \u2192 COSTABOTS Widget / COSTABOTS Assistant \u2192 COSTABOTS Manager \u2192 Equipo',
+            assistantTitle: 'COSTABOTS Assistant para el cliente',
+            assistantText: 'Ofrece un recorrido independiente y guiado para realizar una reserva con la disponibilidad de COSTABOTS.',
+            assistantAria: 'Vista de COSTABOTS Assistant para clientes',
+            assistantVideo: 'Demostraci\u00f3n de COSTABOTS Assistant para clientes',
             videoFallback: 'Tu navegador no puede reproducir este v\u00eddeo.',
-            managerTitle: 'Manager para el equipo',
+            managerTitle: 'COSTABOTS Manager para el equipo',
             managerText: 'Centraliza reservas, disponibilidad, llegadas, ocupaci\u00f3n y peticiones especiales en una \u00fanica pantalla.',
             managerVideo: 'Demostraci\u00f3n de COSTABOTS Manager para el equipo'
           },
@@ -3965,9 +4020,9 @@
             title: 'Del QR al control de sala<br>en cuatro pasos',
             desc: 'Una experiencia clara para el cliente y una operación más ordenada para el equipo.',
             steps: [
-              ['QR', 'El cliente abre el asistente desde mesa, hamaca, web o habitación.'],
-              ['Reserva', 'Consulta carta, eventos y disponibilidad en una experiencia guiada.'],
-              ['Manager', 'El equipo recibe y gestiona reservas, llegadas, mesas y aforo.'],
+              ['QR', 'El cliente abre COSTABOTS Assistant desde mesa, hamaca, web o habitación.'],
+              ['Reserva', 'Selecciona fecha, servicio, hora y personas en un recorrido guiado.'],
+              ['COSTABOTS Manager', 'El equipo recibe y gestiona reservas, llegadas, mesas y aforo.'],
               ['Feedback', 'Las incidencias llegan de forma privada y accionable para el restaurante.']
             ]
           },
@@ -3984,10 +4039,10 @@
           demo: {
             label: 'Demo',
             title: 'Prueba las dos experiencias clave',
-            desc: 'El cliente usa el asistente desde el móvil. El equipo controla la operación desde CostaBots Manager.',
+            desc: 'El cliente usa COSTABOTS Assistant desde el móvil. El equipo controla la operación desde COSTABOTS Manager.',
             cards: [
-              ['Probar asistente', 'Carta, reservas, eventos y atención desde el móvil del cliente.'],
-              ['Probar Manager', 'Panel operativo para reservas, sala, aforo y seguimiento diario.']
+              ['Probar COSTABOTS Assistant', 'Recorrido guiado para realizar reservas desde el móvil del cliente.'],
+              ['Probar COSTABOTS Manager', 'Panel operativo para reservas, sala, aforo y seguimiento diario.']
             ],
             note: 'Credenciales y detalles técnicos disponibles bajo solicitud para mantener una experiencia limpia.'
           },
@@ -4020,31 +4075,29 @@
             openTab: 'Abrir Manager en pantalla completa'
           },
           pricing: {
-            label: 'COSTABOTS HOSPITALITY',
-            title: 'Un sistema de reservas sencillo, completo y adaptado a tu negocio',
-            subtitle: 'Empieza con lo esencial y amplía la solución cuando lo necesites.',
-            planLabel: 'PLAN BASE',
-            amount: 'Desde 99 €',
-            period: '/mes + IVA · por restaurante',
-            description: 'Todo lo necesario para recibir y gestionar reservas desde una única plataforma.',
-            features: ['Widget de reservas integrado en tu web', 'COSTABOTS Manager', 'Gestión de disponibilidad y horarios', 'Reservas manuales y walk-ins', 'Confirmaciones y cancelaciones', 'Historial básico de clientes', 'Soporte y actualizaciones'],
-            status: 'Disponible',
-            demoCta: 'Solicitar una demo',
-            customLabel: 'OPCIONES CONFIGURABLES',
-            customTitle: 'Assistant, WhatsApp y configuraciones especiales',
-            customText: 'Añade experiencias y capacidades según las necesidades reales de tu operativa.',
-            customFeatures: ['Assistant para información y servicios', 'Chat conversacional adaptado al negocio', 'WhatsApp como canal adicional', 'Varios restaurantes o locales', 'Balinesas y otros recursos reservables', 'Integraciones y formación personalizada'],
-            customCta: 'Solicitar propuesta',
-            setupNote: 'La configuración inicial se valora según las necesidades del negocio. En proyectos estándar puede estar incluida en la propuesta.'
+            label: 'PRECIOS',
+            title: 'Todo COSTABOTS desde el primer día',
+            priceLabel: 'PRECIO ESTÁNDAR',
+            amount: '59,99 €',
+            period: '/mes + IVA · por establecimiento',
+            launchBadge: 'CONDICIONES DE LANZAMIENTO',
+            description: 'Estamos incorporando nuestros primeros establecimientos con condiciones especiales de lanzamiento.',
+            features: ['Reservas integradas en tu web', 'COSTABOTS Manager', 'COSTABOTS Assistant', 'Gestión de disponibilidad y horarios', 'Reservas manuales y walk-ins', 'Gestión de mesas y operativa', 'Confirmaciones y cancelaciones', 'Alta y configuración inicial estándar', 'Soporte y actualizaciones'],
+            demoCta: 'Consultar condiciones',
+            reassurance: 'Sin permanencia · Configuración estándar incluida',
+            customTitle: '¿Necesitas una configuración especial?',
+            customText: 'Para grupos, varios establecimientos, recursos reservables o integraciones específicas, preparamos una configuración adaptada al negocio.',
+            customCta: 'Hablar con nosotros',
+            setupNote: 'El alta y la configuración inicial estándar están incluidas. Los proyectos con integraciones o configuraciones especiales se valoran aparte.'
           },
           faq: {
             label: 'Preguntas frecuentes',
             title: 'Lo importante antes de probarlo',
             items: [
-              ['¿Hay coste de configuración inicial?', 'Depende de las necesidades del negocio, el número de servicios y las integraciones necesarias. En proyectos estándar, la configuración puede estar incluida en la propuesta.'],
-              ['¿El precio es por restaurante?', 'El plan base parte de 99 € al mes por restaurante. Para hoteles, grupos o varios locales preparamos una propuesta conjunta.'],
-              ['¿Puedo añadir Assistant o WhatsApp?', 'Sí. Se configuran como opciones adicionales según los servicios y canales que necesite cada negocio.'],
-              ['¿Qué incluye el soporte mensual?', 'Mantenimiento técnico, ajustes operativos, soporte y mejoras progresivas según el uso real del restaurante.']
+              ['¿Qué incluye COSTABOTS?', 'Incluye reservas integradas en tu web, COSTABOTS Manager, COSTABOTS Assistant, gestión de disponibilidad y horarios, reservas manuales y walk-ins, gestión de mesas y operativa, confirmaciones y cancelaciones, soporte y actualizaciones.'],
+              ['¿Cuál es el precio por establecimiento?', 'El precio estándar es de 59,99 €/mes + IVA por establecimiento. Actualmente existen condiciones especiales para los primeros establecimientos, que pueden consultarse contactando con COSTABOTS. Sin permanencia.'],
+              ['¿Cómo funciona WhatsApp?', 'Las automatizaciones y configuraciones específicas de WhatsApp pueden adaptarse según las necesidades del establecimiento.'],
+              ['¿Qué ocurre si necesito una configuración especial?', 'Los grupos, varios establecimientos, recursos reservables o integraciones específicas pueden requerir una propuesta personalizada.']
             ],
             more: 'Ver todas las preguntas'
           },
@@ -4058,7 +4111,7 @@
         en: {
           meta: {
             title: 'COSTABOTS Hospitality | Bookings, guest service and operations',
-            description: 'Connect bookings, guest service and operations with Booking, Assistant and Manager for restaurants, hotels, resorts and beach clubs.',
+            description: 'Connect bookings and operations with COSTABOTS Widget, COSTABOTS Assistant and COSTABOTS Manager for restaurants, hotels, resorts and beach clubs.',
             ogTitle: 'COSTABOTS Hospitality | Connected bookings and operations',
             ogDescription: 'Centralize bookings, guest service and operations from one platform designed for hospitality.',
             locale: 'en_US'
@@ -4066,8 +4119,8 @@
           nav: {
             items: ['Product', 'Experience', 'Configurations', 'Pricing', 'Contact'],
             dropdowns: {
-              product: ['Booking', 'Assistant', 'Manager'],
-              solutions: ['Bruma Widget', 'Bruma Assistant', 'Manager Demo'],
+              product: ['COSTABOTS Widget', 'COSTABOTS Assistant', 'COSTABOTS Manager'],
+              solutions: ['COSTABOTS Widget', 'COSTABOTS Assistant', 'COSTABOTS Manager'],
               cases: ['Safari Restaurant', 'Grand Italia', 'ZAC\'S']
             },
             whatsapp: 'Talk to us',
@@ -4099,12 +4152,12 @@
           },
           product: {
             label: 'ONE CONNECTED SYSTEM',
-            title: 'Booking, Assistant and Manager',
+            title: 'Widget, Assistant and Manager',
             desc: 'Each experience handles one part of the journey while sharing the same operation. WhatsApp automations keep guests informed before and after their visit.',
             cards: [
-              ['Booking', 'A booking widget embedded in your website, with availability, times and confirmation without sending guests elsewhere.'],
-              ['Assistant', 'A guided experience that answers questions, presents services and supports guests throughout their booking.'],
-              ['Manager', 'An operations panel for bookings, tables, walk-ins, availability, arrivals and feedback.']
+              ['COSTABOTS Widget', 'A booking system embedded in your website, with availability, times and confirmation without sending guests elsewhere.'],
+              ['COSTABOTS Assistant', 'An independent, guided interface for making reservations with the same availability and the same COSTABOTS Manager.'],
+              ['COSTABOTS Manager', 'An operations panel for bookings, tables, walk-ins, availability, arrivals and feedback.']
             ],
             closing: 'Three connected experiences.<br>One operation.'
           },
@@ -4118,17 +4171,39 @@
             iframe: 'CostaBots Chat conversational demo',
             openTab: 'Open in new tab'
           },
+          experienceShowcase: {
+            label: 'COSTABOTS EXPERIENCE',
+            title: 'See COSTABOTS in action.',
+            desc: 'Make a reservation with COSTABOTS Widget or COSTABOTS Assistant, explore the automated follow-up and see how everything reaches the team.',
+            note: 'The demonstration uses BRUMA, a fictional restaurant created exclusively to show how COSTABOTS works.',
+            cta: 'Try COSTABOTS Experience',
+            widgetTag: 'COSTABOTS WIDGET · BRUMA DEMO',
+            widgetTitle: 'Bookings on your own website',
+            widgetText: 'COSTABOTS Widget embedded in Bruma’s fictional website.',
+            widgetAlt: 'COSTABOTS Widget embedded in Bruma’s fictional website',
+            assistantTag: 'COSTABOTS ASSISTANT · BRUMA DEMO',
+            assistantTitle: 'Another way to book',
+            assistantText: 'An independent, guided journey that uses the same availability and records the reservation in COSTABOTS Manager.',
+            assistantAlt: 'COSTABOTS Assistant configured for the fictional restaurant Bruma',
+            managerTag: 'COSTABOTS MANAGER · BRUMA DEMO',
+            managerTitle: 'Operations in one place',
+            managerText: 'The Bruma demonstration shows how bookings reach COSTABOTS Manager. The screenshot preserves data from the displayed demo environment.',
+            managerAlt: 'COSTABOTS Manager in the demo environment',
+            automationTag: 'AUTOMATIONS',
+            automationTitle: 'Follow-up connected to operations',
+            automationText: 'Explore the complete communication and guest satisfaction journey within Experience.'
+          },
           experiences: {
             label: 'HOW THEY CONNECT',
             title: 'From guest to team, in real time',
-            desc: 'A booking made on the website or through Assistant goes directly to Manager, where the team controls availability, tables, arrivals and follow-up.',
-            connector: 'Guest \u2192 Booking / Assistant \u2192 COSTABOTS \u2192 Manager \u2192 Team',
-            assistantTitle: 'Guest assistant',
-            assistantText: 'Answers questions, provides information and lets guests book from anywhere, 24/7.',
-            assistantAria: 'Guest assistant mobile preview',
-            assistantVideo: 'Guest booking assistant demonstration',
+            desc: 'A booking made on the website with COSTABOTS Widget or through COSTABOTS Assistant goes directly to COSTABOTS Manager, where the team controls availability, tables, arrivals and follow-up.',
+            connector: 'Guest \u2192 COSTABOTS Widget / COSTABOTS Assistant \u2192 COSTABOTS Manager \u2192 Team',
+            assistantTitle: 'COSTABOTS Assistant for guests',
+            assistantText: 'Provides an independent, guided journey for making a reservation with COSTABOTS availability.',
+            assistantAria: 'COSTABOTS Assistant mobile preview',
+            assistantVideo: 'COSTABOTS Assistant booking demonstration',
             videoFallback: 'Your browser cannot play this video.',
-            managerTitle: 'Manager for the team',
+            managerTitle: 'COSTABOTS Manager for the team',
             managerText: 'Centralizes bookings, availability, arrivals, occupancy and special requests in one screen.',
             managerVideo: 'COSTABOTS Manager demonstration for the team'
           },
@@ -4137,9 +4212,9 @@
             title: 'From QR to service control<br>in four steps',
             desc: 'A clear experience for guests and a more organized workflow for your team.',
             steps: [
-              ['QR', 'Guests open the assistant from the table, sunbed, website or room.'],
-              ['Reservation', 'They check the menu, events and availability through a guided experience.'],
-              ['Manager', 'Your team receives and manages reservations, arrivals, tables and capacity.'],
+              ['QR', 'Guests open COSTABOTS Assistant from the table, sunbed, website or room.'],
+              ['Reservation', 'They select the date, service, time and party size through a guided journey.'],
+              ['COSTABOTS Manager', 'Your team receives and manages reservations, arrivals, tables and capacity.'],
               ['Feedback', 'Issues arrive privately and in a way your restaurant can act on.']
             ]
           },
@@ -4156,10 +4231,10 @@
           demo: {
             label: 'Demo',
             title: 'Try the two core experiences',
-            desc: 'Guests use the assistant on mobile. Your team controls operations from CostaBots Manager.',
+            desc: 'Guests use COSTABOTS Assistant on mobile. Your team controls operations from COSTABOTS Manager.',
             cards: [
-              ['Try assistant', 'Menu, reservations, events and service from the guest’s phone.'],
-              ['Try Manager', 'Operational panel for reservations, service, capacity and daily follow-up.']
+              ['Try COSTABOTS Assistant', 'A guided journey for making reservations from the guest’s phone.'],
+              ['Try COSTABOTS Manager', 'Operational panel for reservations, service, capacity and daily follow-up.']
             ],
             note: 'Credentials and technical details are available on request to keep the experience clean.'
           },
@@ -4192,31 +4267,29 @@
             openTab: 'Open Manager full screen'
           },
           pricing: {
-            label: 'COSTABOTS HOSPITALITY',
-            title: 'A simple, complete reservation system adapted to your business',
-            subtitle: 'Start with the essentials and expand the solution when you need it.',
-            planLabel: 'BASE PLAN',
-            amount: 'From €99',
-            period: '/month + VAT · per restaurant',
-            description: 'Everything you need to receive and manage reservations from one platform.',
-            features: ['Booking widget embedded in your website', 'COSTABOTS Manager', 'Availability and schedule management', 'Manual bookings and walk-ins', 'Confirmations and cancellations', 'Basic guest history', 'Support and updates'],
-            status: 'Available',
-            demoCta: 'Request a demo',
-            customLabel: 'CONFIGURABLE OPTIONS',
-            customTitle: 'Assistant, WhatsApp and special configurations',
-            customText: 'Add experiences and capabilities according to the real needs of your operation.',
-            customFeatures: ['Assistant for information and services', 'Conversational Chat adapted to the business', 'WhatsApp as an additional channel', 'Multiple restaurants or venues', 'Daybeds and other bookable resources', 'Integrations and custom training'],
-            customCta: 'Request a proposal',
-            setupNote: 'Initial setup is assessed according to the needs of the business. For standard projects, it may be included in the proposal.'
+            label: 'PRICING',
+            title: 'Everything in COSTABOTS from day one',
+            priceLabel: 'STANDARD PRICE',
+            amount: '€59.99',
+            period: '/month + VAT · per venue',
+            launchBadge: 'LAUNCH CONDITIONS',
+            description: 'We are onboarding our first venues with special launch conditions.',
+            features: ['Bookings embedded in your website', 'COSTABOTS Manager', 'COSTABOTS Assistant', 'Availability and schedule management', 'Manual bookings and walk-ins', 'Table and operations management', 'Confirmations and cancellations', 'Standard onboarding and setup', 'Support and updates'],
+            demoCta: 'Ask about launch conditions',
+            reassurance: 'No long-term commitment · Standard setup included',
+            customTitle: 'Need a tailored configuration?',
+            customText: 'For groups, multiple venues, bookable resources or specific integrations, we prepare a configuration tailored to your business.',
+            customCta: 'Talk to us',
+            setupNote: 'Standard onboarding and initial setup are included. Projects requiring integrations or special configurations are quoted separately.'
           },
           faq: {
             label: 'FAQ',
             title: 'What matters before you try it',
             items: [
-              ['Is there an initial setup cost?', 'It depends on the needs of the business, the number of services and the integrations required. For standard projects, setup may be included in the proposal.'],
-              ['Is the price per restaurant?', 'The base plan starts at €99 per month per restaurant. For hotels, groups or multiple venues, we prepare a combined proposal.'],
-              ['Can I add Assistant or WhatsApp?', 'Yes. They are configured as additional options according to the services and channels each business needs.'],
-              ['What does monthly support include?', 'Technical maintenance, operational adjustments, support and progressive improvements based on real restaurant usage.']
+              ['What is included with COSTABOTS?', 'It includes bookings embedded in your website, COSTABOTS Manager, COSTABOTS Assistant, availability and schedule management, manual bookings and walk-ins, table and operations management, confirmations and cancellations, support and updates.'],
+              ['What is the price per venue?', 'The standard price is €59.99/month + VAT per venue. Special conditions are currently available for the first venues and can be discussed by contacting COSTABOTS. There is no long-term commitment.'],
+              ['How does WhatsApp work?', 'WhatsApp automations and specific configurations can be adapted to the needs of each venue.'],
+              ['What if I need a tailored configuration?', 'Groups, multiple venues, bookable resources or specific integrations may require a tailored proposal.']
             ],
             more: 'See all questions'
           },
@@ -4280,21 +4353,20 @@
       };
 
       const setPricing = (copy) => {
-        setText('.pricing-main-card .price-label', copy.planLabel);
+        setText('.pricing-standard-price', copy.priceLabel);
         setText('.pricing-main-card .price-amount', copy.amount);
         setText('.pricing-main-card .price-period', copy.period);
+        setText('.pricing-launch-badge', copy.launchBadge);
         setText('.pricing-description', copy.description);
         document.querySelectorAll('.pricing-main-card .price-feature-copy').forEach((element, index) => {
           const featureText = element.querySelector('span:first-child') || element;
           featureText.textContent = copy.features[index];
         });
-        setText('.feature-status', copy.status);
         setText('.pricing-main-card .btn-primary', copy.demoCta);
-        setText('.pricing-custom .price-label', copy.customLabel);
         setText('.pricing-custom h3', copy.customTitle);
-        setText('.pricing-custom > p:not(.price-label)', copy.customText);
-        setList('.pricing-custom-list li', copy.customFeatures);
+        setText('.pricing-custom p', copy.customText);
         setText('.pricing-custom .btn-secondary', copy.customCta);
+        setText('.pricing-reassurance', copy.reassurance);
         setText('.pricing-setup-note', copy.setupNote);
       };
 
@@ -4386,6 +4458,27 @@
         setAttr('.chat-modal .assistant-phone-shell iframe', 'title', t.chat.iframe);
         setText('.chat-modal .assistant-modal-actions .btn-secondary', t.chat.openTab);
 
+        setText('.experience-showcase__intro .section-label', t.experienceShowcase.label);
+        setText('.experience-showcase__intro .section-title', t.experienceShowcase.title);
+        setText('.experience-showcase__intro .section-desc', t.experienceShowcase.desc);
+        setText('.experience-showcase__note', t.experienceShowcase.note);
+        setText('.experience-showcase__actions .btn-primary', t.experienceShowcase.cta);
+        setText('.experience-showcase__item--booking .experience-showcase__tag', t.experienceShowcase.widgetTag);
+        setText('.experience-showcase__item--booking h3', t.experienceShowcase.widgetTitle);
+        setText('.experience-showcase__item--booking .experience-showcase__copy p', t.experienceShowcase.widgetText);
+        setAttr('.experience-showcase__item--booking img', 'alt', t.experienceShowcase.widgetAlt);
+        setText('.experience-showcase__item--assistant .experience-showcase__tag', t.experienceShowcase.assistantTag);
+        setText('.experience-showcase__item--assistant h3', t.experienceShowcase.assistantTitle);
+        setText('.experience-showcase__item--assistant .experience-showcase__copy p', t.experienceShowcase.assistantText);
+        setAttr('.experience-showcase__item--assistant img', 'alt', t.experienceShowcase.assistantAlt);
+        setText('.experience-showcase__item--manager .experience-showcase__tag', t.experienceShowcase.managerTag);
+        setText('.experience-showcase__item--manager h3', t.experienceShowcase.managerTitle);
+        setText('.experience-showcase__item--manager .experience-showcase__copy p', t.experienceShowcase.managerText);
+        setAttr('.experience-showcase__item--manager img', 'alt', t.experienceShowcase.managerAlt);
+        setText('.experience-showcase__item--automation .experience-showcase__tag', t.experienceShowcase.automationTag);
+        setText('.experience-showcase__item--automation h3', t.experienceShowcase.automationTitle);
+        setText('.experience-showcase__item--automation .experience-showcase__copy p', t.experienceShowcase.automationText);
+
         setText('#como-funciona .section-label', t.experiences.label);
         setText('#como-funciona .section-title', t.experiences.title);
         setText('#como-funciona .section-desc', t.experiences.desc);
@@ -4427,7 +4520,6 @@
 
         setText('#precios .section-label', t.pricing.label);
         setHtml('#precios .section-title', t.pricing.title);
-        setText('#precios .section-desc', t.pricing.subtitle);
         setPricing(t.pricing);
 
         setText('#faq .section-label', t.faq.label);
