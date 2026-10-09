@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2F6F68">
+  <meta name="description" content="AURA by COSTABOTS es la recepcionista de WhatsApp con IA para peluquerías, barberías, uñas y estética.">
+  <link rel="canonical" href="https://costabots.com/aura/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="COSTABOTS">
+  <meta property="og:title" content="AURA by COSTABOTS | Tu recepcionista de WhatsApp con IA">
+  <meta property="og:description" content="Responde clientes, organiza citas y sigue el ritmo de tu negocio de belleza.">
+  <meta property="og:url" content="https://costabots.com/aura/">
+  <meta property="og:locale" content="es_ES">
+  <link rel="icon" href="/public/brand/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/public/brand/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <title>AURA by COSTABOTS | Tu recepcionista de WhatsApp con IA</title>
+  <style>
+    :root { --teal:#2F6F68; --teal-dark:#1d504b; --teal-pale:#e6f0ed; --cream:#faf8f3; --sand:#f1ede4; --ink:#18312e; --muted:#64726e; --white:#fff; --line:#d9e0da; --radius:22px; }
+    * { box-sizing:border-box; margin:0; }
+    html { scroll-behavior:smooth; }
+    body { color:var(--ink); background:var(--cream); font:400 16px/1.55 'DM Sans',sans-serif; overflow-x:hidden; }
+    a { color:inherit; text-decoration:none; }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline:3px solid #d39835; outline-offset:4px; border-radius:8px; }
+    .wrap { width:min(1140px,calc(100% - 40px)); margin:auto; }
+    .eyebrow { color:var(--teal); font-size:.75rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
+    h1,h2,h3 { letter-spacing:-.04em; line-height:1.04; }
+    h1,h2 { font-family:'Playfair Display',serif; }
+    h2 { font-size:clamp(2.3rem,5vw,4.35rem); max-width:760px; }
+    .section { padding:92px 0; }
+    .section-lead { margin:18px 0 42px; max-width:580px; color:var(--muted); font-size:1.1rem; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:0 23px; border:1px solid transparent; border-radius:999px; font-weight:700; transition:.2s ease; }
+    .button:hover { transform:translateY(-2px); }
+    .button-primary { color:white; background:var(--teal); box-shadow:0 10px 24px rgba(47,111,104,.2); }
+    .button-primary:hover { background:var(--teal-dark); }
+    .button-secondary { border-color:var(--line); background:#ffffffa8; }
+    .button-secondary:hover { border-color:var(--teal); color:var(--teal); }
+    header { position:relative; z-index:5; padding:20px 0; }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:flex; align-items:center; gap:10px; font-size:.77rem; font-weight:700; letter-spacing:.13em; }
+    .mark { display:grid; place-items:center; width:34px; height:34px; border-radius:11px; color:white; background:var(--teal); font-family:'Playfair Display',serif; font-size:1.35rem; letter-spacing:0; }
+    .nav-links { display:flex; align-items:center; gap:26px; color:#49605b; font-size:.9rem; font-weight:600; }
+    .nav-links a:hover { color:var(--teal); }
+    .nav-cta { min-height:42px; padding:0 17px; font-size:.86rem; }
+    .hero { position:relative; padding:58px 0 95px; background:radial-gradient(circle at 83% 25%,#d7e7df 0,transparent 25rem),linear-gradient(135deg,#f8f5ee,#eef4f0); overflow:hidden; }
+    .hero:after { content:''; position:absolute; right:-90px; bottom:-140px; width:410px; height:410px; border:1px solid #9fc3b8; border-radius:50%; opacity:.6; }
+    .hero-grid { position:relative; z-index:1; display:grid; grid-template-columns:1.05fr .82fr; align-items:center; gap:64px; }
+    .hero h1 { margin:13px 0 21px; max-width:670px; font-size:clamp(3.3rem,7vw,6.25rem); }
+    .hero h1 em { color:var(--teal); font-style:italic; }
+    .hero-copy { max-width:560px; color:#4f625e; font-size:clamp(1.05rem,2vw,1.22rem); }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:13px; margin-top:31px; }
+    .note { margin-top:17px; color:#6b7974; font-size:.83rem; }
+    .phone { position:relative; width:min(100%,350px); margin-left:auto; padding:12px; border:7px solid #193a35; border-radius:39px; background:#193a35; box-shadow:0 28px 55px #2e5f5540; }
+    .phone-top { width:106px; height:22px; margin:-2px auto 7px; border-radius:0 0 15px 15px; background:#193a35; }
+    .screen { min-height:493px; padding:18px 14px; border-radius:25px; background:#edf5f0; }
+    .chat-head { display:flex; align-items:center; gap:10px; padding:3px 4px 19px; font-size:.84rem; font-weight:700; }
+    .avatar { display:grid; place-items:center; width:34px; height:34px; border-radius:50%; color:white; background:var(--teal); font-family:'Playfair Display',serif; font-size:1.2rem; }
+    .online { display:block; color:#4d8a70; font-size:.66rem; font-weight:500; }
+    .bubble { width:max-content; max-width:88%; margin:10px 0; padding:11px 13px; border-radius:14px 14px 14px 4px; background:#fff; box-shadow:0 2px 8px #28594b0b; font-size:.8rem; }
+    .bubble.me { margin-left:auto; border-radius:14px 14px 4px 14px; color:white; background:var(--teal); }
+    .typing { margin-top:25px; color:#739087; font-size:.74rem; }
+    .dots { letter-spacing:3px; }
+    .mini-proof { display:flex; align-items:center; gap:11px; margin-top:23px; color:#61716d; font-size:.8rem; }
+    .mini-proof b { color:var(--teal); }
+    .proof-dot { width:8px; height:8px; border-radius:50%; background:#70a792; }
+    .pain { background:var(--ink); color:#f8f6ee; }
+    .pain .eyebrow { color:#a5d2c4; }
+    .pain h2 { margin-top:12px; }
+    .pain-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; margin-top:46px; }
+    .pain-card { min-height:205px; padding:27px; border:1px solid #ffffff1c; border-radius:var(--radius); background:#ffffff0a; }
+    .pain-icon { display:block; margin-bottom:35px; color:#a5d2c4; font-size:1.8rem; }
+    .pain-card h3 { font-size:1.35rem; }
+    .pain-card p { margin-top:10px; color:#c4d0cc; font-size:.94rem; }
+    .solution-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:65px; align-items:start; }
+    .check-list { display:grid; gap:4px; }
+    .check { display:flex; gap:14px; align-items:flex-start; padding:18px 0; border-bottom:1px solid var(--line); font-size:1.05rem; }
+    .check i { display:grid; flex:0 0 25px; place-items:center; width:25px; height:25px; border-radius:50%; color:white; background:var(--teal); font-size:.76rem; font-style:normal; }
+    .how { background:var(--sand); }
+    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .step { padding:25px 20px 24px; border-radius:18px; background:var(--cream); }
+    .step-n { color:var(--teal); font-size:.79rem; font-weight:700; letter-spacing:.1em; }
+    .step h3 { margin:27px 0 9px; font-size:1.17rem; }
+    .step p { color:var(--muted); font-size:.9rem; }
+    .features { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; }
+    .feature { min-height:166px; padding:24px; border:1px solid var(--line); border-radius:18px; background:white; }
+    .feature span { display:grid; place-items:center; width:36px; height:36px; border-radius:11px; background:var(--teal-pale); color:var(--teal); font-weight:700; }
+    .feature h3 { margin:25px 0 6px; font-size:1.12rem; }
+    .feature p { color:var(--muted); font-size:.88rem; }
+    .sectors { padding:70px 0; background:var(--teal); color:white; text-align:center; }
+    .sectors .eyebrow { color:#c5e4d8; }
+    .sectors h2 { margin:10px auto 31px; font-size:clamp(2rem,4vw,3.4rem); }
+    .sector-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
+    .sector-tags span { padding:10px 17px; border:1px solid #ffffff45; border-radius:999px; font-weight:600; }
+    .pricing { text-align:center; }
+    .pricing h2 { margin:12px auto 0; }
+    .price-card { width:min(100%,455px); margin:39px auto 0; padding:37px 30px 31px; border:1px solid #9ec7ba; border-radius:25px; background:linear-gradient(150deg,#eff7f2,#fff); box-shadow:0 20px 44px #2f6f6814; }
+    .founder-badge { display:inline-flex; align-items:center; justify-content:center; padding:8px 13px; border-radius:999px; color:#174b44; background:#c8e2d8; font-size:.76rem; font-weight:700; letter-spacing:.055em; text-transform:uppercase; }
+    .price-label { margin-top:19px; color:var(--teal); font-size:.84rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+    .price { margin:8px 0 3px; color:var(--teal); font:600 clamp(4.2rem,10vw,5.7rem)/1 'Playfair Display',serif; letter-spacing:-.07em; }
+    .price small { font:600 1.15rem 'DM Sans',sans-serif; letter-spacing:0; }
+    .price-card>p { color:var(--muted); font-size:.92rem; }
+    .standard { margin:20px 0 23px; padding-top:17px; border-top:1px solid var(--line); color:#52635f; font-size:.9rem; }
+    .standard b { color:var(--ink); }
+    .price-card .button { width:100%; }
+    .faq { background:var(--sand); }
+    .faq-grid { display:grid; grid-template-columns:.75fr 1.25fr; gap:74px; }
+    details { border-bottom:1px solid #cfd7d1; }
+    summary { display:flex; justify-content:space-between; gap:20px; padding:19px 0; list-style:none; cursor:pointer; font-weight:700; }
+    summary::-webkit-details-marker { display:none; }
+    summary:after { content:'+'; color:var(--teal); font-size:1.3rem; font-weight:400; }
+    details[open] summary:after { content:'–'; }
+    details p { max-width:690px; padding:0 30px 20px 0; color:var(--muted); font-size:.93rem; }
+    .final { padding:91px 0; color:white; background:var(--ink); text-align:center; }
+    .final .eyebrow { color:#a5d2c4; }
+    .final h2 { margin:10px auto 18px; }
+    .final p { max-width:510px; margin:0 auto 29px; color:#c4d0cc; }
+    .final .button-primary { background:#7fb7a7; color:#153b35; }
+    footer { padding:26px 0; color:#687772; background:var(--ink); border-top:1px solid #ffffff1a; font-size:.78rem; }
+    .footer-in { display:flex; justify-content:space-between; gap:15px; }
+    @media (max-width:800px) { .nav-links>a { display:none; } .hero { padding-top:32px; } .hero-grid,.solution-grid,.faq-grid { grid-template-columns:1fr; gap:40px; } .phone { margin:0 auto; } .pain-grid,.features { grid-template-columns:1fr 1fr; } .steps { grid-template-columns:1fr 1fr; } .section { padding:68px 0; } }
+    @media (max-width:520px) { .wrap { width:min(100% - 30px,1140px); } .nav .nav-cta { display:none; } .hero h1 { font-size:3.2rem; } .hero { padding-bottom:65px; } .pain-grid,.features,.steps { grid-template-columns:1fr; } .pain-card { min-height:0; } .price-card { padding:31px 21px 25px; } .footer-in { flex-direction:column; } }
+  </style>
+</head>
+<body>
+  <header class="wrap"><nav class="nav" aria-label="Navegación principal"><a class="brand" href="https://costabots.com/"><span class="mark">C</span> COSTABOTS</a><div class="nav-links"><a href="#como-funciona">Cómo funciona</a><a href="#funcionalidades">Funcionalidades</a><a href="#precio">Precio</a><a href="#faq">Preguntas</a></div><a class="button button-primary nav-cta" href="https://aura.costabots.com/signup" data-aura-signup>Empezar con AURA</a></nav></header>
+  <main>
+    <section class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">AURA by COSTABOTS</p><h1>Tu recepcionista de WhatsApp <em>con IA</em></h1><p class="hero-copy">AURA responde a tus clientes, organiza citas y ayuda a que tu negocio siga atendiendo mientras tú trabajas.</p><div class="hero-actions"><a class="button button-primary" href="https://aura.costabots.com/signup" data-aura-signup>Empezar con AURA</a><a class="button button-secondary" href="#como-funciona">Ver cómo funciona ↓</a></div><p class="note">Para peluquerías, barberías, uñas y estética · Sin permanencia</p></div><div class="phone" aria-label="Ejemplo de conversación atendida por AURA"><div class="phone-top"></div><div class="screen"><div class="chat-head"><span class="avatar">A</span><span>AURA <span class="online">en línea</span></span></div><div class="bubble me">Hola, ¿tenéis hueco para corte esta tarde?</div><div class="bubble">¡Hola, Marta! Sí, tengo disponibilidad hoy a las 17:30 y 18:15. ¿Qué hora te viene mejor?</div><div class="bubble me">A las 18:15, por favor.</div><div class="bubble">Perfecto ✨ He reservado tu cita de corte para hoy a las 18:15. Te esperamos.</div><p class="typing">AURA está atendiendo <span class="dots">•••</span></p></div></div></div></section>
+    <section class="section pain"><div class="wrap"><p class="eyebrow">El día a día</p><h2>Tu atención al cliente no debería competir con tu trabajo.</h2><div class="pain-grid"><article class="pain-card"><span class="pain-icon">⌁</span><h3>Mensajes mientras atiendes</h3><p>Responder WhatsApps entre citas interrumpe tu ritmo y el de tus clientes.</p></article><article class="pain-card"><span class="pain-icon">◷</span><h3>Fuera de horario</h3><p>Las preguntas y solicitudes llegan cuando ya has cerrado el negocio.</p></article><article class="pain-card"><span class="pain-icon">×</span><h3>Citas que se escapan</h3><p>Un mensaje sin respuesta puede ser una cita perdida para siempre.</p></article></div></div></section>
+    <section class="section"><div class="wrap solution-grid"><div><p class="eyebrow">La solución</p><h2>AURA atiende, tú decides.</h2><p class="section-lead">Una atención clara y cercana que conserva el contexto de cada conversación y te deja entrar cuando lo necesitas.</p></div><div class="check-list"><div class="check"><i>✓</i><span>Responde consultas de tus clientes al momento.</span></div><div class="check"><i>✓</i><span>Informa de servicios, precios y duración.</span></div><div class="check"><i>✓</i><span>Ofrece disponibilidad y crea citas.</span></div><div class="check"><i>✓</i><span>Recuerda el contexto de cada conversación.</span></div><div class="check"><i>✓</i><span>Te permite intervenir manualmente cuando hace falta.</span></div></div></div></section>
+    <section class="section how" id="como-funciona"><div class="wrap"><p class="eyebrow">Fácil de poner en marcha</p><h2>Empieza sin complicarte.</h2><p class="section-lead">Configura lo esencial y AURA estará preparada para atender por WhatsApp.</p><div class="steps"><article class="step"><p class="step-n">01</p><h3>Configura tu negocio</h3><p>Cuéntale a AURA cómo se llama tu centro y qué ofreces.</p></article><article class="step"><p class="step-n">02</p><h3>Añade tu agenda</h3><p>Servicios, profesionales y horarios en unos pocos pasos.</p></article><article class="step"><p class="step-n">03</p><h3>Conecta WhatsApp</h3><p>Vincula el número de tu negocio de forma guiada.</p></article><article class="step"><p class="step-n">04</p><h3>AURA atiende</h3><p>Empieza a responder y organizar citas desde el primer día.</p></article></div></div></section>
+    <section class="section" id="funcionalidades"><div class="wrap"><p class="eyebrow">Todo en un mismo sitio</p><h2>Menos tareas. Más tiempo para tus clientes.</h2><p class="section-lead">Las herramientas que necesita un negocio de belleza, en una experiencia sencilla.</p><div class="features"><article class="feature"><span>✦</span><h3>WhatsApp con IA</h3><p>Atención automática, natural y disponible cuando no puedes responder.</p></article><article class="feature"><span>◷</span><h3>Agenda</h3><p>Consulta disponibilidad y organiza las citas de tu equipo.</p></article><article class="feature"><span>◎</span><h3>Clientes</h3><p>Una relación más continua gracias al contexto de cada conversación.</p></article><article class="feature"><span>◉</span><h3>Profesionales</h3><p>Asigna servicios y horarios a cada persona de tu negocio.</p></article><article class="feature"><span>€</span><h3>Servicios y precios</h3><p>Tu carta de servicios siempre clara para quien pregunta.</p></article><article class="feature"><span>↔</span><h3>Automático o manual</h3><p>AURA atiende; tú tomas el control cuando quieres.</p></article><article class="feature"><span>⌂</span><h3>PWA móvil</h3><p>Consulta tu negocio cómodamente desde el móvil, sin complicaciones.</p></article></div></div></section>
+    <section class="sectors"><div class="wrap"><p class="eyebrow">Hecho para belleza</p><h2>Tu forma de atender, más fácil.</h2><div class="sector-tags"><span>Peluquerías</span><span>Barberías</span><span>Uñas</span><span>Centros de estética</span></div></div></section>
+    <section class="section pricing" id="precio"><div class="wrap"><p class="eyebrow">Oferta de lanzamiento</p><h2>Un precio simple para empezar.</h2><div class="price-card"><p class="founder-badge">Precio fundador · Solo primeros 100 negocios</p><p class="price-label">Precio fundador</p><p class="price">14,99 €<small>/mes + IVA</small></p><p class="standard"><b>Precio estándar: 24,99 €/mes + IVA</b></p><a class="button button-primary" href="https://aura.costabots.com/signup" data-aura-signup>Empezar con AURA</a><div class="mini-proof"><span class="proof-dot"></span><span>Sin permanencia. Cancela cuando quieras.</span></div></div></div></section>
+    <section class="section faq" id="faq"><div class="wrap faq-grid"><div><p class="eyebrow">Preguntas frecuentes</p><h2>Todo claro desde el principio.</h2></div><div><details><summary>¿Necesito cambiar mi número?</summary><p>No. AURA está pensada para conectar el WhatsApp de tu negocio y que sigas atendiendo desde el mismo número.</p></details><details><summary>¿AURA sustituye completamente a una persona?</summary><p>No. AURA se ocupa de las consultas y tareas repetitivas para que tu equipo pueda centrarse en las personas. Siempre puedes intervenir manualmente.</p></details><details><summary>¿Puedo responder yo manualmente?</summary><p>Sí. Puedes participar en una conversación siempre que lo necesites.</p></details><details><summary>¿Puedo configurar mis servicios y horarios?</summary><p>Sí. Durante la configuración inicial añades tus servicios, precios, profesionales y horarios.</p></details><details><summary>¿Funciona desde móvil?</summary><p>Sí. AURA incluye una experiencia móvil para que puedas consultar y gestionar tu negocio estés donde estés.</p></details><details><summary>¿Tiene permanencia?</summary><p>No. Puedes cancelar cuando quieras.</p></details></div></div></section>
+    <section class="final"><div class="wrap"><p class="eyebrow">AURA by COSTABOTS</p><h2>Tu próxima cita puede empezar con un mensaje.</h2><p>Empieza a atender mejor sin añadir más carga a tu día.</p><a class="button button-primary" href="https://aura.costabots.com/signup" data-aura-signup>Empezar con AURA</a></div></section>
+  </main>
+  <footer><div class="wrap footer-in"><span>© 2026 COSTABOTS</span><span>AURA · Atención y agenda para negocios de belleza</span></div></footer>
+  <script>
+    // Single place to update the destination when the AURA signup route changes.
+    const AURA_SIGNUP_URL = 'https://aura.costabots.com/signup';
+    document.querySelectorAll('[data-aura-signup]').forEach((link) => { link.href = AURA_SIGNUP_URL; });
+  </script>
+</body>
+</html>
